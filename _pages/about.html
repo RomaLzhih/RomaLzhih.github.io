@@ -29,6 +29,12 @@ permalink: about:output_ext
       {% if site.email %}
         <li class="email"><a class="email" href="mailto:{{site.email}}"><i class="fa fa-envelope-o"></i></a></li>
       {% endif %}
+      {% if site.instagram %}
+      <li class="instagram"><a class="instagram" href="http://instagram.com/{{site.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      {% endif %}
+      {% if site.douban %}
+      <li class="douban"><a class="douban" href="http://douban.com/people/{{site.douban}}" target="_blank"><i class="<i class="fa-solid fa-book"></i>"></i></a></li>
+      {% endif %}
       {% if site.bandcamp %}
         <li class="bandcamp"><a class="bandcamp" href="https://{{site.bandcamp}}.bandcamp.com" target="_blank"><i class="fa fa-bandcamp" aria-hidden="true"></i></a></li>
       {% endif %}
