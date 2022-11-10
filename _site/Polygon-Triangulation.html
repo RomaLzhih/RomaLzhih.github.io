@@ -7,9 +7,9 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Convex Hull - Swans & Swan</title>
-	<link rel="canonical" href="http://localhost:4000/Convex-Hull.html">
-	<meta name="description" content="Algorithms for computing a Convex Hull">
+	<title>Polygon Triangulation - Swans & Swan</title>
+	<link rel="canonical" href="http://localhost:4000/Polygon-Triangulation.html">
+	<meta name="description" content="Algorithms for polygon triangulation">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 <script type="application/ld+json">
@@ -19,13 +19,13 @@
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "http://localhost:4000"},
-  "headline": "Convex Hull",
-  "abstract": "Algorithms for computing a Convex Hull",
+  "headline": "Polygon Triangulation",
+  "abstract": "Algorithms for polygon triangulation",
     "keywords": "Computational Geometry",
-    "wordcount": "1239",
-    "image": ["http://localhost:4000/assets/imgposts/cover/convexhull.jpg"],
-  "datePublished": "2022-11-09 04:48:20 +0000",
-  "dateModified": "2022-11-09 04:48:20 +0000",
+    "wordcount": "956",
+    "image": ["http://localhost:4000/assets/imgposts/cover/polygon.png"],
+  "datePublished": "2022-11-10 02:48:20 +0000",
+  "dateModified": "2022-11-10 02:48:20 +0000",
   "author": {
     "@type": "Person",
     "name": "Thomas Men"},
@@ -40,30 +40,30 @@
 }
 </script>
 <!-- Open Graph data -->
-<meta property="og:url" content="http://localhost:4000/Convex-Hull.html"/>
+<meta property="og:url" content="http://localhost:4000/Polygon-Triangulation.html"/>
 <meta property="og:type" content="article"/>
-<meta property="og:title" content="Convex Hull"/>
-<meta property="og:description" content="Algorithms for computing a Convex Hull"/>
-<meta property="og:image" content="http://localhost:4000/assets/imgposts/cover/convexhull.jpg"/>
-<meta property="og:image:alt" content="Convex Hull"/>
+<meta property="og:title" content="Polygon Triangulation"/>
+<meta property="og:description" content="Algorithms for polygon triangulation"/>
+<meta property="og:image" content="http://localhost:4000/assets/imgposts/cover/polygon.png"/>
+<meta property="og:image:alt" content="Polygon Triangulation"/>
 <meta property="og:site_name" content="Swans & Swan" />
-<meta property="article:published_time" content="2022-11-09 04:48:20 +0000" />
-<meta property="article:modified_time" content="2022-11-09 04:48:20 +0000" />
+<meta property="article:published_time" content="2022-11-10 02:48:20 +0000" />
+<meta property="article:modified_time" content="2022-11-10 02:48:20 +0000" />
 <meta property="article:tag" content="Computational Geometry" />
 <meta property="fb:admins" content="" />
 <!-- Schema.org markup for Google -->
-<meta itemprop="name" content="Convex Hull">
-<meta itemprop="description" content="Algorithms for computing a Convex Hull">
-<meta itemprop="image" content="http://localhost:4000/assets/imgposts/cover/convexhull.jpg">
+<meta itemprop="name" content="Polygon Triangulation">
+<meta itemprop="description" content="Algorithms for polygon triangulation">
+<meta itemprop="image" content="http://localhost:4000/assets/imgposts/cover/polygon.png">
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
-<meta name="twitter:title" content="Convex Hull">
-<meta name="twitter:description" content="Algorithms for computing a Convex Hull">
+<meta name="twitter:title" content="Polygon Triangulation">
+<meta name="twitter:description" content="Algorithms for polygon triangulation">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="1239"/>
-<meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/convexhull.jpg">
+<meta data-rh="true" name="twitter:data1" content="956"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/polygon.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
 	<!-- iOS Safari -->
@@ -139,7 +139,7 @@
 
 <section class="hidden">
   <div class="post">
-      <a  class="post-list-title" href="./Convex-Hull.html">Convex Hull</a>
+      <a  class="post-list-title" href="./Polygon-Triangulation.html">Polygon Triangulation</a>
       
 
   <span class = "post-card-meta">
@@ -151,7 +151,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2022-11-09T04:48:20+00:00">November 9, 2022</time>
+        <time datetime="2022-11-10T02:48:20+00:00">November 10, 2022</time>
       </span>
     
     
@@ -163,7 +163,7 @@
     
     <span class="page_meta-readtime">
       
-        6 minute read
+        4 minute read
       
     </span>
   
@@ -171,7 +171,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h2 id="problem-definition">Problem Definition</h2><p><strong>Given:</strong> A set $Z$ of $n$ points in the plane.</p><p><strong>Find:</strong> Smallest convex set containing $Z$.</p><h2 id="some-basic-definition">Some Basic Definition</h2><ol> <li>A set $S$ in the plane is convex iff for every pair of points $p_1$ and $p_2$ in $S$, the line-segment $p_1p_2 $ is in $S$.</li> <li>A point $p$ in a convex set $S$ is said to be extreme (or a corner) iff no segment $ab$ in $S$ has $p$ in its interior.</li> <li>$CH(Z)$ is considered to be determined once its corners ordered around the boundary are found.</li> <li>Simplifying assumptions: No pair of Z-points has the same x- or y-coordinate...<a class="read-more" href="./Convex-Hull.html"> read more</a>
+            <h1 id="triangulating-a-polygon">Triangulating a polygon</h1><h2 id="art-gallery-problem">Art gallery problem</h2><p>Two points in a simple polygon can <em>see</em> each other if their connecting line segment is in the polygon.</p><p><code class="language-plaintext highlighter-rouge">Definition</code> The <em>art gallery problem</em>:</p><p>​ How many points are needed in a simple polygon with $n$ vertices so that every point in the polygon is seen?</p><p>This problem is NP-hard.</p><p><code class="language-plaintext highlighter-rouge">Theorem</code> <em>art gallery theorem</em>:</p><p>​ $\lfloor n/3\rfloor$ cameras are occasionally necessary but always sufficient.</p><h3 id="some-definition">Some Definition</h3><ul> <li>Polygon $P$ is <em>triangulated</em>: a decomposition of $P$ into disjoint triangles by a maximal set of non-intersecting diagonals.</li> <li><em>Diagonal</em> of $P$: open line segment that connects two vertices of...<a class="read-more" href="./Polygon-Triangulation.html"> read more</a>
         </div>
   </div>
 </section>
@@ -269,17 +269,17 @@
 </header> <!-- End Header -->
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Convex Hull">
-<meta itemprop="description" content="Algorithms for computing a Convex Hull">
-<meta itemprop="datePublished" content="2022-11-09T04:48:20+00:00">
+    <meta itemprop="headline" content="Polygon Triangulation">
+<meta itemprop="description" content="Algorithms for polygon triangulation">
+<meta itemprop="datePublished" content="2022-11-10T02:48:20+00:00">
 
     <div class="page-image">
-      <div class="cover-image" style="background: url('./assets/img/posts/cover/convexhull.jpg') center no-repeat; background-size: cover;"></div>
+      <div class="cover-image" style="background: url('./assets/img/posts/cover/polygon.png') center no-repeat; background-size: cover;"></div>
     </div>
     <div class="wrapper">
       <div class="page-content">
         <div class="header-page">
-          <h1 class="page-title">Convex Hull</h1>
+          <h1 class="page-title">Polygon Triangulation</h1>
           
 
   <span class = "post-page-meta">
@@ -291,7 +291,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2022-11-09T04:48:20+00:00">November 9, 2022</time>
+        <time datetime="2022-11-10T02:48:20+00:00">November 10, 2022</time>
       </span>
     
     
@@ -303,7 +303,7 @@
     
     <span class="page_meta-readtime">
       
-        6 minute read
+        4 minute read
       
     </span>
   
@@ -331,11 +331,11 @@
     <div class="share-hover side">
         <span class="share-button side"><svg fill="currentColor" width="25" height="25" class="side"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
         <div class="share-icons side" id="sidebar-icons">
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=Convex Hull&url=http://localhost:4000/Convex-Hull.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Convex-Hull.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Convex-Hull.html&title=Convex Hull" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Convex-Hull.html&title=Convex Hull&summary=Algorithms for computing a Convex Hull&source=http://localhost:4000/Convex-Hull.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a class="email" href="mailto:?subject=Convex Hull&body=Algorithms for computing a Convex Hull%0A%0ARead more here: http://localhost:4000/Convex-Hull.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Polygon Triangulation&url=http://localhost:4000/Polygon-Triangulation.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Polygon-Triangulation.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Polygon-Triangulation.html&title=Polygon Triangulation" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Polygon-Triangulation.html&title=Polygon Triangulation&summary=Algorithms for polygon triangulation&source=http://localhost:4000/Polygon-Triangulation.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Polygon Triangulation&body=Algorithms for polygon triangulation%0A%0ARead more here: http://localhost:4000/Polygon-Triangulation.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="side" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
         </div>
     </div>
@@ -348,223 +348,138 @@
     <li class="toc-title">
       <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
     </li>
-    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#problem-definition">Problem Definition</a></li><li class="toc-item-1"><a href="#some-basic-definition">Some Basic Definition</a></li><li class="toc-item-1"><a href="#equivalent-formulations-for-ch">Equivalent Formulations for CH</a></li><li class="toc-item-1"><a href="#algorithm-1-point-pruning">Algorithm 1: Point Pruning</a></li><li class="toc-item-1"><a href="#algorithm-2-edge-pruning---jarvis-march-1973">Algorithm 2: Edge Pruning  → Jarvis March (1973)</a></li><li class="toc-item-1"><a href="#algorithm-3-grahams-scan-1972">Algorithm 3: Graham’s Scan (1972)</a></li><li class="toc-item-1"><a href="#algorithm-4-divide-and-conquer">Algorithm 4: Divide and Conquer</a></li><li class="toc-item-1"><a href="#algorithm-5-marriage-before-conquest-1986">Algorithm 5: Marriage-before-Conquest (1986)</a></li><li class="toc-item-1"><a href="#algorithm-6-chans">Algorithm 6: Chan’s</a></li><li class="toc-item-1"><a href="#reference">Reference:</a></li></ul>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#triangulating-a-polygon">Triangulating a polygon</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#art-gallery-problem">Art gallery problem</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#some-definition">Some Definition</a></li></ul></li><li class="toc-item-2"><a href="#triangulate-a-polygon">Triangulate a polygon</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#partition-into-monotone-pieces">Partition into monotone pieces</a></li><li class="toc-item-3"><a href="#triangulating-a-monotone-polygon">Triangulating a monotone polygon</a></li><li class="toc-item-3"><a href="#triangulating-a-simple-polygon">Triangulating a simple polygon</a></li></ul></li></ul></li></ul>
   </nav>
 </aside>
 
         
-        <h2 id="problem-definition">Problem Definition</h2>
+        <h1 id="triangulating-a-polygon">Triangulating a polygon</h1>
 
-<p><strong>Given:</strong>  A set $Z$ of $n$ points in the plane.</p>
+<h2 id="art-gallery-problem">Art gallery problem</h2>
 
-<p><strong>Find:</strong>  Smallest convex set containing $Z$.</p>
+<p>Two points in a simple polygon can <em>see</em> each other if their connecting line segment is in the polygon.</p>
 
-<h2 id="some-basic-definition">Some Basic Definition</h2>
+<p><code class="language-plaintext highlighter-rouge">Definition</code> The <em>art gallery problem</em>:</p>
+
+<p>​	How many points are needed in a simple polygon with $n$ vertices so that every point in the polygon is seen?</p>
+
+<p>This problem is NP-hard.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem</code> <em>art gallery theorem</em>:</p>
+
+<p>​	 $\lfloor n/3\rfloor$ cameras are occasionally necessary but always sufficient.</p>
+
+<h3 id="some-definition">Some Definition</h3>
+
+<ul>
+  <li>Polygon $P$ is <em>triangulated</em>: a decomposition of $P$ into disjoint triangles by a maximal set of non-intersecting diagonals.</li>
+  <li><em>Diagonal</em> of $P$: open line segment that connects two vertices of $P$ and fully lies in the interior of $P$.</li>
+  <li><em>Dual graph</em> for a plane graph $G$ is a graph which is, each face in primal graph gives a node; two nodes are connected in dual graph if the faces are adjacent. The <em>dual graph</em> of a triangulated simple polygon without hole is a tree.</li>
+  <li>A simple polygon is <em>y-monotone</em> iff any horizontal line intersects it in a connected set (or not at all), or equivalently, if every horizontal line intersects it at most twice.</li>
+</ul>
+
+<p><img src="./assets/img/posts/typora-user-images/image-20210218141423541.png" alt="image-20210218141423541" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Lemma</code>: A simple polygon with $n$ vertices can always be triangulated, and always with $n-2$ triangles.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Proof</code> Every tree has a leaf, in particular the one that is the dual graph. Remove the corresponding triangle from the triangulated polygon, colour its vertices, add the triangle back, and let the extra vertex have the colour different from its neighbours.</p>
+
+<p>For a 3-coloured, triangulated simple, one of the color classes is used by at most $\lfloor n/3\rfloor$ colors. Place the cameras at these vertices.</p>
+
+<h2 id="triangulate-a-polygon">Triangulate a polygon</h2>
+
+<p>Overview:</p>
 
 <ol>
-  <li>A set $S$ in the plane is convex iff for every pair of points $p_1$ and $p_2$ in $S$, the line-segment $p_1p_2	$ is in $S$.</li>
-  <li>A point $p$ in a convex set $S$ is said to be extreme (or a corner) iff no segment $ab$ in $S$ has $p$ in its interior.</li>
-  <li>$CH(Z)$ is considered to be determined once its corners ordered around the boundary are found.</li>
-  <li>Simplifying assumptions: No pair of Z-points has the same x- or y-coordinate and/or no three points colinear.</li>
+  <li>Use <em>plane sweep</em> to partition the polygon into $y$-monotone polygons.</li>
+  <li>Triangulate each $y$-monotone polygon.</li>
 </ol>
 
-<h2 id="equivalent-formulations-for-ch">Equivalent Formulations for CH</h2>
+<h3 id="partition-into-monotone-pieces">Partition into monotone pieces</h3>
+
+<p>Vertex type:</p>
 
 <ul>
-  <li>Intersection of all convex sets containing $Z$.</li>
-  <li>Intersection of all half-planes containing $Z$.</li>
-  <li>Smallest possible convex set containing $Z$.</li>
-  <li>Convex set with the smallest possible perimeter and containing $Z$.</li>
+  <li>Start, above space of the vertex does not belongs to the polygon,</li>
+  <li>Stop/End, below space of the vertex does not belongs to the polygon,</li>
+  <li>Split, the polygon separate into two parts after this point,</li>
+  <li>Merge, the polygon merge into one part after this point,</li>
+  <li>Regular.</li>
 </ul>
 
-<p>Sorting can be transformed in $O(n)$ time into the convex hull problem. Thus the lower bound of the complexity of CH is same as sorting which is $O(n\log n)$.</p>
+<p><img src="./assets/img/posts/typora-user-images/image-20210218141858282.png" alt="image-20210218141858282" /></p>
 
-<p>Point $p_1,p_2,p_3$ make a right turn at $p_2$ iff $p_3$ is to the right or on the line through $p_1$ and $p_2$. Otherwise $p_1,p_2,p_3$ make a left turn at $p_2$. Mathematically speaking, if:
-\(det\begin{bmatrix}
-x_1 &amp; y_1 &amp; 1\\
-x_2 &amp; y_2 &amp; 1\\
-x_3 &amp; y_3 &amp; 1
-\end{bmatrix}&gt;0 \Rightarrow \textit{left turn}\)</p>
+<p>The <em>sweep</em> idea is, find diagonals from each merge vertex down, and from each split vertex up. Since these two kinds of points change the monotone of the polygon.</p>
 
-<h2 id="algorithm-1-point-pruning">Algorithm 1: Point Pruning</h2>
+<p><img src="./assets/img/posts/typora-user-images/image-20210218142031536.png" alt="image-20210218142031536" /></p>
 
-<p>Since: A point in set $Z$ which is not a corner is inside a triangle on $Z$.</p>
+<p><code class="language-plaintext highlighter-rouge">Definition</code> The <em>helper</em> for an edge $e$ that has the polygon right of it, and a position of the sweep line, is <strong>the lowest vertex $v$ above the sweep line</strong> such that the horizontal line segment connecting $e$ and $v$ is inside the polygon.</p>
+
+<p><img src="./assets/img/posts/typora-user-images/image-20210218142250704.png" alt="image-20210218142250704" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> The <em>status</em> is the set of edges intersecting the sweep line that have the polygon to their right, sorted from left to right, and each with their helper: the last vertex passed in that component. The <em>status structure</em> stores all edges that have the polygon to the right, with their helper, sorted from left to right in the leaves of a balanced binary search tree $T$.</p>
+
+<p>The <em>event</em> happen only at the vertices: sort them by $y$-coordinate and put them in a list.</p>
+
+<p>Now we begin sweep the initial polygon and prepare to handle the different event when the sweep line meets the vertex of:</p>
 
 <ul>
-  <li>
-    <p>Use $O(n^3)$ time to enumerate the triangles and for every triangles use $O(n)$ transverse other point to check whether it is contained. When whole procedure finishes, the remaining points never included are corners.</p>
-  </li>
-  <li>
-    <p>Actually, we can select the left/up and right/down extreme points to form a bottom edge for triangle and enumerate the third vertex and check the other $Z$-point inclusion in $O(n\cdot n)$, cuz that the two extreme points must be included in corners.</p>
-  </li>
+  <li><strong>Start vertex</strong> $v$: insert the ccw incident edge in $T$ with $v$ as the helper (the left edge behind $v$).</li>
+  <li><strong>End vertex</strong> $v$: delete the clockwise incident edge and its helper from $T$ (the left edge above $v$).</li>
+  <li><strong>Regular vertex</strong> $v$: if the polygon is right of the two incident edges, then replace the upper edge by the lower edge in $T$, and make $v$ the helper. If the polygon is left of the two incident edges, then find the edge $e$ directly left of $v$, and replace its helper by $v$.</li>
 </ul>
 
-<p>Then, we need to sort the corners.</p>
+<p><img src="./assets/img/posts/typora-user-images/image-20210218144125656.png" alt="image-20210218144125656" /></p>
 
 <ul>
-  <li>
-    <p>Take any point in $CH(Z)$ and sort corners around it.</p>
-  </li>
-  <li>
-    <p>Draw line through the leftmost and rightmost corners. Sort corners above the line by increasing x-coordinate and sort corners below the line by decreasing x-coordinate.</p>
-  </li>
-  <li>
-    <p>All this can be done in $O(n\log n)$ time.</p>
-
-    <p><img src="./assets/img/posts/typora-user-images/image-20210216164303195.png" alt="image-20210216164303195" /></p>
-  </li>
+  <li><strong>Merge vertex</strong> $v$: Remove the edge clockwise from $v$ from $T$. Find the edge $e$ directly left of $v$, and replace its helper by $v$.</li>
 </ul>
 
-<h2 id="algorithm-2-edge-pruning---jarvis-march-1973">Algorithm 2: Edge Pruning  → Jarvis March (1973)</h2>
-
-<p>Naïve approach:</p>
+<p><img src="./assets/img/posts/typora-user-images/image-20210218144358775.png" alt="image-20210218144358775" /></p>
 
 <ul>
-  <li>Arbitrarily pick one edge $O(n^2)$ and check whether all other points are located on same side of  edge (left/right turn, $O(n)$ ). In total $O(n^3)$.</li>
-  <li>Sorting of corners remains.</li>
+  <li><strong>Split vertex</strong> $v$: Find the edge $e$ directly left of $v$, and choose as a diagonal the edge between its helper and $v$. Replace the helper of $e$ by $v$. Insert the edge ccw from $v$ in $T$, with $v$ as its helper.</li>
 </ul>
 
-<p>Jarvis’s March:</p>
+<p><img src="./assets/img/posts/typora-user-images/image-20210218144553912.png" alt="image-20210218144553912" /></p>
 
-<ul>
-  <li>When a boundary edge $z_iz_j$ has been identified, there must exist another boundary edge with $z_j$ as one of its endpoints.</li>
-  <li>Boundary edge can be founded by starting from extreme point. Find boundary edge consecutively.</li>
-  <li>Corner sorting still needed.</li>
-  <li>$O(nh)$, where $h$ is the number of corners. Expected number of corners of points independently and uniformly distributed within a unit circle is $O(n^{1/3})$.</li>
-</ul>
+<p><code class="language-plaintext highlighter-rouge">Efficiency</code>:</p>
 
-<h2 id="algorithm-3-grahams-scan-1972">Algorithm 3: Graham’s Scan (1972)</h2>
+<p>​	Sorting all events by $y$-coordinate takes $O(n\log n)$ time. Every event takes $O(\log n)$ time, because it only involves querying, inserting and deleting in $T$.</p>
 
-<p>Procedure:</p>
+<p><code class="language-plaintext highlighter-rouge">Two-direction Sweep</code>:</p>
+
+<p>​	We need to sweep in both upward and downward direction, since unidirectional sweep is insufficient divide the polygon into monotone spices.</p>
+
+<p><img src="./assets/img/posts/typora-user-images/image-20210218145109119.png" alt="image-20210218145109119" />  <img src="./assets/img/posts/typora-user-images/image-20210218145154091.png" alt="image-20210218145154091" /></p>
+
+<p>For a same vertex, maximum 2 diagonals would be chosen to the same vertex. Because, if $u$ is a split vertex, an edge is added to $u$ and the helper of $u$; then the sweep continuous, another split vertex below which regards $u$ as its helper would also add one edge to $u$, then $u$ would never become helper.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem</code>: A simple polygon with $n$ vertices can be partitioned into $y$-monotone pieces in $O(n\log n)$ time.</p>
+
+<h3 id="triangulating-a-monotone-polygon">Triangulating a monotone polygon</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">algorithm</code>:</p>
 
 <ol>
-  <li>Sort points around some point of CH(Z). Points at the same angle are sorted by their distance. Construct the polygon defined by the sorting.</li>
-  <li>Prune the nodes. If we transverse the nodes in counterclockwise (ccw) order, all middle nodes should make a left turn for pairs $p+,p,p-$, otherwise it can be removed. After remove the middle point $p$, $p-$ would go backward, otherwise all three points walk forward.</li>
-  <li>Algorithm terminate when the initial corner arrived by a forward step.</li>
+  <li>Sort the vertices top-to-bottom by a merge of the two chains,</li>
+  <li>Initialize a stack. Push the first two vertices,</li>
+  <li>Take the next vertex $v$, and triangulate as much as possible, top-down, while popping the stack,</li>
+  <li>Push $v$ onto the stack.</li>
 </ol>
 
-<p><img src="./assets/img/posts/typora-user-images/image-20210216165511764.png" alt="image-20210216165511764" /></p>
+<p><code class="language-plaintext highlighter-rouge">Theorem</code> A monotone polygon with $n$ vertices can be triangulated $O(n)$ time.</p>
 
-<p>Something may goes wrong:</p>
+<h3 id="triangulating-a-simple-polygon">Triangulating a simple polygon</h3>
+
+<p>We need to argue that all $y$-monotone polygons together that we will triangulate have $O(n)$ vertices.</p>
 
 <ul>
-  <li>Will never go backwards behind the initial corner, which means if we select a wrong initial corner at first, it would be dropped and we will never trace back to it.</li>
+  <li>Initially we had $n$ edges. We add at most $n-3$ diagonals in the sweeps. These diagonals are used on both sides as edges. So all monotone polygons together have at most $n+2(n-3)=3n-6$ edges, and therefore at most $3n-6$ vertices.</li>
+  <li>Note that the complexity all about the total computation load, hence we can conclude that triangulating all monotone polygons together takes only $O(n)$ time.</li>
 </ul>
 
-<p>Complexity:</p>
-
-<ul>
-  <li># of backward steps is $O(n)$.</li>
-  <li># of forward step is $O(n)$.</li>
-  <li>Sorting $O(n\log n)$.</li>
-  <li>Totally, $O(n\log n)$.</li>
-</ul>
-
-<h2 id="algorithm-4-divide-and-conquer">Algorithm 4: Divide and Conquer</h2>
-
-<p>Partition $Z$ into balanced subsets $Z_1$ and $Z_2$, determine $CH(Z_1)$ and $CH(Z_2)$ recursively. The problem solve directly if $n\leq 2$.</p>
-
-<p>Merge:</p>
-
-<ul>
-  <li>For each merge phase, two sub-polygon with corners sorted are available. Then select one point arbitrarily, say point 1. Build two sorted edge set between point 1 and other points.</li>
-  <li>If point 1 is inside another polygon, cause this two edges are all sorted, we can merge them directly.</li>
-  <li>If point 2 is outside another polygon, we pick two extreme points (which is exterior most to point 2), say point 3 and point 4. For all other points $q$, we check whether it make a left turn from point 3 to point 2, or form a right turn from point 4 to point 2. If not, we drop this point. (or we can check whether this point is included by the other polygon)</li>
-</ul>
-
-<p><img src="./assets/img/posts/typora-user-images/image-20210216171711614.png" alt="image-20210216171711614" /></p>
-
-<p>Partition and union complexity:
-\(\begin{array}{c}
-T(n)=O(1), n \leq 2 \\
-T(n)=2 * T(n / 2)+O(n), n&gt;2
-\end{array}\)
-Overall $O(n\log n)$.</p>
-
-<h2 id="algorithm-5-marriage-before-conquest-1986">Algorithm 5: Marriage-before-Conquest (1986)</h2>
-
-<p>“Reverse Order” than Divide-and-Conquer.</p>
-
-<p>Calculate the Upper and Lower Convex Hulls separately and merge them.</p>
-
-<ol>
-  <li>Divide the nodes into 2 points, which is approximately same.</li>
-  <li><code class="language-plaintext highlighter-rouge">Find the Bridge</code> across two sides.</li>
-  <li>Drop the nodes exactly below the bridge and compute the left upper CH and right upper CH recursively.</li>
-  <li>Merge.</li>
-</ol>
-
-<p><img src="./assets/img/posts/typora-user-images/image-20210216172244323.png" alt="image-20210216172244323" /></p>
-
-<p>How to find a Bridge?</p>
-
-<ol>
-  <li>Build edges by pairing two nodes arbitrarily.  Select the edge $e$ with median slope.</li>
-  <li>Move $e$ parallelly to the upper/lower extreme point $p$ (no more higher /lower nodes exists). If exactly two nodes from both sides located in same line, the line is bridge and then be returned.</li>
-  <li>Otherwise, for all of other points $p_i$ in <strong>same side</strong> of $p$, calculate the slope $e_i=(p,p_i)$ . If $p$ is on left side and $e_i&gt;e$, drop $p_i$, or if $p$ is on right side and $e_i&lt;e$, drop $p_i$.</li>
-  <li>Repeat until only 1 node in opposite side of $p$ exists.</li>
-</ol>
-
-<p>Complexity containing both Bridge Finding, and Overall Complexity is shown as follows, big constant.</p>
-
-<p><img src="./assets/img/posts/typora-user-images/image-20210216173159802.png" alt="image-20210216173159802" /></p>
-
-<p><img src="./assets/img/posts/typora-user-images/image-20210216173210980.png" alt="image-20210216173210980" /></p>
-
-<h2 id="algorithm-6-chans">Algorithm 6: Chan’s</h2>
-
-<p>Algorithms with complexity measured as a function of both $n$ and <code class="language-plaintext highlighter-rouge">output size</code> $h$ are said to be <em>output-sensitive</em>.</p>
-
-<p>Let $P\subset E^2$ be a set of $n\geq 3$ points. The procedure of Chan’s algorithm is:</p>
-
-<p><strong>Algorithm</strong> Hull2D($P, m, H$), where $P \subset E^2$, $3 ≤ m ≤ n$, and $H ≥ 1$</p>
-
-<ol>
-  <li>partition $P$ into subsets $P_1,\cdots,P_{\lceil n/m\rceil}$ each of size at most $m$</li>
-  <li>for $i=1,\cdots, \lceil n/m\rceil$ do
-    <ol>
-      <li>compute conv($P_i$) by Graham’s scan and store its vertices in an array in ccw order</li>
-    </ol>
-  </li>
-  <li>$p_0\leftarrow (0,-\infty)$</li>
-  <li>$p_1\leftarrow$ the rightmost point of $P$</li>
-  <li>for $k=1,\cdots,H$ do
-    <ol>
-      <li>for $i=1,\cdots,\lceil n/m\rceil$ do
-        <ol>
-          <li>compute the points $q_i\in P_i$ that maximizes $\angle p_{k-1}p_kq_i\quad (q_i\neq p_k)$ by performing a binary search on the vertices of conv($P_i$)</li>
-        </ol>
-      </li>
-      <li>$p_{k+1}\rightarrow$ the point $q$ from ${q_1,\cdots,q_{\lceil n/m\rceil}}$ that maximizes $\angle p_{k-1}p_kq$</li>
-      <li>if $p_{k+1}=p_1$ then return the list $\langle p_1,\cdots,p_k\rangle$</li>
-    </ol>
-  </li>
-  <li>return <em>incomplete</em></li>
-</ol>
-
-<p><img src="./assets/img/posts/typora-user-images/image-20210216184535411.png" alt="image-20210216184535411" /></p>
-
-<p>By choosing $m = H$, the complexity of the algorithm is then $O(n(1+H/m) \log m) = O(n \log H)$. Since the value of $h$ is not known in advance, we use a sequence of $H$’s to “guess” its value as shown below:</p>
-
-<p><strong>Algorithm</strong> Hull2D($P$), where $P \subset E^2$</p>
-
-<ol>
-  <li>for $t = 1, 2,\cdots $ do
-    <ol>
-      <li>$L\rightarrow $ Hull2D($P,m,H$), where $m=H=\min{2^{2^t},n}$</li>
-      <li>if $L\neq incomplete$ then return $L$</li>
-    </ol>
-  </li>
-</ol>
-
-<p>The procedure stops with the list of hull vertices as soon as the value of $H$ in the for-loop reaches or exceeds $h$. The number of iterations in the loop is $\lceil \log \log h\rceil$ (using base-2 logarithms), and the $t$-th iteration takes $O(n \log H) = O(n2^t )$ time. Therefore, the total running time of the algorithm is $O(\sum_{t=1}^{\lceil \log\log h\rceil}n2^t)=O(n2^{\lceil\log\log h\rceil+1})=O(n\log h)$. The storage requirement is clearly linear.</p>
-
-<h2 id="reference">Reference:</h2>
-
-<ul>
-  <li>Convex Hull, CG - Lecture, UCPH-DIKU.</li>
-  <li>Chan’s paper</li>
-</ul>
+<p><code class="language-plaintext highlighter-rouge">Theorem</code> A simple polygon with $n$ vertices can be triangulated $O(n\log n)$ time.</p>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -584,11 +499,11 @@ Overall $O(n\log n)$.</p>
     <div class="share-hover inline">
         <span class="share-button inline"><svg fill="currentColor" width="25" height="25" class="inline"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
         <div class="share-icons inline" id="post-end-icons">
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=Convex Hull&url=http://localhost:4000/Convex-Hull.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Convex-Hull.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Convex-Hull.html&title=Convex Hull" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Convex-Hull.html&title=Convex Hull&summary=Algorithms for computing a Convex Hull&source=http://localhost:4000/Convex-Hull.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a class="email" href="mailto:?subject=Convex Hull&body=Algorithms for computing a Convex Hull%0A%0ARead more here: http://localhost:4000/Convex-Hull.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Polygon Triangulation&url=http://localhost:4000/Polygon-Triangulation.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Polygon-Triangulation.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Polygon-Triangulation.html&title=Polygon Triangulation" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Polygon-Triangulation.html&title=Polygon Triangulation&summary=Algorithms for polygon triangulation&source=http://localhost:4000/Polygon-Triangulation.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Polygon Triangulation&body=Algorithms for polygon triangulation%0A%0ARead more here: http://localhost:4000/Polygon-Triangulation.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="inline" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
         </div>
     </div>
@@ -925,14 +840,14 @@ Overall $O(n\log n)$.</p>
     }
 
     function copyToClipboard() {
-      navigator.clipboard.writeText('http://localhost:4000/Convex-Hull.html').then(function() {
+      navigator.clipboard.writeText('http://localhost:4000/Polygon-Triangulation.html').then(function() {
       alerts = document.getElementsByClassName('alert')
       for (i=0; i < alerts.length; i++){
         alerts[i].innerHTML='\u00ABlink copied\u00BB';
         setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
       };
       }, function() {
-        prompt("Unable to copy, please use this link:", "http://localhost:4000/Convex-Hull.html");
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/Polygon-Triangulation.html");
       });
     }
 

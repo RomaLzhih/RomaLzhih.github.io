@@ -5,7 +5,7 @@ show_date: true
 title:  Convex Hull
 date:   2022-11-08 22:48:20 -0600
 description: Algorithms for computing a Convex Hull
-img: posts/typora-user-images/image-20210216164303195.png
+img: posts/cover/convexhull.jpg
 tags: [Computational Geometry]
 author: Thomas Men
 toc: yes

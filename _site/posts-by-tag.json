@@ -6,6 +6,8 @@
   "tag" : "Computational Geometry",
   "posts" : [
       
+      "./Polygon-Triangulation.html",
+      
       "./Convex-Hull.html"
       
     ]

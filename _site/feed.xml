@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-09T01:13:12-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Swans &amp;amp; Swan</title><subtitle>Algorithm, Math and Life</subtitle><author><name>Thomas Men</name></author><entry><title type="html">Convex Hull</title><link href="http://localhost:4000/Convex-Hull.html" rel="alternate" type="text/html" title="Convex Hull" /><published>2022-11-08T20:48:20-08:00</published><updated>2022-11-08T20:48:20-08:00</updated><id>http://localhost:4000/Convex-Hull</id><content type="html" xml:base="http://localhost:4000/Convex-Hull.html">&lt;h2 id=&quot;problem-definition&quot;&gt;Problem Definition&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-10T04:43:06+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Swans &amp;amp; Swan</title><subtitle>Algorithm, Math and Life</subtitle><author><name>Thomas Men</name></author><entry><title type="html">Polygon Triangulation</title><link href="http://localhost:4000/Polygon-Triangulation.html" rel="alternate" type="text/html" title="Polygon Triangulation" /><published>2022-11-10T02:48:20+00:00</published><updated>2022-11-10T02:48:20+00:00</updated><id>http://localhost:4000/Polygon-Triangulation</id><content type="html" xml:base="http://localhost:4000/Polygon-Triangulation.html">&lt;h1 id=&quot;triangulating-a-polygon&quot;&gt;Triangulating a polygon&lt;/h1&gt;
+
+&lt;h2 id=&quot;art-gallery-problem&quot;&gt;Art gallery problem&lt;/h2&gt;
+
+&lt;p&gt;Two points in a simple polygon can &lt;em&gt;see&lt;/em&gt; each other if their connecting line segment is in the polygon.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Definition&lt;/code&gt; The &lt;em&gt;art gallery problem&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;​	How many points are needed in a simple polygon with $n$ vertices so that every point in the polygon is seen?&lt;/p&gt;
+
+&lt;p&gt;This problem is NP-hard.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Theorem&lt;/code&gt; &lt;em&gt;art gallery theorem&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;​	 $\lfloor n/3\rfloor$ cameras are occasionally necessary but always sufficient.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-definition&quot;&gt;Some Definition&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Polygon $P$ is &lt;em&gt;triangulated&lt;/em&gt;: a decomposition of $P$ into disjoint triangles by a maximal set of non-intersecting diagonals.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Diagonal&lt;/em&gt; of $P$: open line segment that connects two vertices of $P$ and fully lies in the interior of $P$.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Dual graph&lt;/em&gt; for a plane graph $G$ is a graph which is, each face in primal graph gives a node; two nodes are connected in dual graph if the faces are adjacent. The &lt;em&gt;dual graph&lt;/em&gt; of a triangulated simple polygon without hole is a tree.&lt;/li&gt;
+  &lt;li&gt;A simple polygon is &lt;em&gt;y-monotone&lt;/em&gt; iff any horizontal line intersects it in a connected set (or not at all), or equivalently, if every horizontal line intersects it at most twice.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218141423541.png&quot; alt=&quot;image-20210218141423541&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lemma&lt;/code&gt;: A simple polygon with $n$ vertices can always be triangulated, and always with $n-2$ triangles.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proof&lt;/code&gt; Every tree has a leaf, in particular the one that is the dual graph. Remove the corresponding triangle from the triangulated polygon, colour its vertices, add the triangle back, and let the extra vertex have the colour different from its neighbours.&lt;/p&gt;
+
+&lt;p&gt;For a 3-coloured, triangulated simple, one of the color classes is used by at most $\lfloor n/3\rfloor$ colors. Place the cameras at these vertices.&lt;/p&gt;
+
+&lt;h2 id=&quot;triangulate-a-polygon&quot;&gt;Triangulate a polygon&lt;/h2&gt;
+
+&lt;p&gt;Overview:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use &lt;em&gt;plane sweep&lt;/em&gt; to partition the polygon into $y$-monotone polygons.&lt;/li&gt;
+  &lt;li&gt;Triangulate each $y$-monotone polygon.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;partition-into-monotone-pieces&quot;&gt;Partition into monotone pieces&lt;/h3&gt;
+
+&lt;p&gt;Vertex type:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Start, above space of the vertex does not belongs to the polygon,&lt;/li&gt;
+  &lt;li&gt;Stop/End, below space of the vertex does not belongs to the polygon,&lt;/li&gt;
+  &lt;li&gt;Split, the polygon separate into two parts after this point,&lt;/li&gt;
+  &lt;li&gt;Merge, the polygon merge into one part after this point,&lt;/li&gt;
+  &lt;li&gt;Regular.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218141858282.png&quot; alt=&quot;image-20210218141858282&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;sweep&lt;/em&gt; idea is, find diagonals from each merge vertex down, and from each split vertex up. Since these two kinds of points change the monotone of the polygon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218142031536.png&quot; alt=&quot;image-20210218142031536&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Definition&lt;/code&gt; The &lt;em&gt;helper&lt;/em&gt; for an edge $e$ that has the polygon right of it, and a position of the sweep line, is &lt;strong&gt;the lowest vertex $v$ above the sweep line&lt;/strong&gt; such that the horizontal line segment connecting $e$ and $v$ is inside the polygon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218142250704.png&quot; alt=&quot;image-20210218142250704&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Definition&lt;/code&gt; The &lt;em&gt;status&lt;/em&gt; is the set of edges intersecting the sweep line that have the polygon to their right, sorted from left to right, and each with their helper: the last vertex passed in that component. The &lt;em&gt;status structure&lt;/em&gt; stores all edges that have the polygon to the right, with their helper, sorted from left to right in the leaves of a balanced binary search tree $T$.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;event&lt;/em&gt; happen only at the vertices: sort them by $y$-coordinate and put them in a list.&lt;/p&gt;
+
+&lt;p&gt;Now we begin sweep the initial polygon and prepare to handle the different event when the sweep line meets the vertex of:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Start vertex&lt;/strong&gt; $v$: insert the ccw incident edge in $T$ with $v$ as the helper (the left edge behind $v$).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;End vertex&lt;/strong&gt; $v$: delete the clockwise incident edge and its helper from $T$ (the left edge above $v$).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Regular vertex&lt;/strong&gt; $v$: if the polygon is right of the two incident edges, then replace the upper edge by the lower edge in $T$, and make $v$ the helper. If the polygon is left of the two incident edges, then find the edge $e$ directly left of $v$, and replace its helper by $v$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218144125656.png&quot; alt=&quot;image-20210218144125656&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Merge vertex&lt;/strong&gt; $v$: Remove the edge clockwise from $v$ from $T$. Find the edge $e$ directly left of $v$, and replace its helper by $v$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218144358775.png&quot; alt=&quot;image-20210218144358775&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Split vertex&lt;/strong&gt; $v$: Find the edge $e$ directly left of $v$, and choose as a diagonal the edge between its helper and $v$. Replace the helper of $e$ by $v$. Insert the edge ccw from $v$ in $T$, with $v$ as its helper.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218144553912.png&quot; alt=&quot;image-20210218144553912&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Efficiency&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;​	Sorting all events by $y$-coordinate takes $O(n\log n)$ time. Every event takes $O(\log n)$ time, because it only involves querying, inserting and deleting in $T$.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Two-direction Sweep&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;​	We need to sweep in both upward and downward direction, since unidirectional sweep is insufficient divide the polygon into monotone spices.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218145109119.png&quot; alt=&quot;image-20210218145109119&quot; /&gt;  &lt;img src=&quot;./assets/img/posts/typora-user-images/image-20210218145154091.png&quot; alt=&quot;image-20210218145154091&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For a same vertex, maximum 2 diagonals would be chosen to the same vertex. Because, if $u$ is a split vertex, an edge is added to $u$ and the helper of $u$; then the sweep continuous, another split vertex below which regards $u$ as its helper would also add one edge to $u$, then $u$ would never become helper.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Theorem&lt;/code&gt;: A simple polygon with $n$ vertices can be partitioned into $y$-monotone pieces in $O(n\log n)$ time.&lt;/p&gt;
+
+&lt;h3 id=&quot;triangulating-a-monotone-polygon&quot;&gt;Triangulating a monotone polygon&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithm&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Sort the vertices top-to-bottom by a merge of the two chains,&lt;/li&gt;
+  &lt;li&gt;Initialize a stack. Push the first two vertices,&lt;/li&gt;
+  &lt;li&gt;Take the next vertex $v$, and triangulate as much as possible, top-down, while popping the stack,&lt;/li&gt;
+  &lt;li&gt;Push $v$ onto the stack.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Theorem&lt;/code&gt; A monotone polygon with $n$ vertices can be triangulated $O(n)$ time.&lt;/p&gt;
+
+&lt;h3 id=&quot;triangulating-a-simple-polygon&quot;&gt;Triangulating a simple polygon&lt;/h3&gt;
+
+&lt;p&gt;We need to argue that all $y$-monotone polygons together that we will triangulate have $O(n)$ vertices.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Initially we had $n$ edges. We add at most $n-3$ diagonals in the sweeps. These diagonals are used on both sides as edges. So all monotone polygons together have at most $n+2(n-3)=3n-6$ edges, and therefore at most $3n-6$ vertices.&lt;/li&gt;
+  &lt;li&gt;Note that the complexity all about the total computation load, hence we can conclude that triangulating all monotone polygons together takes only $O(n)$ time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Theorem&lt;/code&gt; A simple polygon with $n$ vertices can be triangulated $O(n\log n)$ time.&lt;/p&gt;</content><author><name>Thomas Men</name></author><category term="Computational Geometry" /><summary type="html">Triangulating a polygon Art gallery problem Two points in a simple polygon can see each other if their connecting line segment is in the polygon. Definition The art gallery problem: ​ How many points are needed in a simple polygon with $n$ vertices so that every point in the polygon is seen? This problem is NP-hard. Theorem art gallery theorem: ​ $\lfloor n/3\rfloor$ cameras are occasionally necessary but always sufficient. Some Definition Polygon $P$ is triangulated: a decomposition of $P$ into disjoint triangles by a maximal set of non-intersecting diagonals. Diagonal of $P$: open line segment that connects two vertices of $P$ and fully lies in the interior of $P$. Dual graph for a plane graph $G$ is a graph which is, each face in primal graph gives a node; two nodes are connected in dual graph if the faces are adjacent. The dual graph of a triangulated simple polygon without hole is a tree. A simple polygon is y-monotone iff any horizontal line intersects it in a connected set (or not at all), or equivalently, if every horizontal line intersects it at most twice. Lemma: A simple polygon with $n$ vertices can always be triangulated, and always with $n-2$ triangles. Proof Every tree has a leaf, in particular the one that is the dual graph. Remove the corresponding triangle from the triangulated polygon, colour its vertices, add the triangle back, and let the extra vertex have the colour different from its neighbours. For a 3-coloured, triangulated simple, one of the color classes is used by at most $\lfloor n/3\rfloor$ colors. Place the cameras at these vertices. Triangulate a polygon Overview: Use plane sweep to partition the polygon into $y$-monotone polygons. Triangulate each $y$-monotone polygon. Partition into monotone pieces Vertex type: Start, above space of the vertex does not belongs to the polygon, Stop/End, below space of the vertex does not belongs to the polygon, Split, the polygon separate into two parts after this point, Merge, the polygon merge into one part after this point, Regular. The sweep idea is, find diagonals from each merge vertex down, and from each split vertex up. Since these two kinds of points change the monotone of the polygon. Definition The helper for an edge $e$ that has the polygon right of it, and a position of the sweep line, is the lowest vertex $v$ above the sweep line such that the horizontal line segment connecting $e$ and $v$ is inside the polygon. Definition The status is the set of edges intersecting the sweep line that have the polygon to their right, sorted from left to right, and each with their helper: the last vertex passed in that component. The status structure stores all edges that have the polygon to the right, with their helper, sorted from left to right in the leaves of a balanced binary search tree $T$. The event happen only at the vertices: sort them by $y$-coordinate and put them in a list. Now we begin sweep the initial polygon and prepare to handle the different event when the sweep line meets the vertex of: Start vertex $v$: insert the ccw incident edge in $T$ with $v$ as the helper (the left edge behind $v$). End vertex $v$: delete the clockwise incident edge and its helper from $T$ (the left edge above $v$). Regular vertex $v$: if the polygon is right of the two incident edges, then replace the upper edge by the lower edge in $T$, and make $v$ the helper. If the polygon is left of the two incident edges, then find the edge $e$ directly left of $v$, and replace its helper by $v$. Merge vertex $v$: Remove the edge clockwise from $v$ from $T$. Find the edge $e$ directly left of $v$, and replace its helper by $v$. Split vertex $v$: Find the edge $e$ directly left of $v$, and choose as a diagonal the edge between its helper and $v$. Replace the helper of $e$ by $v$. Insert the edge ccw from $v$ in $T$, with $v$ as its helper. Efficiency: ​ Sorting all events by $y$-coordinate takes $O(n\log n)$ time. Every event takes $O(\log n)$ time, because it only involves querying, inserting and deleting in $T$. Two-direction Sweep: ​ We need to sweep in both upward and downward direction, since unidirectional sweep is insufficient divide the polygon into monotone spices. For a same vertex, maximum 2 diagonals would be chosen to the same vertex. Because, if $u$ is a split vertex, an edge is added to $u$ and the helper of $u$; then the sweep continuous, another split vertex below which regards $u$ as its helper would also add one edge to $u$, then $u$ would never become helper. Theorem: A simple polygon with $n$ vertices can be partitioned into $y$-monotone pieces in $O(n\log n)$ time. Triangulating a monotone polygon The algorithm: Sort the vertices top-to-bottom by a merge of the two chains, Initialize a stack. Push the first two vertices, Take the next vertex $v$, and triangulate as much as possible, top-down, while popping the stack, Push $v$ onto the stack. Theorem A monotone polygon with $n$ vertices can be triangulated $O(n)$ time. Triangulating a simple polygon We need to argue that all $y$-monotone polygons together that we will triangulate have $O(n)$ vertices. Initially we had $n$ edges. We add at most $n-3$ diagonals in the sweeps. These diagonals are used on both sides as edges. So all monotone polygons together have at most $n+2(n-3)=3n-6$ edges, and therefore at most $3n-6$ vertices. Note that the complexity all about the total computation load, hence we can conclude that triangulating all monotone polygons together takes only $O(n)$ time. Theorem A simple polygon with $n$ vertices can be triangulated $O(n\log n)$ time.</summary></entry><entry><title type="html">Convex Hull</title><link href="http://localhost:4000/Convex-Hull.html" rel="alternate" type="text/html" title="Convex Hull" /><published>2022-11-09T04:48:20+00:00</published><updated>2022-11-09T04:48:20+00:00</updated><id>http://localhost:4000/Convex-Hull</id><content type="html" xml:base="http://localhost:4000/Convex-Hull.html">&lt;h2 id=&quot;problem-definition&quot;&gt;Problem Definition&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Given:&lt;/strong&gt;  A set $Z$ of $n$ points in the plane.&lt;/p&gt;
 

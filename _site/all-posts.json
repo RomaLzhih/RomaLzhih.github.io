@@ -1,6 +1,8 @@
 {
   "posts" : [
     
+    "./Polygon-Triangulation.html",
+    
     "./Convex-Hull.html"
     
   ]

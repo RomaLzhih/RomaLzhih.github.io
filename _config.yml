@@ -5,7 +5,7 @@ permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://RomaLzhih.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/img/branding/logo.png"
-logo-icon: "/assets/img/branding/symbol.png"
+logo-icon: "/assets/img/branding/symbol-dark_adobe_express.svg"
 logo-icon-SEO: "/assets/img/branding/symbol-dark.png" # must be a non SVG file
 
 # Night/Dark mode
@@ -42,8 +42,8 @@ douban: romaLzhih
 mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
 
 # Tracker
-analytics: G-R8SZS2YBZK
-fbadmin: ar.maybach
+analytics: G-JFSBB9E8Q4
+#fbadmin: ar.maybach
 
 # Paginate
 paginate: 6
@@ -71,7 +71,7 @@ compress_html:
   startings: [html, head, body]
 
 # Outputting
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: UTC−08:00 # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 category_archive:
   type: liquid
