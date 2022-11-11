@@ -123,3 +123,8 @@ We need to argue that all $y$-monotone polygons together that we will triangulat
 - Note that the complexity all about the total computation load, hence we can conclude that triangulating all monotone polygons together takes only $O(n)$ time. 
 
 `Theorem` A simple polygon with $n$ vertices can be triangulated $O(n\log n)$ time.
+
+## Reference:
+
+- Convex Hull, CG - Lecture, UCPH-DIKU.
+- Chan's paper

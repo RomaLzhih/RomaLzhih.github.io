@@ -5,6 +5,20 @@ permalink: tags:output_ext
 ---
 {% include calculate_relative_base.html %}
 {% include get-site-tags.html %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 <section class="blog-tags">
   <h2>tags</h2>
   {% include tag_cloud.html %}

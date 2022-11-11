@@ -126,3 +126,8 @@ Range Tree has exactly such structure. We use Fractional Cascading to improve it
 After sorted in preprocessing,  The second-level structure is always the subset of its ancestor nodes. Since we find the same nodes, in the first level binary search we can position the node we should start search in second level. For example, in root node, we find 2 as the left most point, and the pointer in 2 points to 6 since we have sorted it in $y$-monotone already. 
 
 `Theorem` Let $P$ be a set of $n$ points in $d$-dimensional space, with $d\geq 2$. A layered range tree for $P$ uses $O(n\log^{d-1}n)$ storage and it can be constructed in $O(n\log^{d-1}n)$ time. With this range tree one can report the points in $P$ lie in a rectangular query range in $O(\log^{d-1}n+k)$ time, where $k$ is the number of reported points. 
+
+## Reference:
+
+- Convex Hull, CG - Lecture, UCPH-DIKU.
+- Chan's paper

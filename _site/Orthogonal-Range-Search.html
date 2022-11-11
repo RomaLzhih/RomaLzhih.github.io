@@ -22,7 +22,7 @@
   "headline": "Orthogonal Range Searching",
   "abstract": "Algorithms for Orthogonal Range Searching",
     "keywords": "Computational Geometry",
-    "wordcount": "1499",
+    "wordcount": "1508",
     "image": ["http://localhost:4000/assets/imgposts/cover/OrthogonalRangeSearching.png"],
   "datePublished": "2022-11-11 00:48:20 +0000",
   "dateModified": "2022-11-11 00:48:20 +0000",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Algorithms for Orthogonal Range Searching">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="1499"/>
+<meta data-rh="true" name="twitter:data1" content="1508"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/OrthogonalRangeSearching.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -348,7 +348,7 @@
     <li class="toc-title">
       <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
     </li>
-    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#kd-trees">Kd-Trees</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#basic-definition">Basic Definition</a></li><li class="toc-item-2"><a href="#preprocessing-time">Preprocessing Time</a></li><li class="toc-item-2"><a href="#query-time">Query Time</a></li></ul></li><li class="toc-item-1"><a href="#1-dimensional-range-search">1-Dimensional Range Search</a></li><li class="toc-item-1"><a href="#range-tree">Range Tree</a></li><li class="toc-item-1"><a href="#improved-range-tree">Improved Range Tree</a></li></ul>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#kd-trees">Kd-Trees</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#basic-definition">Basic Definition</a></li><li class="toc-item-2"><a href="#preprocessing-time">Preprocessing Time</a></li><li class="toc-item-2"><a href="#query-time">Query Time</a></li></ul></li><li class="toc-item-1"><a href="#1-dimensional-range-search">1-Dimensional Range Search</a></li><li class="toc-item-1"><a href="#range-tree">Range Tree</a></li><li class="toc-item-1"><a href="#improved-range-tree">Improved Range Tree</a></li><li class="toc-item-1"><a href="#reference">Reference:</a></li></ul>
   </nav>
 </aside>
 
@@ -464,6 +464,13 @@ This recurrence solves to $Q(n)=O(\sqrt{n})$. In other words, any vertical line 
 
 <p><code class="language-plaintext highlighter-rouge">Theorem</code> Let $P$ be a set of $n$ points in $d$-dimensional space, with $d\geq 2$. A layered range tree for $P$ uses $O(n\log^{d-1}n)$ storage and it can be constructed in $O(n\log^{d-1}n)$ time. With this range tree one can report the points in $P$ lie in a rectangular query range in $O(\log^{d-1}n+k)$ time, where $k$ is the number of reported points.</p>
 
+<h2 id="reference">Reference:</h2>
+
+<ul>
+  <li>Convex Hull, CG - Lecture, UCPH-DIKU.</li>
+  <li>Chan’s paper</li>
+</ul>
+
         <aside class="sidebar inline" id="post-end">
     
 
@@ -524,7 +531,7 @@ This recurrence solves to $Q(n)=O(\sqrt{n})$. In other words, any vertical line 
   </div>
   <div class="author-desc">
     <h3>Thomas Men</h3>
-    <p>Resolution & Emo = Everyday</p>
+    <p>$\int_{Birth}^{Death}\text{Study} dt = \text{Life}$</p>
   </div>
 </section>
 
