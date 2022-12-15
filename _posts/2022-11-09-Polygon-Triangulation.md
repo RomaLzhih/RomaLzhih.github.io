@@ -5,14 +5,12 @@ show_date: true
 title:  Polygon Triangulation
 date:   2022-11-09 20:48:20 -0600
 description: Algorithms for polygon triangulation
-img: posts/cover/polygon.png
+img: posts/cover/CG-polygon.png
 tags: [Computational Geometry]
 author: Thomas Men
 toc: yes
 mathjax: yes
 ---
-
-# Triangulating a polygon
 
 ## Art gallery problem
 
@@ -37,7 +35,7 @@ This problem is NP-hard.
 
 ![image-20210218141423541](./assets/img/posts/typora-user-images/image-20210218141423541.png)
 
-`Lemma`: A simple polygon with $n$ vertices can always be triangulated, and always with $n-2$ triangles.
+`Lemma`: A simple polygon with $n$ vertices can always be triangulated, and always into $n-2$ triangles.
 
 `Proof` Every tree has a leaf, in particular the one that is the dual graph. Remove the corresponding triangle from the triangulated polygon, colour its vertices, add the triangle back, and let the extra vertex have the colour different from its neighbours. 
 
@@ -126,5 +124,5 @@ We need to argue that all $y$-monotone polygons together that we will triangulat
 
 ## Reference:
 
-- Convex Hull, CG - Lecture, UCPH-DIKU.
+- Polygon Triangulation, CG - Lecture, UCPH-DIKU.
 - Chan's paper

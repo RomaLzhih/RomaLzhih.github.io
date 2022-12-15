@@ -7,9 +7,9 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Swans & Swan</title>
-	<link rel="canonical" href="http://localhost:4000/">
-	<meta name="description" content="Algorithm, Math and Life">
+	<title>Line Segment Intersection - Swans & Swan</title>
+	<link rel="canonical" href="http://localhost:4000/Line-Segment-Intersection.html">
+	<meta name="description" content="Introduction to Line Segment Intersection">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 <script type="application/ld+json">
@@ -19,16 +19,16 @@
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "http://localhost:4000"},
-  "headline": "Swans & Swan",
-  "abstract": "",
-    "keywords": "",
-    "wordcount": "26",
-    "image": ["http://localhost:4000/assets/img"],
-  "datePublished": "",
-  "dateModified": "",
+  "headline": "Line Segment Intersection",
+  "abstract": "Introduction to Line Segment Intersection",
+    "keywords": "Computational Geometry",
+    "wordcount": "458",
+    "image": ["http://localhost:4000/assets/imgposts/cover/CG-LineIntersection.png"],
+  "datePublished": "2022-12-15 18:38:20 +0000",
+  "dateModified": "2022-12-15 18:38:20 +0000",
   "author": {
     "@type": "Person",
-    "name": ""},
+    "name": "Thomas Men"},
   "publisher": {
     "@type":  "Organization",
     "logo": {
@@ -40,30 +40,30 @@
 }
 </script>
 <!-- Open Graph data -->
-<meta property="og:url" content="http://localhost:4000/"/>
+<meta property="og:url" content="http://localhost:4000/Line-Segment-Intersection.html"/>
 <meta property="og:type" content="article"/>
-<meta property="og:title" content="Swans & Swan"/>
-<meta property="og:description" content=""/>
-<meta property="og:image" content="http://localhost:4000/assets/img"/>
-<meta property="og:image:alt" content=""/>
+<meta property="og:title" content="Line Segment Intersection"/>
+<meta property="og:description" content="Introduction to Line Segment Intersection"/>
+<meta property="og:image" content="http://localhost:4000/assets/imgposts/cover/CG-LineIntersection.png"/>
+<meta property="og:image:alt" content="Line Segment Intersection"/>
 <meta property="og:site_name" content="Swans & Swan" />
-<meta property="article:published_time" content="" />
-<meta property="article:modified_time" content="" />
-<meta property="article:tag" content="" />
+<meta property="article:published_time" content="2022-12-15 18:38:20 +0000" />
+<meta property="article:modified_time" content="2022-12-15 18:38:20 +0000" />
+<meta property="article:tag" content="Computational Geometry" />
 <meta property="fb:admins" content="" />
 <!-- Schema.org markup for Google -->
-<meta itemprop="name" content="Swans & Swan">
-<meta itemprop="description" content="">
-<meta itemprop="image" content="http://localhost:4000/assets/img">
+<meta itemprop="name" content="Line Segment Intersection">
+<meta itemprop="description" content="Introduction to Line Segment Intersection">
+<meta itemprop="image" content="http://localhost:4000/assets/imgposts/cover/CG-LineIntersection.png">
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
-<meta name="twitter:title" content="Swans & Swan">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Line Segment Intersection">
+<meta name="twitter:description" content="Introduction to Line Segment Intersection">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="26"/>
-<meta name="twitter:image:src" content="http://localhost:4000/assets/img/">
+<meta data-rh="true" name="twitter:data1" content="458"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/CG-LineIntersection.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
 	<!-- iOS Safari -->
@@ -127,10 +127,55 @@
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
+	<link rel="stylesheet" href="./assets/css/highlighter/syntax-base16.monokai.dark.css">
+	
 </head>
 
   <body>
-    <div class="flex-container transparent">
+    
+
+
+
+
+<section class="hidden">
+  <div class="post">
+      <a  class="post-list-title" href="./Line-Segment-Intersection.html">Line Segment Intersection</a>
+      
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-12-15T18:38:20+00:00">December 15, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+  </span>
+
+        <div class="post-excerpt">
+            <h2 id="line-segment-intersection">Line Segment intersection</h2><p><code class="language-plaintext highlighter-rouge">Problem</code> Given a set $S$ of $n$ closed segments in the plane, report all intersection points among the segments in $S$.</p><p><code class="language-plaintext highlighter-rouge">Theorem 2.4</code> Let $S$ be a set of $n$ line segments in the plane. All intersection points in $S$, with for each intersection point the segments involved in it, can be reported in $O(n\log n+I\log n)$ time and $O(n)$ space, where $I$ is the number of intersection points.</p><h2 id="the-double-connected-edge-list">The double-Connected Edge List</h2><p>Some Definition:</p><ul> <li> <p>A <em>face</em> of the subdivision is connected subset of the plane that doesn’t contain a point on an edge...<a class="read-more" href="./Line-Segment-Intersection.html"> read more</a>
+        </div>
+  </div>
+</section>
+<div class="flex-container transparent">
   
 
 
@@ -223,32 +268,35 @@
   </div>
 </header> <!-- End Header -->
 
-  <div class="content wrapper">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Line Segment Intersection">
+<meta itemprop="description" content="Introduction to Line Segment Intersection">
+<meta itemprop="datePublished" content="2022-12-15T18:38:20+00:00">
+
+    <div class="page-image">
+      <div class="cover-image" style="background: url('./assets/img/posts/cover/CG-LineIntersection.png') center no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">Line Segment Intersection</h1>
+          
+
+  <span class = "post-page-meta">
+  
+    <p class="page_meta">
+  
+  
+  
     
-
-
-
-<ol class="post-card-box clearfix">
-  
-  
-
-  <li>
-    <div class="post-card">
-      <a href="./Line-Segment-Intersection.html" title="Line Segment Intersection" class="post-card-image" style="background: url('./assets/img/posts/cover/CG-LineIntersection.png') center no-repeat; background-size: cover;">
-      </a>
-      <div class="post-card-body">
-        <p class="post-card-title-and-meta">
-          
-          <a href="./Line-Segment-Intersection.html" class="post-card-link">
-          Line Segment Intersection
-          </a>
-          
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
+      
+      <span class="page_meta-date">
+        <time datetime="2022-12-15T18:38:20+00:00">December 15, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
   
   
     
@@ -260,164 +308,330 @@
     </span>
   
   
+    </p>
+  
   </span>
 
-        </p>
-      </div>
+        </div>
+        <aside class="sidebar side" id="sidebar">
+    
+
+
+
+<div class="tag-cloud">
+    
+        <ul class="tags side">
+            
+                <li><a href="./tag.html?tag=Computational+Geometry" class="tag side">Computational Geometry</a></li>
+            
+    
+        </ul>
+</div>
+    <div class="share-options side">
+    <div class="share-hover side">
+        <span class="share-button side"><svg fill="currentColor" width="25" height="25" class="side"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
+        <div class="share-icons side" id="sidebar-icons">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Line Segment Intersection&url=http://localhost:4000/Line-Segment-Intersection.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Line-Segment-Intersection.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Line-Segment-Intersection.html&title=Line Segment Intersection" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Line-Segment-Intersection.html&title=Line Segment Intersection&summary=Introduction to Line Segment Intersection&source=http://localhost:4000/Line-Segment-Intersection.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Line Segment Intersection&body=Introduction to Line Segment Intersection%0A%0ARead more here: http://localhost:4000/Line-Segment-Intersection.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="side" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
+        </div>
     </div>
-  </li>
-  
-  
+    <div class='alert' style='font-size:.6em;color:var(--accent);text-align:center;'></div>
+</div>
+</aside>
 
+        <aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">
+      <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
+    </li>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#line-segment-intersection">Line Segment intersection</a></li><li class="toc-item-1"><a href="#the-double-connected-edge-list">The double-Connected Edge List</a></li></ul>
+  </nav>
+</aside>
+
+        
+        <h2 id="line-segment-intersection">Line Segment intersection</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Problem</code> Given a set $S$ of $n$ closed segments in the plane, report all intersection points among the segments in $S$.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem 2.4</code> Let $S$ be a set of $n$ line segments in the plane. All intersection points in $S$, with for each intersection point the segments involved in it, can be reported in $O(n\log n+I\log n)$ time and $O(n)$ space, where $I$ is the number of intersection points.</p>
+
+<h2 id="the-double-connected-edge-list">The double-Connected Edge List</h2>
+
+<p>Some Definition:</p>
+
+<ul>
   <li>
-    <div class="post-card">
-      <a href="./Point-Location.html" title="Point Location" class="post-card-image" style="background: url('./assets/img/posts/cover/CG-PointLocation.png') center no-repeat; background-size: cover;">
-      </a>
-      <div class="post-card-body">
-        <p class="post-card-title-and-meta">
+    <p>A <em>face</em> of the subdivision is connected subset of the plane that doesn’t contain a point on an edge or a vertex. Thus a face is an open polygon region whose boundary is formed by edges and vertices from the subdivision.</p>
+  </li>
+  <li>
+    <p>The <em>complexity</em> of a subdivision is defined as the sum of the number of vertices, the number of edges, and the number of faces it consists of.</p>
+  </li>
+  <li>
+    <p>If a vertex is the endpoint of an edge, then we say that the vertex and the edge are <em>incident</em>.</p>
+  </li>
+</ul>
+
+<p>Our goal is to:</p>
+
+<ul>
+  <li>require that we can walk around the boundary of a given face,</li>
+  <li>we can access one face from an adjacent one if we are given a common edge.</li>
+  <li>visit all the edges around a given vertex.</li>
+</ul>
+
+<p>Our answer is called the <code class="language-plaintext highlighter-rouge">doubly-connected edge list</code>. A DCEL contains a record for each face, edge, and vertex of the subdivision.</p>
+
+<p>The doubly-connected edge list consists of three collections of records: one for the vertices, one for the faces, and one for the half-edges. These records store the following geometric and topological information:</p>
+
+<ul>
+  <li>The vertex record of a vertex $v$ stores the coordinates of $v$ in a field called <em>Coordinates(v)</em>. It also stores a pointer <em>IncidentEdge(v)</em> to an arbitrary half-edge that has $v$ as its origin.</li>
+  <li>The face record of a face $f$ stores a pointer <em>OuterComponent(f)</em> to some half-edge on its outer boundary. For the unbounded face this pointer is <em>nil</em>. It also stores a list <em>InnerComponents(f)</em>, which contains for each hole in the face a pointer to some half-edge on the boundary of the hole.</li>
+  <li>The half-edge record of a half-edge $\overrightarrow{e}$ stores a pointer <em>Origin($\overrightarrow{e}$)</em> to its origin, a pointer <em>Twin($\overrightarrow{e}$)</em> to its twin half-edge, and a pointer <em>IncidentFace($\overrightarrow{e}$)</em> to the face that it bounds. We don’t need to store the destination of an edge, because it is equal to <em>Origin(Twin($\overrightarrow{e}$))</em>.  The origin is chose such that <em>IncidentFace($\overrightarrow{e}$)</em> lies to the left of $\overrightarrow{e}$ when it is traversed from origin to destination. The half-edge record also stores pointers <em>Next($\overrightarrow{e}$)</em> and <em>Prev($\overrightarrow{e}$)</em> to the next and previous edge on the boundary of <em>IncidentFace($\overrightarrow{e}$)</em> that has the destination of $\overrightarrow{e}$ as its origin, and <em>Prev($\overrightarrow{e}$)</em> is the unique half-edge on the boundary of <em>IncidentFace($\overrightarrow{e}$)</em> that has <em>Origin($\overrightarrow{e}$)</em> as its destination.</li>
+</ul>
+
+<p><img src="./assets/img/posts/typora-user-images/image-20210225221914680.png" alt="image-20210225221914680" /></p>
+
+<p><img src="./assets/img/posts/typora-user-images/image-20210225221925751.png" alt="image-20210225221925751" /></p>
+
+        <aside class="sidebar inline" id="post-end">
+    
+
+
+
+<div class="tag-cloud">
+    
+        <ul class="tags inline">
+            
+                <li><a href="./tag.html?tag=Computational+Geometry" class="tag inline">Computational Geometry</a></li>
+            
+    
+        </ul>
+</div>
+    <div class="share-options inline">
+    <div class="share-hover inline">
+        <span class="share-button inline"><svg fill="currentColor" width="25" height="25" class="inline"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
+        <div class="share-icons inline" id="post-end-icons">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Line Segment Intersection&url=http://localhost:4000/Line-Segment-Intersection.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Line-Segment-Intersection.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Line-Segment-Intersection.html&title=Line Segment Intersection" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Line-Segment-Intersection.html&title=Line Segment Intersection&summary=Introduction to Line Segment Intersection&source=http://localhost:4000/Line-Segment-Intersection.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Line Segment Intersection&body=Introduction to Line Segment Intersection%0A%0ARead more here: http://localhost:4000/Line-Segment-Intersection.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="inline" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
+        </div>
+    </div>
+    <div class='alert' style='font-size:.6em;color:var(--accent);text-align:center;'></div>
+</div>
+</aside>
+
+        <div class="separator"></div>
+        
+
+
+
+<section class="author-box">
+  <div class="narrow-column">
+    <a href='https://RomaLzhih.github.io'><img src="./assets/img/Ziyang.jpg" alt="Thomas Men" class="author-img"></a>
+    <ul class="contact-icons">
+      
+      
+      <li class="linkedin"><a class="linkedin" href="https://in.linkedin.com/in/ziyang-men-427429221" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      
+      
+      <li class="github"><a class="github" href="http://github.com/RomaLzhih" target="_blank"><i class="fa fa-github"></i></a></li>
+      
+      
+      <li class="instagram"><a class="instagram" href="http://instagram.com/__ziyang_" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      
+      
+      <li class="book"><a class="book" href="https://www.douban.com/people/romaLzhih" target="_blank"><i class="fa fa-book"></i></a></li>
+      
+      
+      <li class="email"><a class="email" href="mailto:mzy791191656@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      
+    </ul>
+  </div>
+  <div class="author-desc">
+    <h3>Thomas Men</h3>
+    <p>$\int_{birth}^{death}\text{Study} dt = \text{Life}$</p>
+  </div>
+</section>
+
+        
+
+
+
+<div class="recent-box">
+  <h2 class="page-subtitle">Recent posts</h2>
+  <div class="recent-list">
+    
+      
+        <div class="recent-item">
           
-          <a href="./Point-Location.html" class="post-card-link">
-          Point Location
-          </a>
           
 
-  <span class = "post-card-meta">
+          <a href="./Line-Segment-Intersection.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-LineIntersection.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Line Segment Intersection</span>
+              
+
+  <span class = "recent-item-meta">
   
-  
-    <span class="meta-pre"></span>
   
   
   
     
     
-    <span class="page_meta-readtime">
+    <p class="page_meta-readtime">
+      
+        2 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Point-Location.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-PointLocation.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Point Location</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
       
         10 minute read
       
-    </span>
+    </p>
   
   
   </span>
 
-        </p>
-      </div>
-    </div>
-  </li>
-  
-  
-
-  <li>
-    <div class="post-card">
-      <a href="./Orthogonal-Range-Search.html" title="Orthogonal Range Searching" class="post-card-image" style="background: url('./assets/img/posts/cover/CG-OrthogonalRangeSearching.png') center no-repeat; background-size: cover;">
-      </a>
-      <div class="post-card-body">
-        <p class="post-card-title-and-meta">
-          
-          <a href="./Orthogonal-Range-Search.html" class="post-card-link">
-          Orthogonal Range Searching
+            </div>
           </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
           
 
-  <span class = "post-card-meta">
+          <a href="./Orthogonal-Range-Search.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-OrthogonalRangeSearching.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Orthogonal Range Searching</span>
+              
+
+  <span class = "recent-item-meta">
   
-  
-    <span class="meta-pre"></span>
   
   
   
     
     
-    <span class="page_meta-readtime">
+    <p class="page_meta-readtime">
       
         7 minute read
       
-    </span>
+    </p>
   
   
   </span>
 
-        </p>
-      </div>
-    </div>
-  </li>
-  
-  
-
-  <li>
-    <div class="post-card">
-      <a href="./Polygon-Triangulation.html" title="Polygon Triangulation" class="post-card-image" style="background: url('./assets/img/posts/cover/CG-polygon.png') center no-repeat; background-size: cover;">
-      </a>
-      <div class="post-card-body">
-        <p class="post-card-title-and-meta">
-          
-          <a href="./Polygon-Triangulation.html" class="post-card-link">
-          Polygon Triangulation
+            </div>
           </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
           
 
-  <span class = "post-card-meta">
+          <a href="./Polygon-Triangulation.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-polygon.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Polygon Triangulation</span>
+              
+
+  <span class = "recent-item-meta">
   
-  
-    <span class="meta-pre"></span>
   
   
   
     
     
-    <span class="page_meta-readtime">
+    <p class="page_meta-readtime">
       
         4 minute read
       
-    </span>
+    </p>
   
   
   </span>
 
-        </p>
-      </div>
-    </div>
-  </li>
-  
-  
-
-  <li>
-    <div class="post-card">
-      <a href="./Convex-Hull.html" title="Convex Hull" class="post-card-image" style="background: url('./assets/img/posts/cover/CG-convexhull.jpg') center no-repeat; background-size: cover;">
-      </a>
-      <div class="post-card-body">
-        <p class="post-card-title-and-meta">
-          
-          <a href="./Convex-Hull.html" class="post-card-link">
-          Convex Hull
+            </div>
           </a>
-          
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-  
-    
-    
-    <span class="page_meta-readtime">
+        </div>
       
-        6 minute read
-      
-    </span>
-  
-  
-  </span>
+    
+  </div>
+</div> <!-- End Recent-Box -->
 
-        </p>
+        <div class="newsletter" id="mc_embed_signup">
+  <h2 class="page-subtitle">Newsletter</h2>
+  <div class="form-container">
+    <p>Subscribe here to get our latest updates</p>
+    <form action="https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <label class="screen-reader-text" for="mce-EMAIL">Email Address</label>
+      <div class="newsletter-box" id="mc_embed_signup_scroll">
+        <input type="email" name="EMAIL" placeholder="Email address" class="email-input" id="mce-EMAIL" required>
+        <input type="submit" value="Subscribe" name="subscribe" class="subscribe-btn" id="mc-embedded-subscribe">
       </div>
-    </div>
-  </li>
-  
-</ol>
+    </form>
+  </div>
+</div> <!-- End Newsletter -->
 
-    <div class="search-box">
+        <section class="comment-area">
+    <div class="comment-wrapper">
+        
+        <div class="row" id="comment-curtain">
+            <div class="col-lg-8 col-sm-10 mr-auto ml-auto">
+                <h2 class="page-subtitle">Comments</h2>
+                <div class="comments-trigger" onClick="toggle_comments()">
+                    <i class="fa fa-comments"></i>&nbsp;&nbsp;Write a comment ...
+                </div>
+            </div>
+        </div>
+        
+
+        
+            
+        
+    </div>
+</section> <!-- End Comment Area -->
+      </div>
+    </div> <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
   <div class="wrapper">
     <div class="search-grid">
       <form class="search-form">
@@ -433,30 +647,6 @@
   </div>
 </div>
 
-    <div class="pagination clearfix">
-  
-  
-</div>
-
-    <div class="center-tags">
-      
-
-      
-
-
-
-<div class="tag-cloud">
-    
-        <ul class="tags">
-            
-                
-                <li><a href="./tag.html?tag=Computational+Geometry" class="tag">Computational Geometry <span>(5)</span></a></li>
-            
-    
-        </ul>
-</div>
-    </div>
-  </div> <!-- End Wrapper -->
   
 
 
@@ -689,7 +879,8 @@
     </div>
 </footer> <!-- End Footer -->
 
-</div><!-- End flex-container -->
+</div>
+
     <div class="top" title="Top">
       <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
     </div>
@@ -811,9 +1002,123 @@
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
 
 
+  <script>
+    function toggle_comments(){
+      var commentCurtain = document.getElementById('comment-curtain')
+      if (commentCurtain) {
+        commentCurtain.classList.toggle('hide')
+      }
+      var disqusThread = document.getElementById('comment-layout')
+      if (disqusThread) {
+        disqusThread.classList.toggle('show')
+      }
+    }
+
+    function copyToClipboard() {
+      navigator.clipboard.writeText('http://localhost:4000/Line-Segment-Intersection.html').then(function() {
+      alerts = document.getElementsByClassName('alert')
+      for (i=0; i < alerts.length; i++){
+        alerts[i].innerHTML='\u00ABlink copied\u00BB';
+        setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
+      };
+      }, function() {
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/Line-Segment-Intersection.html");
+      });
+    }
+
+    $(function () {
+      if (document.getElementById('comment-curtain') == null){
+        var disqusThread = document.getElementById('comment-layout')
+        if (disqusThread) {
+          disqusThread.classList.toggle('show')
+        }
+      }
+
+      var tweetTags = document.getElementsByTagName("tweet");
+
+      if (tweetTags != null){
+        for (i=0; i<tweetTags.length; i++){
+          tweetA = document.createElement("a")
+          tweetA.href = 'https://twitter.com/share?text='
+                       + encodeURIComponent(tweetTags[i].textContent)
+                       + '&via=&url='
+                       + window.location.href;
+          tweetA.target = "_blank";
+          tweetA.className = 'twitter';
+          tweetSpanText = document.createElement('span');
+          tweetSpanText.className = 'tweetText';
+          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
+          tweetSpanIcon = document.createElement('span');
+          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+          tweetI = document.createElement("i");
+          tweetI.className = 'fa fa-twitter';
+          tweetSpanIcon.appendChild(tweetI);
+          tweetA.appendChild(tweetSpanText);
+          tweetA.appendChild(tweetSpanIcon);
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
+        }
+      }
+
+    });
+
+  </script>
+  <!-- Mailchimp linking -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 
 
 
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+  <script>
+    var spy = new Gumshoe("#toc-content a", {
+      navClass:"active",
+      contentClass:"underline",
+      nested:0,
+      nestedClass:"active",
+      offset:20,
+      reflow:1,
+      events:1
+    });
+
+    var coll = document.getElementsByClassName("toc-item-1");
+    var i;
+    var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
+    var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
+    for (i = 0; i < coll.length; i++) {
+      if (coll[i].childElementCount > 1) {
+        sign = document.createElement('div');
+        sign.className = "toc-sign";
+        sign.innerHTML = chevron_down;
+        coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+        coll[i].addEventListener("click", function() {
+          var content = this.lastElementChild;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            this.firstElementChild.nextSibling.innerHTML = chevron_down;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.firstElementChild.nextSibling.innerHTML = chevron_up;
+          }
+        });
+      }
+    }
+  </script>
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 <script src="./assets/js/main.js"></script>

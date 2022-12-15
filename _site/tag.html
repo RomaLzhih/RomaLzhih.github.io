@@ -254,6 +254,84 @@
 			
 
 				<div class="post">
+					<a class="post-list-title" href="./Line-Segment-Intersection.html">Line Segment Intersection</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-12-15T18:38:20+00:00">December 15, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h2 id="line-segment-intersection">Line Segment intersection</h2> <p><code class="language-plaintext highlighter-rouge">Problem</code> Given a set $S$ of $n$ closed segments in the plane, report all intersection points among the segments in $S$.</p> <p><code class="language-plaintext highlighter-rouge">Theorem 2.4</code> Let $S$ be a set of $n$ line segments in the plane. All intersection points in $S$, with for each intersection point the segments involved in it, can be reported in $O(n\log n+I\log n)$ time and $O(n)$ space, where $I$ is the number of intersection points.</p> <h2 id="the-double-connected-edge-list">The double-Connected Edge List</h2> <p>Some Definition:</p> <ul> <li> <p>A <em>face</em> of the subdivision is connected subset of the plane that doesn’t contain...<a class="read-more" href="./Line-Segment-Intersection.html"> read more</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./Point-Location.html">Point Location</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-11-11T00:48:20+00:00">November 11, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        10 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<p><code class="language-plaintext highlighter-rouge">Point Location query</code> Given a map and a query point $q$ specified by its coordinates, find the region of the map containing $q$. A map, of course, is nothing more than a subdivision of the plane into regions, a <em>planar subdivision</em>.</p> <p><code class="language-plaintext highlighter-rouge">Idea</code> To <em>preprocess</em> the maps and to store them in a data structure that makes it possible to answer point location queries fast.</p> <h2 id="slab-method">Slab Method</h2> <p>Let $S$ be a planar subdivision with $n$ edges. The <em>planar point location problem</em> is to store $S$ in such a way that we can answer queries of the...<a class="read-more" href="./Point-Location.html"> read more</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
 					<a class="post-list-title" href="./Orthogonal-Range-Search.html">Orthogonal Range Searching</a>
 					
 
@@ -287,84 +365,6 @@
 
 					<div class="post-excerpt">
 						<p><code class="language-plaintext highlighter-rouge">Definition</code> A query asking to report all records whose fields lie between specified values, then transforms to a query asking for all points inside a $d$-dimensional axis-parallel box. Such a query is called a <em>rectangular range query</em>, or an <em>orthogonal range query</em> in CG.</p> <p><img src="./assets/img/posts/typora-user-images/image-20210222172729789.png" alt="image-20210222172729789" /></p> <p><code class="language-plaintext highlighter-rouge">Normalization</code> $x$- and $y$-coordinates of points can be replaced by integers $1,2,3,\cdots, n$ in $O(n\log n)$ time (First sort and re-index). When querying, the coordinates of of the rectangle corners can be transformed to appropriate integers in $O(\log n)$ time.</p> <p>In the remainder of this section we assume...<a class="read-more" href="./Orthogonal-Range-Search.html"> read more</a>
-					</div>
-				</div>
-			
-			
-
-				<div class="post">
-					<a class="post-list-title" href="./Polygon-Triangulation.html">Polygon Triangulation</a>
-					
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2022-11-10T02:48:20+00:00">November 10, 2022</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        4 minute read
-      
-    </span>
-  
-  
-  </span>
-
-					<div class="post-excerpt">
-						<h1 id="triangulating-a-polygon">Triangulating a polygon</h1> <h2 id="art-gallery-problem">Art gallery problem</h2> <p>Two points in a simple polygon can <em>see</em> each other if their connecting line segment is in the polygon.</p> <p><code class="language-plaintext highlighter-rouge">Definition</code> The <em>art gallery problem</em>:</p> <p>​ How many points are needed in a simple polygon with $n$ vertices so that every point in the polygon is seen?</p> <p>This problem is NP-hard.</p> <p><code class="language-plaintext highlighter-rouge">Theorem</code> <em>art gallery theorem</em>:</p> <p>​ $\lfloor n/3\rfloor$ cameras are occasionally necessary but always sufficient.</p> <h3 id="some-definition">Some Definition</h3> <ul> <li>Polygon $P$ is <em>triangulated</em>: a decomposition of $P$ into disjoint triangles by a maximal set of non-intersecting diagonals.</li> <li><em>Diagonal</em> of...<a class="read-more" href="./Polygon-Triangulation.html"> read more</a>
-					</div>
-				</div>
-			
-			
-
-				<div class="post">
-					<a class="post-list-title" href="./Convex-Hull.html">Convex Hull</a>
-					
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2022-11-09T04:48:20+00:00">November 9, 2022</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        6 minute read
-      
-    </span>
-  
-  
-  </span>
-
-					<div class="post-excerpt">
-						<h2 id="problem-definition">Problem Definition</h2> <p><strong>Given:</strong> A set $Z$ of $n$ points in the plane.</p> <p><strong>Find:</strong> Smallest convex set containing $Z$.</p> <h2 id="some-basic-definition">Some Basic Definition</h2> <ol> <li>A set $S$ in the plane is convex iff for every pair of points $p_1$ and $p_2$ in $S$, the line-segment $p_1p_2 $ is in $S$.</li> <li>A point $p$ in a convex set $S$ is said to be extreme (or a corner) iff no segment $ab$ in $S$ has $p$ in its interior.</li> <li>$CH(Z)$ is considered to be determined once its corners ordered around the boundary are found.</li> <li>Simplifying assumptions: No pair of Z-points has the...<a class="read-more" href="./Convex-Hull.html"> read more</a>
 					</div>
 				</div>
 			
@@ -442,7 +442,7 @@
         <ul class="tags">
             
                 
-                <li><a href="./tag.html?tag=Computational+Geometry" class="tag">Computational Geometry <span>(3)</span></a></li>
+                <li><a href="./tag.html?tag=Computational+Geometry" class="tag">Computational Geometry <span>(5)</span></a></li>
             
     
         </ul>

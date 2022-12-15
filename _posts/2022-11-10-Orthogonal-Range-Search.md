@@ -5,7 +5,7 @@ show_date: true
 title:  Orthogonal Range Searching
 date:   2022-11-10 18:48:20 -0600
 description: Algorithms for Orthogonal Range Searching
-img: posts/cover/OrthogonalRangeSearching.png
+img: posts/cover/CG-OrthogonalRangeSearching.png
 tags: [Computational Geometry]
 author: Thomas Men
 toc: yes
@@ -101,7 +101,7 @@ For a 1-dimensional range query, $[u,u']$, we first binary search $u$ in the tre
 The range tree is:
 
 - The main tree $\mathcal{T}$ is a balanced binary search tree built on the $x$-coordinate of the points in $P$.
-- For any internal or leaf node $v\in \mathcal{T}$, the canonical subset $P(v)$, which is the subset of points store in the leaves of the subtree rooted at a node $v$, is stored in a balanced BST $\mathcal{T}_{assoc}(v)$ on the $y$-coordinate of the points. The node $v$ stores a pointer to the root of $\mathcal{T}_{assoc}(v)$, which is called the associated structure of $v$.
+- For any internal or leaf node $v\in \mathcal{T}$, the canonical subset $P(v)$, which is the subset of points store in the leaves of the subtree rooted at a node $v$, is stored in a balanced associated BST $\mathcal{T}(v)$ on the $y$-coordinate of the points. The node $v$ stores a pointer to the root of $\mathcal{T}(v)$, which is called the associated structure of $v$.
 
 `Space` Because 1-dimensional range trees use linear storage it follows that the associated structures of all nodes at any depth of $\mathcal{T}$ together use $O(n)$ storage. The depth of $\mathcal{T}$ is $O(\log n)$. Hence, the total amount of storage required is bounded by $O(n\log n)$.
 
@@ -129,5 +129,5 @@ After sorted in preprocessing,  The second-level structure is always the subset 
 
 ## Reference:
 
-- Convex Hull, CG - Lecture, UCPH-DIKU.
+- Orthogonal Range Search, CG - Lecture, UCPH-DIKU.
 - Chan's paper

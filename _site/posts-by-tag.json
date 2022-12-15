@@ -6,6 +6,10 @@
   "tag" : "Computational Geometry",
   "posts" : [
       
+      "./Line-Segment-Intersection.html",
+      
+      "./Point-Location.html",
+      
       "./Orthogonal-Range-Search.html",
       
       "./Polygon-Triangulation.html",
