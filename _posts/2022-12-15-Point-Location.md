@@ -3,7 +3,7 @@ layout: post
 read_time: true
 show_date: true
 title:  Point Location
-date:   2022-11-10 18:48:20 -0600
+date:   2022-12-15 18:48:20 -0600
 description: Algorithms for Point Location
 img: posts/cover/CG-PointLocation.png
 tags: [Computational Geometry]

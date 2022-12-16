@@ -1,9 +1,15 @@
 {
   "posts" : [
     
-    "./Line-Segment-Intersection.html",
+    "./Robot-Motion.html",
+    
+    "./Delaunay-Triangulations.html",
+    
+    "./Voronoi-Diagram.html",
     
     "./Point-Location.html",
+    
+    "./Line-Segment-Intersection.html",
     
     "./Orthogonal-Range-Search.html",
     

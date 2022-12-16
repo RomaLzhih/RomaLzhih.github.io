@@ -26,7 +26,7 @@ highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code h
 # Author settings
 author: Thomas Men # add your name
 author-pic: Ziyang.jpg
-about-author: $\int_{birth}^{death}\text{Study} dt = \text{Life}$
+about-author: $\int_{birth}^{death}\text{study} dt = \text{life}$
 
 # Contact links
 email: mzy791191656@gmail.com # Add your Email address

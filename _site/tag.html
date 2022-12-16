@@ -254,7 +254,7 @@
 			
 
 				<div class="post">
-					<a class="post-list-title" href="./Line-Segment-Intersection.html">Line Segment Intersection</a>
+					<a class="post-list-title" href="./Robot-Motion.html">Robot Motion</a>
 					
 
   <span class = "post-card-meta">
@@ -266,7 +266,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2022-12-15T18:38:20+00:00">December 15, 2022</time>
+        <time datetime="2022-12-16T17:48:22+00:00">December 16, 2022</time>
       </span>
     
     
@@ -278,7 +278,7 @@
     
     <span class="page_meta-readtime">
       
-        2 minute read
+        3 minute read
       
     </span>
   
@@ -286,14 +286,14 @@
   </span>
 
 					<div class="post-excerpt">
-						<h2 id="line-segment-intersection">Line Segment intersection</h2> <p><code class="language-plaintext highlighter-rouge">Problem</code> Given a set $S$ of $n$ closed segments in the plane, report all intersection points among the segments in $S$.</p> <p><code class="language-plaintext highlighter-rouge">Theorem 2.4</code> Let $S$ be a set of $n$ line segments in the plane. All intersection points in $S$, with for each intersection point the segments involved in it, can be reported in $O(n\log n+I\log n)$ time and $O(n)$ space, where $I$ is the number of intersection points.</p> <h2 id="the-double-connected-edge-list">The double-Connected Edge List</h2> <p>Some Definition:</p> <ul> <li> <p>A <em>face</em> of the subdivision is connected subset of the plane that doesn’t contain...<a class="read-more" href="./Line-Segment-Intersection.html"> read more</a>
+						<p>Given a robot and set of obstacles, find the shortest path from $s$ to $t$ without collision.</p> <p><img src="./assets/img/posts/typora-user-images/image-20210318143348856.png" alt="image-20210318143348856" style="zoom:50%;" /></p> <h2 id="robot-without-collision-volume">Robot without collision volume</h2> <p>Starting from a point $s$ and finds a possible way to the end point $t$.</p> <p>First, build a rectangle boundary and do the planar subdivision, pick the mid point for vertical planar edge and pick the mid point for ever face.</p> <p>Find the shortest path from the face $f_s$ containing $s$ to that $f_t$ containing $t$. Add an edge from $s$ to the nearest face middle point and add an edge from that...<a class="read-more" href="./Robot-Motion.html"> read more</a>
 					</div>
 				</div>
 			
 			
 
 				<div class="post">
-					<a class="post-list-title" href="./Point-Location.html">Point Location</a>
+					<a class="post-list-title" href="./Delaunay-Triangulations.html">Delaunay Triangulations</a>
 					
 
   <span class = "post-card-meta">
@@ -305,7 +305,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2022-11-11T00:48:20+00:00">November 11, 2022</time>
+        <time datetime="2022-12-16T17:48:21+00:00">December 16, 2022</time>
       </span>
     
     
@@ -317,7 +317,7 @@
     
     <span class="page_meta-readtime">
       
-        10 minute read
+        8 minute read
       
     </span>
   
@@ -325,14 +325,14 @@
   </span>
 
 					<div class="post-excerpt">
-						<p><code class="language-plaintext highlighter-rouge">Point Location query</code> Given a map and a query point $q$ specified by its coordinates, find the region of the map containing $q$. A map, of course, is nothing more than a subdivision of the plane into regions, a <em>planar subdivision</em>.</p> <p><code class="language-plaintext highlighter-rouge">Idea</code> To <em>preprocess</em> the maps and to store them in a data structure that makes it possible to answer point location queries fast.</p> <h2 id="slab-method">Slab Method</h2> <p>Let $S$ be a planar subdivision with $n$ edges. The <em>planar point location problem</em> is to store $S$ in such a way that we can answer queries of the...<a class="read-more" href="./Point-Location.html"> read more</a>
+						<p>A terrain is a 2-dimensional surface in 3-dimensional space with a special property: every vertical line intersects it in a point, if it intersects it at all. In other words, it is the graph of a function $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$ that assigns a height $f(p)$ to every point $p$ in the domain, $A$, of the terrain.</p> <p><img src="./assets/img/posts/typora-user-images/image-20210317132256993.png" alt="image-20210317132256993" style="zoom:67%;" /></p> <p>Nevertheless, some triangulations look more natural than others. We will rank triangulations by comparing their smallest angle. Since there is only finite number of different triangulations of a given point set $P$, this implies that there must be an optimal...<a class="read-more" href="./Delaunay-Triangulations.html"> read more</a>
 					</div>
 				</div>
 			
 			
 
 				<div class="post">
-					<a class="post-list-title" href="./Orthogonal-Range-Search.html">Orthogonal Range Searching</a>
+					<a class="post-list-title" href="./Voronoi-Diagram.html">Voronoi Diagram</a>
 					
 
   <span class = "post-card-meta">
@@ -344,7 +344,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2022-11-11T00:48:20+00:00">November 11, 2022</time>
+        <time datetime="2022-12-16T17:48:20+00:00">December 16, 2022</time>
       </span>
     
     
@@ -364,7 +364,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<p><code class="language-plaintext highlighter-rouge">Definition</code> A query asking to report all records whose fields lie between specified values, then transforms to a query asking for all points inside a $d$-dimensional axis-parallel box. Such a query is called a <em>rectangular range query</em>, or an <em>orthogonal range query</em> in CG.</p> <p><img src="./assets/img/posts/typora-user-images/image-20210222172729789.png" alt="image-20210222172729789" /></p> <p><code class="language-plaintext highlighter-rouge">Normalization</code> $x$- and $y$-coordinates of points can be replaced by integers $1,2,3,\cdots, n$ in $O(n\log n)$ time (First sort and re-index). When querying, the coordinates of of the rectangle corners can be transformed to appropriate integers in $O(\log n)$ time.</p> <p>In the remainder of this section we assume...<a class="read-more" href="./Orthogonal-Range-Search.html"> read more</a>
+						<p>Problem: Given a set $S$ of $N$ points in the plane, for each point $p_i$ in $S$ what is the locus of points $(x,y)$ in the plane that are close to $p_i$ than to any other point $S$ ?</p> <p><code class="language-plaintext highlighter-rouge">Definition</code> <em>locus</em> is the set of points whose location satisfies by one or more specified conditions.</p> <p>Given two points, $p_i$ and $p_j$, the set of points closer to $p_i$ than to $p_j$ is just the half-plane containing $p_i$ that is defined by the perpendicular bisector of $\overline{p_ip_j}$. Denote the halfplane by $H(p_i,p_j)$. The locus of points closer to $p_i$...<a class="read-more" href="./Voronoi-Diagram.html"> read more</a>
 					</div>
 				</div>
 			
@@ -442,7 +442,7 @@
         <ul class="tags">
             
                 
-                <li><a href="./tag.html?tag=Computational+Geometry" class="tag">Computational Geometry <span>(5)</span></a></li>
+                <li><a href="./tag.html?tag=Computational+Geometry" class="tag">Computational Geometry <span>(8)</span></a></li>
             
     
         </ul>
