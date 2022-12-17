@@ -22,7 +22,7 @@
   "headline": "Delaunay Triangulations",
   "abstract": "Algorithms for Delaunay Triangulations",
     "keywords": "Computational Geometry",
-    "wordcount": "1724",
+    "wordcount": "1728",
     "image": ["http://localhost:4000/assets/imgposts/cover/CG-Delaunay.png"],
   "datePublished": "2022-12-16 17:48:21 +0000",
   "dateModified": "2022-12-16 17:48:21 +0000",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Algorithms for Delaunay Triangulations">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="1724"/>
+<meta data-rh="true" name="twitter:data1" content="1728"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/CG-Delaunay.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -367,9 +367,11 @@
 
 <p><code class="language-plaintext highlighter-rouge">Theorem 9.1</code> Let $P$ be a set of $n$ points in the plane, not all colinear, and let $k$ denote the number of points in $P$ that lie on the boundary of the convex hull of $P$. Then any triangulation of $P$ has $2n-2-k$ triangles and $3n-3-k$ edges.</p>
 
-<p>Let $\mathfrak T$ be a triangulation of $P$, and suppose it has $m$ triangles. Let $\alpha_1,\alpha_2,\cdots,\alpha_{3m}$ be the resulting sequence of angles, where $\alpha_i\le\alpha_j$, for $i&lt;j$. We can $A(\mathfrak T):=(\alpha_1,\alpha_2,\cdots,\alpha_{3m})$ the <em>angle-vector</em> of $\mathfrak T$. We say that the angle vector of $\mathfrak T$ is larger than the angle-vector of $\mathfrak T’$, denoted as $A(\mathfrak T)&gt;A(\mathfrak T’)$, if $A(\mathfrak T)$ is lexicographically larger than $A(\mathfrak T’)$, or in other words, if there exists an index $i$ with $1\leq i\leq 3m$ such that:
-\(\alpha_j=\alpha_j', \forall j&lt;i\quad and \quad \alpha_i&gt;\alpha_i'\)
-A triangulation $\mathfrak T$ is called <em>angle-optimal</em> if $A(\mathfrak T)\geq A(\mathfrak T’)$ for all triangulations $\mathfrak T’$ of $P$.</p>
+<p>Let $\mathfrak T$ be a triangulation of $P$, and suppose it has $m$ triangles. Let $\alpha_1,\alpha_2,\cdots,\alpha_{3m}$ be the resulting sequence of angles, where $\alpha_i\le\alpha_j$, for $i&lt;j$. We can $A(\mathfrak T):=(\alpha_1,\alpha_2,\cdots,\alpha_{3m})$ the <em>angle-vector</em> of $\mathfrak T$. We say that the angle vector of $\mathfrak T$ is larger than the angle-vector of $\mathfrak T’$, denoted as $A(\mathfrak T)&gt;A(\mathfrak T’)$, if $A(\mathfrak T)$ is lexicographically larger than $A(\mathfrak T’)$, or in other words, if there exists an index $i$ with $1\leq i\leq 3m$ such that:</p>
+<center>$$
+\alpha_j=\alpha_j', \forall j&lt;i\quad and \quad \alpha_i&gt;\alpha_i'
+$$</center>
+<p>A triangulation $\mathfrak T$ is called <em>angle-optimal</em> if $A(\mathfrak T)\geq A(\mathfrak T’)$ for all triangulations $\mathfrak T’$ of $P$.</p>
 
 <h3 id="when-a-triangulation-is-angle-optimal">When a triangulation is angle-optimal?</h3>
 
@@ -377,9 +379,11 @@ A triangulation $\mathfrak T$ is called <em>angle-optimal</em> if $A(\mathfrak T
 
 <p><img src="./assets/img/posts/typora-user-images/image-20210317141229786.png" alt="image-20210317141229786" style="zoom:67%;" /></p>
 
-<p>We call the edge $e=\overline{p_ip_j}$ an <em>illegal edge</em> if
-\(\min_{q\leq i\leq 6}\alpha_i&lt;\min_{1\leq i \leq 6}\alpha_i'\)
-In other words, an edge is illegal if we can locally increase the smallest angle by flipping that edge.</p>
+<p>We call the edge $e=\overline{p_ip_j}$ an <em>illegal edge</em> if</p>
+<center>$$
+\min_{q\leq i\leq 6}\alpha_i&lt;\min_{1\leq i \leq 6}\alpha_i'
+$$</center>
+<p>In other words, an edge is illegal if we can locally increase the smallest angle by flipping that edge.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Obervation 9.3</code> Let $\mathfrak T$ be a triangulation with an illegal edge $e$. Let $\mathfrak T’$ be the triangulation obtained from $\mathfrak T$ by flipping $e$. Then $A(\mathfrak T’)&gt;A(\mathfrak T)$.</p>
 
@@ -541,7 +545,7 @@ In other words, an edge is illegal if we can locally increase the smallest angle
   </div>
   <div class="author-desc">
     <h3>Thomas Men</h3>
-    <p>$\int_{birth}^{death}\text{Study} dt = \text{Life}$</p>
+    <p>$\int_{birth}^{death}\text{study} dt = \text{life}$</p>
   </div>
 </section>
 

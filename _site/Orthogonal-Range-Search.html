@@ -22,7 +22,7 @@
   "headline": "Orthogonal Range Searching",
   "abstract": "Algorithms for Orthogonal Range Searching",
     "keywords": "Computational Geometry",
-    "wordcount": "1510",
+    "wordcount": "1516",
     "image": ["http://localhost:4000/assets/imgposts/cover/CG-OrthogonalRangeSearching.png"],
   "datePublished": "2022-11-11 00:48:20 +0000",
   "dateModified": "2022-11-11 00:48:20 +0000",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Algorithms for Orthogonal Range Searching">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="1510"/>
+<meta data-rh="true" name="twitter:data1" content="1516"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/CG-OrthogonalRangeSearching.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -373,12 +373,14 @@
 
 <h3 id="preprocessing-time">Preprocessing Time</h3>
 
-<p>The most expensive step is performed at every recursive call is finding the <strong>splitting line</strong>. This requires determining the <strong>median $x$-coordinate or the median $y$-coordinate</strong>, depending on whether the depth is even or odd. We find the median in linear time relative simply in such way, sort by $x$- and $y$- coordinates independently. Hence, the building time $T(n)$ satisfies the recurrence:
-\(T_n=\begin{cases}
+<p>The most expensive step is performed at every recursive call is finding the <strong>splitting line</strong>. This requires determining the <strong>median $x$-coordinate or the median $y$-coordinate</strong>, depending on whether the depth is even or odd. We find the median in linear time relative simply in such way, sort by $x$- and $y$- coordinates independently. Hence, the building time $T(n)$ satisfies the recurrence:</p>
+<center>$$
+T_n=\begin{cases}
 O(1), &amp; if\quad n=1\\
 O(n)+2T(\lceil n/2\rceil), &amp; if \quad n&gt;1
-\end{cases}\)
-which solves to $O(n\log n)$. Here $O(n)$ is the expense for median finding and recursive expression $T(\lceil n/2\rceil)$ shows the left and right build procedure.</p>
+\end{cases}
+$$</center>
+<p>which solves to $O(n\log n)$. Here $O(n)$ is the expense for median finding and recursive expression $T(\lceil n/2\rceil)$ shows the left and right build procedure.</p>
 
 <p>Space: Binary tree with $n$ leaves. $O(n)$ space.</p>
 
@@ -396,9 +398,11 @@ which solves to $O(n\log n)$. Here $O(n)$ is the expense for median finding and 
 
 <p><img src="./assets/img/posts/typora-user-images/image-20210222180109075.png" alt="image-20210222180109075" /></p>
 
-<p>The main test of the query algorithm performs is whether the query range $R$ intersects the region corresponding to some node $v$. One can maintain the current region through the recursive calls using the lines stored in the internal nodes. For instance, the region corresponding to the left child of a node $ν$ at even depth can be computed from $region(ν)$ as follows:
-\(\operatorname{region}(l c(v))=\operatorname{region}(v) \cap \ell(v)^{\text {left }}\)
-where $\ell(v)$ is the splitting line stored at $v$, and $\ell(v)^{left}$ is the half-plane to the left of and including $\ell(v)$.</p>
+<p>The main test of the query algorithm performs is whether the query range $R$ intersects the region corresponding to some node $v$. One can maintain the current region through the recursive calls using the lines stored in the internal nodes. For instance, the region corresponding to the left child of a node $ν$ at even depth can be computed from $region(ν)$ as follows:</p>
+<center>$$
+\operatorname{region}(l c(v))=\operatorname{region}(v) \cap \ell(v)^{\text {left }}
+$$</center>
+<p>where $\ell(v)$ is the splitting line stored at $v$, and $\ell(v)^{left}$ is the half-plane to the left of and including $\ell(v)$.</p>
 
 <p><img src="./assets/img/posts/typora-user-images/image-20210222180710476.png" alt="image-20210222180710476" /></p>
 
@@ -410,12 +414,14 @@ where $\ell(v)$ is the splitting line stored at $v$, and $\ell(v)^{left}$ is the
 
 <p><img src="./assets/img/posts/typora-user-images/image-20210222182343544.png" alt="image-20210222182343544" style="zoom: 67%;" /></p>
 
-<p>Two of the four nodes correspond to intersected regions (at least two regions would be interested by such region), so we have to count the number of intersected regions of the remaining 2 nodes ($Q(n/4)+Q(n/4)$) in these subtrees recursively.  Hence, $Q(n)$ satisfies the recurrence
-\(Q(n)=\begin{cases}
+<p>Two of the four nodes correspond to intersected regions (at least two regions would be interested by such region), so we have to count the number of intersected regions of the remaining 2 nodes ($Q(n/4)+Q(n/4)$) in these subtrees recursively.  Hence, $Q(n)$ satisfies the recurrence</p>
+<center>$$
+Q(n)=\begin{cases}
 O(1), &amp;if \quad n=1\\
 2 + 2Q(n/4), &amp;if \quad n&gt;1
-\end{cases}\)
-This recurrence solves to $Q(n)=O(\sqrt{n})$. In other words, any vertical line intersects $O(\sqrt{n})$ regions in a Kd-Tree.</p>
+\end{cases}
+$$</center>
+<p>This recurrence solves to $Q(n)=O(\sqrt{n})$. In other words, any vertical line intersects $O(\sqrt{n})$ regions in a Kd-Tree.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Theorem</code> A Kd-Tree for a set $P$ of $n$ points in the plane use $O(n)$ storage and can be built in $O(n\log n)$ time. A rectangular range query on the Kd-Tree takes $O(\sqrt n+k)$ time, where $k$ is the number of reported points. If its $d$-dimensional, the query time is bounded by $O(n^{1-1/d}+k)$.</p>
 
@@ -531,7 +537,7 @@ This recurrence solves to $Q(n)=O(\sqrt{n})$. In other words, any vertical line 
   </div>
   <div class="author-desc">
     <h3>Thomas Men</h3>
-    <p>$\int_{birth}^{death}\text{Study} dt = \text{Life}$</p>
+    <p>$\int_{birth}^{death}\text{study} dt = \text{life}$</p>
   </div>
 </section>
 

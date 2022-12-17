@@ -34,6 +34,8 @@ mathjax: yes
 Sorting can be transformed in $O(n)$ time into the convex hull problem. Thus the lower bound of the complexity of CH is same as sorting which is $O(n\log n)$.
 
 Point $p_1,p_2,p_3$ make a right turn at $p_2$ iff $p_3$ is to the right or on the line through $p_1$ and $p_2$. Otherwise $p_1,p_2,p_3$ make a left turn at $p_2$. Mathematically speaking, if:
+
+<center>
 $$
 det\begin{bmatrix}
 x_1 & y_1 & 1\\
@@ -41,6 +43,7 @@ x_2 & y_2 & 1\\
 x_3 & y_3 & 1
 \end{bmatrix}>0 \Rightarrow \textit{left turn}
 $$
+</center>
 
 ## Algorithm 1: Point Pruning
 
@@ -108,12 +111,12 @@ Merge:
 ![image-20210216171711614](./assets/img/posts/typora-user-images/image-20210216171711614.png)
 
 Partition and union complexity:
-$$
+<center>$$
 \begin{array}{c}
 T(n)=O(1), n \leq 2 \\
 T(n)=2 * T(n / 2)+O(n), n>2
 \end{array}
-$$
+$$</center>
 Overall $O(n\log n)$.
 
 ## Algorithm 5: Marriage-before-Conquest (1986)

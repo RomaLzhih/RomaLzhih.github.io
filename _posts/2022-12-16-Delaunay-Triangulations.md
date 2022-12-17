@@ -27,9 +27,9 @@ A *triangulation* of $P$ is now defined as a maximal planar subdivision whose ve
 `Theorem 9.1` Let $P$ be a set of $n$ points in the plane, not all colinear, and let $k$ denote the number of points in $P$ that lie on the boundary of the convex hull of $P$. Then any triangulation of $P$ has $2n-2-k$ triangles and $3n-3-k$ edges.
 
 Let $\mathfrak T$ be a triangulation of $P$, and suppose it has $m$ triangles. Let $\alpha_1,\alpha_2,\cdots,\alpha_{3m}$ be the resulting sequence of angles, where $\alpha_i\le\alpha_j$, for $i<j$. We can $A(\mathfrak T):=(\alpha_1,\alpha_2,\cdots,\alpha_{3m})$ the *angle-vector* of $\mathfrak T$. We say that the angle vector of $\mathfrak T$ is larger than the angle-vector of $\mathfrak T'$, denoted as $A(\mathfrak T)>A(\mathfrak T')$, if $A(\mathfrak T)$ is lexicographically larger than $A(\mathfrak T')$, or in other words, if there exists an index $i$ with $1\leq i\leq 3m$ such that:
-$$
+<center>$$
 \alpha_j=\alpha_j', \forall j<i\quad and \quad \alpha_i>\alpha_i'
-$$
+$$</center>
 A triangulation $\mathfrak T$ is called *angle-optimal* if $A(\mathfrak T)\geq A(\mathfrak T')$ for all triangulations $\mathfrak T'$ of $P$.
 
 ### When a triangulation is angle-optimal?
@@ -39,9 +39,9 @@ Below is a basic operation called *edge flip*:
 <img src="./assets/img/posts/typora-user-images/image-20210317141229786.png" alt="image-20210317141229786" style="zoom:67%;" />
 
 We call the edge $e=\overline{p_ip_j}$ an *illegal edge* if
-$$
+<center>$$
 \min_{q\leq i\leq 6}\alpha_i<\min_{1\leq i \leq 6}\alpha_i'
-$$
+$$</center>
 In other words, an edge is illegal if we can locally increase the smallest angle by flipping that edge.
 
 `Obervation 9.3` Let $\mathfrak T$ be a triangulation with an illegal edge $e$. Let $\mathfrak T'$ be the triangulation obtained from $\mathfrak T$ by flipping $e$. Then $A(\mathfrak T')>A(\mathfrak T)$.

@@ -115,14 +115,14 @@ $c(u)$ original number of nodes (primary structure).
 $t(u)$ total number of nodes, which includes those nodes added when adding the bridges. Note that $t(u)=c(u)$ if $u$ is a leaf.
 
 Below is the analysis:
-$$
+<center>$$
 \begin{align}
 t(u)&<c(u)+(t(v)+t(w))/d+2\\
 \sum_{u}t(u)&<\sum_{u}c(u)+\frac{1}{d}(\sum_ut(u)-t(root))+2n\\
 (1-\frac{1}{d})\sum_ut(u)&<\sum_uc(u)+2n\\
 \sum_ut(u)&<\frac{d}{d-1}(\sum_uc(u)+2n)\in \mathcal{O}(n)
 \end{align}
-$$
+$$</center>
 where 
 
 - $d$ is every $d$ time. 
@@ -233,29 +233,29 @@ For any trapezoid $\Delta$, there are at most $4$ line segments whose insertion 
 `Space`
 
 Let $n_i$ be # of "new" trapezoids of $T_i$, i.e., the ones that are not trapezoids of $T_{i-1}$.  Then we have:
-$$
+<center>$$
 |D_i|-|D_{i-1}|=O(n_i)
-$$
+$$</center>
 Here we have $n_i=\Theta(k_i)$,  where $k_i$ is the # of trapezoids of $T_{i-1}$ intersected by $s_i$.
 
 $T_i$ has $\leq 3i+1$ trapezoids and when we add line $s_i$, each trapezoid has probability $\leq 4/i$ of being new, where $i$ is remaining # of line segments. Hence,
-$$
+<center>$$
 \mathbb{E}[n_i]\leq(3i+1)\cdot4/i\leq 13
-$$
+$$</center>
 Therefore,
-$$
+<center>$$
 \mathbb{E}[|D_n|]=\mathbb{E}[O(\sum_{i=1}^n n_i)]=O(\sum_{i=1}^n\mathbb{E}[n_i])=O(13n)=O(n)
-$$
+$$</center>
 `Query Time`
 
 Define $X_i=1$ if the search path for any query point $p$ increases in iteration $i$. Otherwise, $X_i=0$. In other words, $X_i=1$ if and only if trapezoid containing $p$ in $T_i$ is new.
-$$
+<center>$$
 \mathbb{E}[\sum_{i=1}^nX_i]=\sum_{i=1}^n\mathbb{E}[X_i]=\sum_{i=1}^n\mathbb{P}[X_i=1]
-$$
+$$</center>
 Hence, $P[X_i=1]\leq 4/i$, since at most $4$ of the $i$ segments in $T_i$ could have caused the trapezoid containing $p$ to be new (just created). 
-$$
+<center>$$
 \mathbb{E}[\sum_{i=1}^nX_i]=\sum_{i=1}^n\mathbb{P}[X_i=1]\leq\sum_{i=1}^n 4/i=O(\log n)
-$$
+$$</center>
 The search path increases by at most $3$ at a time, so the final search is $O(\log n)$.
 
 `Theorem ` Given a planar subdivision defined by a set of $n$ non-crossing line segments in the plane, we can preprocess it for planar point location queries in $O(n\log n)$ expected time, the structure uses $O(n)$ expected storage, and the expected query time is $O(\log n)$.

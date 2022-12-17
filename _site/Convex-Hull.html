@@ -22,7 +22,7 @@
   "headline": "Convex Hull",
   "abstract": "Algorithms for computing a Convex Hull",
     "keywords": "Computational Geometry",
-    "wordcount": "1239",
+    "wordcount": "1243",
     "image": ["http://localhost:4000/assets/imgposts/cover/CG-convexhull.jpg"],
   "datePublished": "2022-11-09 04:48:20 +0000",
   "dateModified": "2022-11-09 04:48:20 +0000",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Algorithms for computing a Convex Hull">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="1239"/>
+<meta data-rh="true" name="twitter:data1" content="1243"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/CG-convexhull.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -379,12 +379,17 @@
 
 <p>Sorting can be transformed in $O(n)$ time into the convex hull problem. Thus the lower bound of the complexity of CH is same as sorting which is $O(n\log n)$.</p>
 
-<p>Point $p_1,p_2,p_3$ make a right turn at $p_2$ iff $p_3$ is to the right or on the line through $p_1$ and $p_2$. Otherwise $p_1,p_2,p_3$ make a left turn at $p_2$. Mathematically speaking, if:
-\(det\begin{bmatrix}
+<p>Point $p_1,p_2,p_3$ make a right turn at $p_2$ iff $p_3$ is to the right or on the line through $p_1$ and $p_2$. Otherwise $p_1,p_2,p_3$ make a left turn at $p_2$. Mathematically speaking, if:</p>
+
+<center>
+$$
+det\begin{bmatrix}
 x_1 &amp; y_1 &amp; 1\\
 x_2 &amp; y_2 &amp; 1\\
 x_3 &amp; y_3 &amp; 1
-\end{bmatrix}&gt;0 \Rightarrow \textit{left turn}\)</p>
+\end{bmatrix}&gt;0 \Rightarrow \textit{left turn}
+$$
+</center>
 
 <h2 id="algorithm-1-point-pruning">Algorithm 1: Point Pruning</h2>
 
@@ -474,12 +479,14 @@ x_3 &amp; y_3 &amp; 1
 
 <p><img src="./assets/img/posts/typora-user-images/image-20210216171711614.png" alt="image-20210216171711614" /></p>
 
-<p>Partition and union complexity:
-\(\begin{array}{c}
+<p>Partition and union complexity:</p>
+<center>$$
+\begin{array}{c}
 T(n)=O(1), n \leq 2 \\
 T(n)=2 * T(n / 2)+O(n), n&gt;2
-\end{array}\)
-Overall $O(n\log n)$.</p>
+\end{array}
+$$</center>
+<p>Overall $O(n\log n)$.</p>
 
 <h2 id="algorithm-5-marriage-before-conquest-1986">Algorithm 5: Marriage-before-Conquest (1986)</h2>
 
@@ -626,7 +633,7 @@ Overall $O(n\log n)$.</p>
   </div>
   <div class="author-desc">
     <h3>Thomas Men</h3>
-    <p>$\int_{birth}^{death}\text{Study} dt = \text{Life}$</p>
+    <p>$\int_{birth}^{death}\text{study} dt = \text{life}$</p>
   </div>
 </section>
 

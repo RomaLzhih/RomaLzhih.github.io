@@ -22,7 +22,7 @@
   "headline": "Point Location",
   "abstract": "Algorithms for Point Location",
     "keywords": "Computational Geometry",
-    "wordcount": "2015",
+    "wordcount": "2027",
     "image": ["http://localhost:4000/assets/imgposts/cover/CG-PointLocation.png"],
   "datePublished": "2022-12-16 00:48:20 +0000",
   "dateModified": "2022-12-16 00:48:20 +0000",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Algorithms for Point Location">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="2015"/>
+<meta data-rh="true" name="twitter:data1" content="2027"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/CG-PointLocation.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -475,14 +475,16 @@
 
 <p>$t(u)$ total number of nodes, which includes those nodes added when adding the bridges. Note that $t(u)=c(u)$ if $u$ is a leaf.</p>
 
-<p>Below is the analysis:
-\(\begin{align}
+<p>Below is the analysis:</p>
+<center>$$
+\begin{align}
 t(u)&amp;&lt;c(u)+(t(v)+t(w))/d+2\\
 \sum_{u}t(u)&amp;&lt;\sum_{u}c(u)+\frac{1}{d}(\sum_ut(u)-t(root))+2n\\
 (1-\frac{1}{d})\sum_ut(u)&amp;&lt;\sum_uc(u)+2n\\
 \sum_ut(u)&amp;&lt;\frac{d}{d-1}(\sum_uc(u)+2n)\in \mathcal{O}(n)
-\end{align}\)
-where</p>
+\end{align}
+$$</center>
+<p>where</p>
 
 <ul>
   <li>$d$ is every $d$ time.</li>
@@ -615,21 +617,31 @@ where</p>
 
 <p><code class="language-plaintext highlighter-rouge">Space</code></p>
 
-<p>Let $n_i$ be # of “new” trapezoids of $T_i$, i.e., the ones that are not trapezoids of $T_{i-1}$.  Then we have:
-\(|D_i|-|D_{i-1}|=O(n_i)\)
-Here we have $n_i=\Theta(k_i)$,  where $k_i$ is the # of trapezoids of $T_{i-1}$ intersected by $s_i$.</p>
+<p>Let $n_i$ be # of “new” trapezoids of $T_i$, i.e., the ones that are not trapezoids of $T_{i-1}$.  Then we have:</p>
+<center>$$
+|D_i|-|D_{i-1}|=O(n_i)
+$$</center>
+<p>Here we have $n_i=\Theta(k_i)$,  where $k_i$ is the # of trapezoids of $T_{i-1}$ intersected by $s_i$.</p>
 
-<p>$T_i$ has $\leq 3i+1$ trapezoids and when we add line $s_i$, each trapezoid has probability $\leq 4/i$ of being new, where $i$ is remaining # of line segments. Hence,
-\(\mathbb{E}[n_i]\leq(3i+1)\cdot4/i\leq 13\)
-Therefore,
-\(\mathbb{E}[|D_n|]=\mathbb{E}[O(\sum_{i=1}^n n_i)]=O(\sum_{i=1}^n\mathbb{E}[n_i])=O(13n)=O(n)\)
-<code class="language-plaintext highlighter-rouge">Query Time</code></p>
+<p>$T_i$ has $\leq 3i+1$ trapezoids and when we add line $s_i$, each trapezoid has probability $\leq 4/i$ of being new, where $i$ is remaining # of line segments. Hence,</p>
+<center>$$
+\mathbb{E}[n_i]\leq(3i+1)\cdot4/i\leq 13
+$$</center>
+<p>Therefore,</p>
+<center>$$
+\mathbb{E}[|D_n|]=\mathbb{E}[O(\sum_{i=1}^n n_i)]=O(\sum_{i=1}^n\mathbb{E}[n_i])=O(13n)=O(n)
+$$</center>
+<p><code class="language-plaintext highlighter-rouge">Query Time</code></p>
 
-<p>Define $X_i=1$ if the search path for any query point $p$ increases in iteration $i$. Otherwise, $X_i=0$. In other words, $X_i=1$ if and only if trapezoid containing $p$ in $T_i$ is new.
-\(\mathbb{E}[\sum_{i=1}^nX_i]=\sum_{i=1}^n\mathbb{E}[X_i]=\sum_{i=1}^n\mathbb{P}[X_i=1]\)
-Hence, $P[X_i=1]\leq 4/i$, since at most $4$ of the $i$ segments in $T_i$ could have caused the trapezoid containing $p$ to be new (just created). 
-\(\mathbb{E}[\sum_{i=1}^nX_i]=\sum_{i=1}^n\mathbb{P}[X_i=1]\leq\sum_{i=1}^n 4/i=O(\log n)\)
-The search path increases by at most $3$ at a time, so the final search is $O(\log n)$.</p>
+<p>Define $X_i=1$ if the search path for any query point $p$ increases in iteration $i$. Otherwise, $X_i=0$. In other words, $X_i=1$ if and only if trapezoid containing $p$ in $T_i$ is new.</p>
+<center>$$
+\mathbb{E}[\sum_{i=1}^nX_i]=\sum_{i=1}^n\mathbb{E}[X_i]=\sum_{i=1}^n\mathbb{P}[X_i=1]
+$$</center>
+<p>Hence, $P[X_i=1]\leq 4/i$, since at most $4$ of the $i$ segments in $T_i$ could have caused the trapezoid containing $p$ to be new (just created).</p>
+<center>$$
+\mathbb{E}[\sum_{i=1}^nX_i]=\sum_{i=1}^n\mathbb{P}[X_i=1]\leq\sum_{i=1}^n 4/i=O(\log n)
+$$</center>
+<p>The search path increases by at most $3$ at a time, so the final search is $O(\log n)$.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Theorem </code> Given a planar subdivision defined by a set of $n$ non-crossing line segments in the plane, we can preprocess it for planar point location queries in $O(n\log n)$ expected time, the structure uses $O(n)$ expected storage, and the expected query time is $O(\log n)$.</p>
 
@@ -693,7 +705,7 @@ The search path increases by at most $3$ at a time, so the final search is $O(\l
   </div>
   <div class="author-desc">
     <h3>Thomas Men</h3>
-    <p>$\int_{birth}^{death}\text{Study} dt = \text{Life}$</p>
+    <p>$\int_{birth}^{death}\text{study} dt = \text{life}$</p>
   </div>
 </section>
 

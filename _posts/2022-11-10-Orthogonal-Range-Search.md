@@ -33,12 +33,12 @@ Every vertical/horizontal line split current graph into two parts each with equa
 ### Preprocessing Time
 
 The most expensive step is performed at every recursive call is finding the **splitting line**. This requires determining the **median $x$-coordinate or the median $y$-coordinate**, depending on whether the depth is even or odd. We find the median in linear time relative simply in such way, sort by $x$- and $y$- coordinates independently. Hence, the building time $T(n)$ satisfies the recurrence:
-$$
+<center>$$
 T_n=\begin{cases}
 O(1), & if\quad n=1\\
 O(n)+2T(\lceil n/2\rceil), & if \quad n>1
 \end{cases}
-$$
+$$</center>
 which solves to $O(n\log n)$. Here $O(n)$ is the expense for median finding and recursive expression $T(\lceil n/2\rceil)$ shows the left and right build procedure.
 
 Space: Binary tree with $n$ leaves. $O(n)$ space.
@@ -58,9 +58,9 @@ The *query algorithm* is: we traverse the Kd-Tree, but visit only nodes whose re
 ![image-20210222180109075](./assets/img/posts/typora-user-images/image-20210222180109075.png)
 
 The main test of the query algorithm performs is whether the query range $R$ intersects the region corresponding to some node $v$. One can maintain the current region through the recursive calls using the lines stored in the internal nodes. For instance, the region corresponding to the left child of a node $ν$ at even depth can be computed from $region(ν)$ as follows:
-$$
+<center>$$
 \operatorname{region}(l c(v))=\operatorname{region}(v) \cap \ell(v)^{\text {left }}
-$$
+$$</center>
 where $\ell(v)$ is the splitting line stored at $v$, and $\ell(v)^{left}$ is the half-plane to the left of and including $\ell(v)$.
 
 ![image-20210222180710476](./assets/img/posts/typora-user-images/image-20210222180710476.png)
@@ -74,12 +74,12 @@ Define $Q(n)$ as the number of interested regions in a Kd-Tree storing $n$ point
 <img src="./assets/img/posts/typora-user-images/image-20210222182343544.png" alt="image-20210222182343544" style="zoom: 67%;" />
 
 Two of the four nodes correspond to intersected regions (at least two regions would be interested by such region), so we have to count the number of intersected regions of the remaining 2 nodes ($Q(n/4)+Q(n/4)$) in these subtrees recursively.  Hence, $Q(n)$ satisfies the recurrence
-$$
+<center>$$
 Q(n)=\begin{cases}
 O(1), &if \quad n=1\\
 2 + 2Q(n/4), &if \quad n>1
 \end{cases}
-$$
+$$</center>
 This recurrence solves to $Q(n)=O(\sqrt{n})$. In other words, any vertical line intersects $O(\sqrt{n})$ regions in a Kd-Tree.
 
 `Theorem` A Kd-Tree for a set $P$ of $n$ points in the plane use $O(n)$ storage and can be built in $O(n\log n)$ time. A rectangular range query on the Kd-Tree takes $O(\sqrt n+k)$ time, where $k$ is the number of reported points. If its $d$-dimensional, the query time is bounded by $O(n^{1-1/d}+k)$.

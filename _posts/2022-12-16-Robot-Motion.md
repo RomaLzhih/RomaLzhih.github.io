@@ -110,9 +110,9 @@ Finally, $\bigcup_T(T\oplus(-\mathcal R))$ has $O(n)$ corners.
 $k$ obstacles with $n_1,\cdots,n_k$ corners, in total $n$.
 
 Triangulating: 
-$$
+<center>$$
 \sum_{i=1}^kO(n_i\log n_i)=O(\sum_{i=1}^kn_i\log n_i)\leq O(\log n\sum_{i=1}^kn_i)=O(n \log n)
-$$
+$$</center>
 Computing Minkowsky sum between each obstacles and robot, $\mathcal{CP}_j=\mathcal P_j\oplus(-\mathcal R):O(1)$ time (three corners per $\triangle$ and one corner per robot, constant number in total), in total $O(n)$. 
 
 Below algorithm computing the forbidden space:

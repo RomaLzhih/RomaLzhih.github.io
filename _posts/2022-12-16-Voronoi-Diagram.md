@@ -17,9 +17,9 @@ Problem: Given a set $S$ of $N$ points in the plane, for each point $p_i$ in $S$
 `Definition` *locus* is the set of points whose location satisfies by one or more specified conditions.
 
 Given two points, $p_i$ and $p_j$, the set of points closer to $p_i$ than to $p_j$ is just the half-plane containing $p_i$ that is defined by the perpendicular bisector of $\overline{p_ip_j}$. Denote the halfplane by $H(p_i,p_j)$. The locus of points closer to $p_i$ than to any other point, which we denote by $V(i)$, is the **intersection of $N-1$ half-planes**, and is a convex polygonal region having no more than $N-1$ sides, that is:
-$$
-V(i)=\cap_{i\neq j}H(p_i,p_j)
-$$
+
+\\[ V(i)=\cap_{i\neq j}H(p_i,p_j) \\]
+
 $V(i)$ is called the *Voronoi polygon* associated with $p_i$.
 
 <img src="./assets/img/posts/typora-user-images/image-20210309215905849.png" alt="image-20210309215905849" style="zoom:67%;" />
@@ -48,9 +48,9 @@ A graph is regular if all vertices have the same degree.
 `Theorem 5.9` Every nearest neighbor of $p_i$ in $S$ defines an edge of the Voronoi polygon $V(i)$. 
 
 `Proof` Assume $p_j$ be a nearest neighbor of $p_i$ and let $v$ be the midpoint of their adjoining segment. Suppose that $v$ does not lie on the boundary of $V(i)$. Here we have $length(\overline{p_iu})<length(\overline{p_iv})$, so: 
-$$
+<center>$$
 length(\overline{p_ip_k})\leq 2length(\overline{p_iu})<2length(\overline{p_iv})=length(\overline{p_ip_j})
-$$
+$$</center>
 and we could have $p_k$ closer to $p_i$ than $p_j$ is, which is contradictory.
 
 <img src="./assets/img/posts/typora-user-images/image-20210309222657402.png" alt="image-20210309222657402" style="zoom:67%;" />
@@ -153,6 +153,6 @@ Since there are no more than $3N-6$ edges in $Vor(S_1)$ and $Vor(S_2)$ together,
 `Theorem 5.15` The Voronoi diagram of a set of $N$ points in the plane can be construct in $O(N\log N)$ time, and this is optimal.
 
 `Proof` 
-$$
+<center>$$
 T(N)=2T(N/2)+O(N)=O(N\log N)
-$$
+$$</center>

@@ -22,7 +22,7 @@
   "headline": "Voronoi Diagram",
   "abstract": "Algorithms for Voronoi Diagram",
     "keywords": "Computational Geometry",
-    "wordcount": "1544",
+    "wordcount": "1550",
     "image": ["http://localhost:4000/assets/imgposts/cover/CG-Voronoi.png"],
   "datePublished": "2022-12-16 17:48:20 +0000",
   "dateModified": "2022-12-16 17:48:20 +0000",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Algorithms for Voronoi Diagram">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="1544"/>
+<meta data-rh="true" name="twitter:data1" content="1550"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/CG-Voronoi.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -357,9 +357,11 @@
 
 <p><code class="language-plaintext highlighter-rouge">Definition</code> <em>locus</em> is the set of points whose location satisfies by one or more specified conditions.</p>
 
-<p>Given two points, $p_i$ and $p_j$, the set of points closer to $p_i$ than to $p_j$ is just the half-plane containing $p_i$ that is defined by the perpendicular bisector of $\overline{p_ip_j}$. Denote the halfplane by $H(p_i,p_j)$. The locus of points closer to $p_i$ than to any other point, which we denote by $V(i)$, is the <strong>intersection of $N-1$ half-planes</strong>, and is a convex polygonal region having no more than $N-1$ sides, that is:
-\(V(i)=\cap_{i\neq j}H(p_i,p_j)\)
-$V(i)$ is called the <em>Voronoi polygon</em> associated with $p_i$.</p>
+<p>Given two points, $p_i$ and $p_j$, the set of points closer to $p_i$ than to $p_j$ is just the half-plane containing $p_i$ that is defined by the perpendicular bisector of $\overline{p_ip_j}$. Denote the halfplane by $H(p_i,p_j)$. The locus of points closer to $p_i$ than to any other point, which we denote by $V(i)$, is the <strong>intersection of $N-1$ half-planes</strong>, and is a convex polygonal region having no more than $N-1$ sides, that is:</p>
+
+<p>\[ V(i)=\cap_{i\neq j}H(p_i,p_j) \]</p>
+
+<p>$V(i)$ is called the <em>Voronoi polygon</em> associated with $p_i$.</p>
 
 <p><img src="./assets/img/posts/typora-user-images/image-20210309215905849.png" alt="image-20210309215905849" style="zoom:67%;" /></p>
 
@@ -388,9 +390,11 @@ $V(i)$ is called the <em>Voronoi polygon</em> associated with $p_i$.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Theorem 5.9</code> Every nearest neighbor of $p_i$ in $S$ defines an edge of the Voronoi polygon $V(i)$.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Proof</code> Assume $p_j$ be a nearest neighbor of $p_i$ and let $v$ be the midpoint of their adjoining segment. Suppose that $v$ does not lie on the boundary of $V(i)$. Here we have $length(\overline{p_iu})&lt;length(\overline{p_iv})$, so: 
-\(length(\overline{p_ip_k})\leq 2length(\overline{p_iu})&lt;2length(\overline{p_iv})=length(\overline{p_ip_j})\)
-and we could have $p_k$ closer to $p_i$ than $p_j$ is, which is contradictory.</p>
+<p><code class="language-plaintext highlighter-rouge">Proof</code> Assume $p_j$ be a nearest neighbor of $p_i$ and let $v$ be the midpoint of their adjoining segment. Suppose that $v$ does not lie on the boundary of $V(i)$. Here we have $length(\overline{p_iu})&lt;length(\overline{p_iv})$, so:</p>
+<center>$$
+length(\overline{p_ip_k})\leq 2length(\overline{p_iu})&lt;2length(\overline{p_iv})=length(\overline{p_ip_j})
+$$</center>
+<p>and we could have $p_k$ closer to $p_i$ than $p_j$ is, which is contradictory.</p>
 
 <p><img src="./assets/img/posts/typora-user-images/image-20210309222657402.png" alt="image-20210309222657402" style="zoom:67%;" /></p>
 
@@ -505,8 +509,10 @@ and we could have $p_k$ closer to $p_i$ than $p_j$ is, which is contradictory.</
 
 <p><code class="language-plaintext highlighter-rouge">Theorem 5.15</code> The Voronoi diagram of a set of $N$ points in the plane can be construct in $O(N\log N)$ time, and this is optimal.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Proof</code> 
-\(T(N)=2T(N/2)+O(N)=O(N\log N)\)</p>
+<p><code class="language-plaintext highlighter-rouge">Proof</code></p>
+<center>$$
+T(N)=2T(N/2)+O(N)=O(N\log N)
+$$</center>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -568,7 +574,7 @@ and we could have $p_k$ closer to $p_i$ than $p_j$ is, which is contradictory.</
   </div>
   <div class="author-desc">
     <h3>Thomas Men</h3>
-    <p>$\int_{birth}^{death}\text{Study} dt = \text{Life}$</p>
+    <p>$\int_{birth}^{death}\text{study} dt = \text{life}$</p>
   </div>
 </section>
 
