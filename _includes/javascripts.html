@@ -239,10 +239,18 @@ night_mode = site.night_mode %}
   }
 </script>
 {% endif %} {% if page.mathjax %}
-<script
-  type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "CommonHTML": { linebreaks: { automatic: true } }
+  });
+</script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 {% endif %}
 
 <script src="{{ relativebase }}assets/js/main.js"></script>
@@ -261,6 +269,18 @@ night_mode = site.night_mode %}
 
 {% if page.infinite %}
 <script src="{{ relativebase }}assets/js/infinite-jekyll.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "CommonHTML": { linebreaks: { automatic: true } }
+  });
+</script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 {% endif %} {% if page.url contains "ipfs-404" %}
 <script class="deep-dir">
   function fixPath() {

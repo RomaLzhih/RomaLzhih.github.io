@@ -3,6 +3,16 @@
 [   
       
   {
+  "tag" : "Computability and Complexity",
+  "posts" : [
+      
+      "./Regular-Language.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "Computational Geometry",
   "posts" : [
       

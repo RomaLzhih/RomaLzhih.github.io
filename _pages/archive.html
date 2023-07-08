@@ -6,12 +6,18 @@ infinite: yes
 ---
 
 {% include calculate_relative_base.html %}
-
-<script
-  type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-></script>
-
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "CommonHTML": { linebreaks: { automatic: true } }
+  });
+</script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <div class="archive tag-master">
   <form class="search-form inline">
     <div id="search-container">
@@ -25,7 +31,7 @@ infinite: yes
   </form>
   <ul id="results-container" class="results-search"></ul>
   <div class="post-list">
-    {% for post in site.posts limit: 5 %}
+    {% for post in site.posts limit: 10000 %}
     <div class="post">
       {% include remove_double_slash.html %}
       <a class="post-list-title" href="{{ post_url }}">{{ post.title }}</a>

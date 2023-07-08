@@ -2,16 +2,20 @@
 <html lang="en">
   
 
-
-
+ 
 
 <head>
-	<meta charset="utf-8">
-	<title>Point Location - Swans & Swan</title>
-	<link rel="canonical" href="http://localhost:4000/Point-Location.html">
-	<meta name="description" content="Algorithms for Point Location">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+  <meta charset="utf-8" />
+  <title>
+    Point Location - Swans & Swan
+  </title>
+  <link rel="canonical" href="http://localhost:4000/Point-Location.html" />
+  <meta
+    name="description"
+    content="Algorithms for Point Location"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +26,7 @@
   "headline": "Point Location",
   "abstract": "Algorithms for Point Location",
     "keywords": "Computational Geometry",
-    "wordcount": "2027",
+    "wordcount": "2030",
     "image": ["http://localhost:4000/assets/imgposts/cover/CG-PointLocation.png"],
   "datePublished": "2022-12-16 00:48:20 +0000",
   "dateModified": "2022-12-16 00:48:20 +0000",
@@ -62,15 +66,15 @@
 <meta name="twitter:description" content="Algorithms for Point Location">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="2027"/>
+<meta data-rh="true" name="twitter:data1" content="2030"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/CG-PointLocation.png">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#311e3e">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<style>
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#311e3e" />
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#311e3e" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <!-- <style>
 /* latin */
 @font-face {
   font-family: 'Lora';
@@ -111,13 +115,19 @@
   src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-	</style>
-	<!-- <link href="https://fonts.googleapis.com/css?family=Lora:400,600|Source+Sans+Pro:200,400,700" rel="stylesheet"> -->
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="./assets/fonts/font-awesome/css/font-awesome.min.css">
-	<!-- Styles -->
-	<link rel="stylesheet" href="./assets/css/main.css">
-	
+	</style> -->
+  <link
+    href="https://fonts.googleapis.com/css?family=cmu-typewriter-text:400,600|Source+Sans+Pro:200,400,700"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="./assets/fonts/font-awesome/css/font-awesome.min.css"
+  />
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  
 
 
 
@@ -125,22 +135,22 @@
 <link rel="icon" href="./assets/img/favicon/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
-	
-	<link rel="stylesheet" href="./assets/css/highlighter/syntax-base16.monokai.dark.css">
-	
+<link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico"> 
+  <link
+    rel="stylesheet"
+    href="./assets/css/highlighter/syntax-base16.monokai.dark.css"
+  />
+  
 </head>
 
   <body>
     
 
-
-
-
+  
 <section class="hidden">
   <div class="post">
-      <a  class="post-list-title" href="./Point-Location.html">Point Location</a>
-      
+    <a class="post-list-title" href="./Point-Location.html">Point Location</a>
+    
 
   <span class = "post-card-meta">
   
@@ -170,11 +180,17 @@
   
   </span>
 
-        <div class="post-excerpt">
-            <p><code class="language-plaintext highlighter-rouge">Point Location query</code> Given a map and a query point $q$ specified by its coordinates, find the region of the map containing $q$. A map, of course, is nothing more than a subdivision of the plane into regions, a <em>planar subdivision</em>.</p><p><code class="language-plaintext highlighter-rouge">Idea</code> To <em>preprocess</em> the maps and to store them in a data structure that makes it possible to answer point location queries fast.</p><h2 id="slab-method">Slab Method</h2><p>Let $S$ be a planar subdivision with $n$ edges. The <em>planar point location problem</em> is to store $S$ in such a way that we can answer queries of the following type:</p><ul> <li>​...<a class="read-more" href="./Point-Location.html"> read more</a>
-        </div>
+    <div class="post-excerpt">
+      <p><code class="language-plaintext highlighter-rouge">Point Location query</code> Given a map and a query point $q$ specified by its coordinates, find the region of the map containing $q$. A map, of course, is nothing more than a subdivision of the plane into regions, a <em>planar subdivision</em>.</p><p><code class="language-plaintext highlighter-rouge">Idea</code> To <em>preprocess</em> the maps and to store them in a data structure that makes it possible to answer point location queries fast.</p><h2 id="slab-method">Slab Method</h2><p>Let $S$ be a planar subdivision with $n$ edges. The <em>planar</em> _ point_ _ location_ _ problem_ is to store $S$ in such a way that we can answer queries of the...<a
+        class="read-more"
+        href="./Point-Location.html"
+      >
+        read more</a
+      >
+    </div>
   </div>
 </section>
+
 <div class="flex-container transparent">
   
 
@@ -274,7 +290,10 @@
 <meta itemprop="datePublished" content="2022-12-16T00:48:20+00:00">
 
     <div class="page-image">
-      <div class="cover-image" style="background: url('./assets/img/posts/cover/CG-PointLocation.png') center no-repeat; background-size: cover;"></div>
+      <div
+        class="cover-image"
+        style="background: url('./assets/img/posts/cover/CG-PointLocation.png') center no-repeat; background-size: cover;"
+      ></div>
     </div>
     <div class="wrapper">
       <div class="page-content">
@@ -342,8 +361,7 @@
     <div class='alert' style='font-size:.6em;color:var(--accent);text-align:center;'></div>
 </div>
 </aside>
-
-        <aside class="toc">
+ <aside class="toc">
   <nav class="toc-nav">
     <li class="toc-title">
       <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
@@ -351,18 +369,16 @@
     <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#slab-method">Slab Method</a></li><li class="toc-item-1"><a href="#chain-method">Chain Method</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#chain-method---reducing-space-complexity">Chain Method - Reducing Space Complexity</a></li></ul></li><li class="toc-item-1"><a href="#randomized-incremental-algorithm">Randomized Incremental Algorithm</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#space-and-time-analysis">Space and Time analysis</a></li></ul></li></ul>
   </nav>
 </aside>
-
-        
-        <p><code class="language-plaintext highlighter-rouge">Point Location query</code> Given a map and a query point $q$ specified by its coordinates, find the region of the map containing $q$. A map, of course, is nothing more than a subdivision of the plane into regions, a <em>planar subdivision</em>.</p>
+  <p><code class="language-plaintext highlighter-rouge">Point Location query</code> Given a map and a query point $q$ specified by its coordinates, find the region of the map containing $q$. A map, of course, is nothing more than a subdivision of the plane into regions, a <em>planar subdivision</em>.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Idea</code> To <em>preprocess</em> the maps and to store them in a data structure that makes it possible to answer point location queries fast.</p>
 
 <h2 id="slab-method">Slab Method</h2>
 
-<p>Let $S$ be a planar subdivision with $n$ edges. The <em>planar point location problem</em> is to store $S$ in such a way that we can answer queries of the following type:</p>
+<p>Let $S$ be a planar subdivision with $n$ edges. The <em>planar</em> _ point_ _ location_ _ problem_ is to store $S$ in such a way that we can answer queries of the following type:</p>
 
 <ul>
-  <li>​	Given a query point $p$, report the face $f$ of $S$ that containing $q$. If $q$ lies on an edge or coincides with a vertex, the query algorithm should return this information.</li>
+  <li>​ Given a query point $p$, report the face $f$ of $S$ that containing $q$. If $q$ lies on an edge or coincides with a vertex, the query algorithm should return this information.</li>
 </ul>
 
 <p>Method:</p>
@@ -379,7 +395,7 @@
 
 <ul>
   <li>We do a binary search with the $x$-coordinate of the query point $q$ in the array storing the $x$-coordinates of the vertices of the subdivision. This tells us the slab containing $q$.</li>
-  <li>Do a binary search with $q$ in the array for that slab. The elementary operation in this binary search is: Given a segment $s$ and a point $q$ such that the vertical line through $q$ intersects $s$, determine whether $q$ lies above $s$, below $s$,or on $s$. This tells us the segment directly below $q$, provided there is one.  The label stored with that segment is the face of $S$ containing $q$. If we find that there is no segment below $q$ then $q$ lies in the unbounded face.</li>
+  <li>Do a binary search with $q$ in the array for that slab. The elementary operation in this binary search is: Given a segment $s$ and a point $q$ such that the vertical line through $q$ intersects $s$, determine whether $q$ lies above $s$, below $s$,or on $s$. This tells us the segment directly below $q$, provided there is one. The label stored with that segment is the face of $S$ containing $q$. If we find that there is no segment below $q$ then $q$ lies in the unbounded face.</li>
 </ul>
 
 <p>The complexity:</p>
@@ -389,7 +405,7 @@
     <p>Preprocessing: slabs in a sorted list. Trapezoids within the same slab in a sorted list. Sorting in $O(n)$ slabs, each slab with $O(n)$ elements (edges it contain), takes $O(n^2\log n)$ time.</p>
   </li>
   <li>Only perform two binary searches, thence the query time is $O(\log n)$.</li>
-  <li>Storage requirement: we have an array on the $x$-coordinates of the vertices, which uses $O(n)$ storage.  But we also have an array for every slab.  Such an array stores the edges intersecting its slab, so it uses $O(n)$ storage.  Since there are $O(n)$ slabs, the total amount of storage is $O(n^2)$.</li>
+  <li>Storage requirement: we have an array on the $x$-coordinates of the vertices, which uses $O(n)$ storage. But we also have an array for every slab. Such an array stores the edges intersecting its slab, so it uses $O(n)$ storage. Since there are $O(n)$ slabs, the total amount of storage is $O(n^2)$.</li>
 </ul>
 
 <h2 id="chain-method">Chain Method</h2>
@@ -400,17 +416,17 @@
 
 <p><code class="language-plaintext highlighter-rouge">Definition</code> A chain $C=(u_1,\cdots,u_p)$ is said to be <em>monotone</em> w.r.t a straight line $l$ if a line orthogonal to $l$ intersects $C$ in exactly one point.</p>
 
-<p>​	The operation of deciding on which side of a $p$-vertex chain $C$ a query point $z$ lies – called <em>discrimination</em> of $z$ against $C$, is effected in time $O(\log p)$.</p>
+<p>​ The operation of deciding on which side of a $p$-vertex chain $C$ a query point $z$ lies – called <em>discrimination</em> of $z$ against $C$, is effected in time $O(\log p)$.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Property</code> For any two chains $C_i$ and $C_j$ of $\mathcal{L}$, the vertices of $C_i$ which are not vertices of $C_j$ lie on the same side of $C_j$.</p>
 
-<p>​	$\mathcal{L}$ is referred to as a <em>monotone complete set of chains of $G$</em>. Thus if there are $r$ chains in $\mathcal{L}$ and the longest chain has $p$-vertices, then the search uses worst-case time $O(\log p\cdot\log r)$.</p>
+<p>​ $\mathcal{L}$ is referred to as a <em>monotone complete set of chains of $G$</em>. Thus if there are $r$ chains in $\mathcal{L}$ and the longest chain has $p$-vertices, then the search uses worst-case time $O(\log p\cdot\log r)$.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Definition</code> Let $G$ be a PSLG with vertex set ${v_1,\cdots,v_n}$, where the vertices are indexed from right-bottom to the upper-left. A vertex $v_j$ is said to be <em>regular</em> if there are integers $i&lt;j&lt;k$ such that $(v_i,v_j)$ and $(v_j,v_k)$ are edges of $G$. Graph $G$ is said to be regular if each $v_j$ is regular for $1&lt;j&lt;N$ (i.e., with the exception of the two extreme vertices $v_1$ and $v_n$).</p>
 
 <hr />
 
-<p>​	How we transform a non-regular graph into a regular one (to keep the monotone chain divide possible)? In the sweep, for each vertex $v$ reached we perform the following operation:</p>
+<p>​ How we transform a non-regular graph into a regular one (to keep the monotone chain divide possible)? In the sweep, for each vertex $v$ reached we perform the following operation:</p>
 
 <ol>
   <li>locate $v$ in an interval in the status structure</li>
@@ -476,6 +492,7 @@
 <p>$t(u)$ total number of nodes, which includes those nodes added when adding the bridges. Note that $t(u)=c(u)$ if $u$ is a leaf.</p>
 
 <p>Below is the analysis:</p>
+
 <center>$$
 \begin{align}
 t(u)&amp;&lt;c(u)+(t(v)+t(w))/d+2\\
@@ -565,7 +582,7 @@ $$</center>
 
 <p>We want only one leaf in $D$ to correspond to each trapezoid; this means we get a <em>directed acyclic graph (DAG)</em> (one leaf could only have one father node) instead of a search tree (one father per son).</p>
 
-<p><img src="./assets/img/posts/typora-user-images/image-20210302000345651.png" alt="image-20210302000345651" style="zoom: 50%;" />        <img src="./assets/img/posts/typora-user-images/image-20210302000617878.png" alt="image-20210302000617878" style="zoom:50%;" /></p>
+<p><img src="./assets/img/posts/typora-user-images/image-20210302000345651.png" alt="image-20210302000345651" style="zoom: 50%;" /> <img src="./assets/img/posts/typora-user-images/image-20210302000617878.png" alt="image-20210302000617878" style="zoom:50%;" /></p>
 
 <p>Right is the the point location query.</p>
 
@@ -575,7 +592,7 @@ $$</center>
 
 <p>Because $D_{i-1}$ is a valid point location structure for $s_1,\cdots,s_{i-1}$, we can use it to find the trapezoid of $T_{i-1}$ that contains $p_i$, the left endpoint of $s_i$ (query process). Then we use $T_{i-1}$ to find all other trapezoids that intersect $s_i$, because every face stores the information of its neighbour.</p>
 
-<p><img src="./assets/img/posts/typora-user-images/image-20210302000933470.png" alt="image-20210302000933470" style="zoom:55%;" />                                     <img src="./assets/img/posts/typora-user-images/image-20210302001005036.png" alt="image-20210302001005036" style="zoom:55%;" /></p>
+<p><img src="./assets/img/posts/typora-user-images/image-20210302000933470.png" alt="image-20210302000933470" style="zoom:55%;" /> <img src="./assets/img/posts/typora-user-images/image-20210302001005036.png" alt="image-20210302001005036" style="zoom:55%;" /></p>
 
 <p>After locating the trapezoid that contains $p_i$, we can determine all $k$ trapezoids that intersect $s_i$ in $O(k)$ time by traversing $T_{i-1}$. The update of the vertical decomposition can be finished in $O(k)$ as well. More specifically:</p>
 
@@ -617,13 +634,15 @@ $$</center>
 
 <p><code class="language-plaintext highlighter-rouge">Space</code></p>
 
-<p>Let $n_i$ be # of “new” trapezoids of $T_i$, i.e., the ones that are not trapezoids of $T_{i-1}$.  Then we have:</p>
+<p>Let $n_i$ be # of “new” trapezoids of $T_i$, i.e., the ones that are not trapezoids of $T_{i-1}$. Then we have:</p>
+
 <center>$$
 |D_i|-|D_{i-1}|=O(n_i)
 $$</center>
 <p>Here we have $n_i=\Theta(k_i)$,  where $k_i$ is the # of trapezoids of $T_{i-1}$ intersected by $s_i$.</p>
 
 <p>$T_i$ has $\leq 3i+1$ trapezoids and when we add line $s_i$, each trapezoid has probability $\leq 4/i$ of being new, where $i$ is remaining # of line segments. Hence,</p>
+
 <center>$$
 \mathbb{E}[n_i]\leq(3i+1)\cdot4/i\leq 13
 $$</center>
@@ -634,6 +653,7 @@ $$</center>
 <p><code class="language-plaintext highlighter-rouge">Query Time</code></p>
 
 <p>Define $X_i=1$ if the search path for any query point $p$ increases in iteration $i$. Otherwise, $X_i=0$. In other words, $X_i=1$ if and only if trapezoid containing $p$ in $T_i$ is new.</p>
+
 <center>$$
 \mathbb{E}[\sum_{i=1}^nX_i]=\sum_{i=1}^n\mathbb{E}[X_i]=\sum_{i=1}^n\mathbb{P}[X_i=1]
 $$</center>
@@ -644,8 +664,7 @@ $$</center>
 <p>The search path increases by at most $3$ at a time, so the final search is $O(\log n)$.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Theorem </code> Given a planar subdivision defined by a set of $n$ non-crossing line segments in the plane, we can preprocess it for planar point location queries in $O(n\log n)$ expected time, the structure uses $O(n)$ expected storage, and the expected query time is $O(\log n)$.</p>
-
-        <aside class="sidebar inline" id="post-end">
+ <aside class="sidebar inline" id="post-end">
     
 
 
@@ -708,14 +727,44 @@ $$</center>
     <p>$\int_{birth}^{death}\text{study} dt = \text{life}$</p>
   </div>
 </section>
-
-        
+ 
 
 
 
 <div class="recent-box">
   <h2 class="page-subtitle">Recent posts</h2>
   <div class="recent-list">
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Regular-Language.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/COCO-Regular-Language.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Regular Languages</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        8 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
     
       
         <div class="recent-item">
@@ -810,74 +859,12 @@ $$</center>
         </div>
       
     
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./Point-Location.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-PointLocation.png') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>Point Location</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        10 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
   </div>
 </div> <!-- End Recent-Box -->
 
-        <div class="newsletter" id="mc_embed_signup">
-  <h2 class="page-subtitle">Newsletter</h2>
-  <div class="form-container">
-    <p>Subscribe here to get our latest updates</p>
-    <form action="https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-      <label class="screen-reader-text" for="mce-EMAIL">Email Address</label>
-      <div class="newsletter-box" id="mc_embed_signup_scroll">
-        <input type="email" name="EMAIL" placeholder="Email address" class="email-input" id="mce-EMAIL" required>
-        <input type="submit" value="Subscribe" name="subscribe" class="subscribe-btn" id="mc-embedded-subscribe">
       </div>
-    </form>
-  </div>
-</div> <!-- End Newsletter -->
-
-        <section class="comment-area">
-    <div class="comment-wrapper">
-        
-        <div class="row" id="comment-curtain">
-            <div class="col-lg-8 col-sm-10 mr-auto ml-auto">
-                <h2 class="page-subtitle">Comments</h2>
-                <div class="comments-trigger" onClick="toggle_comments()">
-                    <i class="fa fa-comments"></i>&nbsp;&nbsp;Write a comment ...
-                </div>
-            </div>
-        </div>
-        
-
-        
-            
-        
     </div>
-</section> <!-- End Comment Area -->
-      </div>
-    </div> <!-- End Wrapper -->
+    <!-- End Wrapper -->
   </article>
   <div class="search-box">
   <div class="wrapper">
@@ -894,8 +881,7 @@ $$</center>
     </div>
   </div>
 </div>
-
-  
+ 
 
 
 
@@ -1105,7 +1091,7 @@ $$</center>
             </a>
         </div>
         <div class="copyright">
-          <p>2022 &copy; Thomas Men</p>
+          <p>2023 &copy; Thomas Men</p>
         </div>
         <div class="footer-nav">
             <div>
@@ -1130,262 +1116,304 @@ $$</center>
 </div>
 
     <div class="top" title="Top">
-      <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fal"
+        data-icon="angle-up"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 256 512"
+        class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"
+      >
+        <path
+          fill="currentColor"
+          d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z"
+          class=""
+        ></path>
+      </svg>
     </div>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "CommonHTML": { linebreaks: { automatic: true } }
+      });
+    </script>
+    <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     
 
-
-
+ 
 
 <!-- JS -->
 
-
-
-
-
-
-
+     
 
 <script>
-(function() {
-    var sw = document.getElementById('theme-switch');
-    var html = document.getElementsByTagName('html')[0];
-    var logo = document.getElementById('logo');
-    var nightModeOption = ('auto' || 'auto').toLowerCase();
-    var storage = nightModeOption === 'manual'
-        ? localStorage
-        : sessionStorage;
+  (function () {
+    var sw = document.getElementById("theme-switch");
+    var html = document.getElementsByTagName("html")[0];
+    var logo = document.getElementById("logo");
+    var nightModeOption = ("auto" || "auto").toLowerCase();
+    var storage = nightModeOption === "manual" ? localStorage : sessionStorage;
     var themeData = loadThemeData();
 
     function saveThemeData(data) {
-    storage.setItem('theme', JSON.stringify(data));
+      storage.setItem("theme", JSON.stringify(data));
     }
 
     function loadThemeData() {
-    var data = storage.getItem('theme');
-    try {
-        data = JSON.parse(data ? data : '');
-    } catch(e) {
+      var data = storage.getItem("theme");
+      try {
+        data = JSON.parse(data ? data : "");
+      } catch (e) {
         data = { nightShift: undefined, autoToggleAt: 0 };
         saveThemeData(data);
-    }
-    return data;
+      }
+      return data;
     }
 
     function handleThemeToggle(nightShift) {
-    themeData.nightShift = nightShift;
-    saveThemeData(themeData);
-    html.dataset.theme = nightShift ? 'dark' : 'light';
-    if (nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? "dark" : "light";
+      if (nightShift) {
         logo.setAttribute("src", "./assets/img/branding/logo.png");
-    } else {
+      } else {
         logo.setAttribute("src", "./assets/img/branding/logo.png");
-    }
-    setTimeout(function() {
+      }
+      setTimeout(function () {
         sw.checked = nightShift ? true : false;
-    }, 50);
+      }, 50);
     }
 
     function autoThemeToggle() {
-    // Next time point of theme toggle
-    var now = new Date();
-    var toggleAt = new Date();
-    var hours = now.getHours();
-    var nightShift = hours >= 19 || hours <=7;
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <= 7;
 
-    if (nightShift) {
+      if (nightShift) {
         if (hours > 7) {
-        toggleAt.setDate(toggleAt.getDate() + 1);
+          toggleAt.setDate(toggleAt.getDate() + 1);
         }
         toggleAt.setHours(7);
-    } else {
+      } else {
         toggleAt.setHours(19);
-    }
+      }
 
-    toggleAt.setMinutes(0);
-    toggleAt.setSeconds(0);
-    toggleAt.setMilliseconds(0)
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0);
 
-    var delay = toggleAt.getTime() - now.getTime();
+      var delay = toggleAt.getTime() - now.getTime();
 
-    // auto toggle theme mode
-    setTimeout(function() {
+      // auto toggle theme mode
+      setTimeout(function () {
         handleThemeToggle(!nightShift);
-    }, delay);
+      }, delay);
 
-    return {
+      return {
         nightShift: nightShift,
-        toggleAt: toggleAt.getTime()
-    };
+        toggleAt: toggleAt.getTime(),
+      };
     }
 
     // Listen the theme toggle event
-    sw.addEventListener('change', function(event) {
-    handleThemeToggle(event.target.checked);
+    sw.addEventListener("change", function (event) {
+      handleThemeToggle(event.target.checked);
     });
 
-    if (nightModeOption == 'auto') {
-    var data = autoThemeToggle();
+    if (nightModeOption == "auto") {
+      var data = autoThemeToggle();
 
-    // Toggle theme by local setting
-    if (data.toggleAt > themeData.autoToggleAt) {
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
         themeData.autoToggleAt = data.toggleAt;
         handleThemeToggle(data.nightShift);
-    } else {
+      } else {
         handleThemeToggle(themeData.nightShift);
-    }
-    } else if (nightModeOption == 'manual') {
-    handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == "manual") {
+      handleThemeToggle(themeData.nightShift);
     } else {
-    var nightShift = themeData.nightShift;
-    if (nightShift === undefined) {
-        nightShift = nightModeOption === 'on';
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === "on";
+      }
+      handleThemeToggle(nightShift);
     }
-    handleThemeToggle(nightShift);
-    }
-})();
+  })();
 </script>
 
 <script src="./assets/js/jekyll-search.js"></script>
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
 
 
-  <script>
-    function toggle_comments(){
-      var commentCurtain = document.getElementById('comment-curtain')
-      if (commentCurtain) {
-        commentCurtain.classList.toggle('hide')
+<script>
+  function toggle_comments() {
+    var commentCurtain = document.getElementById("comment-curtain");
+    if (commentCurtain) {
+      commentCurtain.classList.toggle("hide");
+    }
+    var disqusThread = document.getElementById("comment-layout");
+    if (disqusThread) {
+      disqusThread.classList.toggle("show");
+    }
+  }
+
+  function copyToClipboard() {
+    navigator.clipboard.writeText("http://localhost:4000/Point-Location.html").then(
+      function () {
+        alerts = document.getElementsByClassName("alert");
+        for (i = 0; i < alerts.length; i++) {
+          alerts[i].innerHTML = "\u00ABlink copied\u00BB";
+          setTimeout(
+            (function (i) {
+              return function () {
+                alerts[i].innerHTML = "";
+              };
+            })(i),
+            1600
+          );
+        }
+      },
+      function () {
+        prompt(
+          "Unable to copy, please use this link:",
+          "http://localhost:4000/Point-Location.html"
+        );
       }
-      var disqusThread = document.getElementById('comment-layout')
+    );
+  }
+
+  $(function () {
+    if (document.getElementById("comment-curtain") == null) {
+      var disqusThread = document.getElementById("comment-layout");
       if (disqusThread) {
-        disqusThread.classList.toggle('show')
+        disqusThread.classList.toggle("show");
       }
     }
 
-    function copyToClipboard() {
-      navigator.clipboard.writeText('http://localhost:4000/Point-Location.html').then(function() {
-      alerts = document.getElementsByClassName('alert')
-      for (i=0; i < alerts.length; i++){
-        alerts[i].innerHTML='\u00ABlink copied\u00BB';
-        setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
-      };
-      }, function() {
-        prompt("Unable to copy, please use this link:", "http://localhost:4000/Point-Location.html");
+    var tweetTags = document.getElementsByTagName("tweet");
+
+    if (tweetTags != null) {
+      for (i = 0; i < tweetTags.length; i++) {
+        tweetA = document.createElement("a");
+        tweetA.href =
+          "https://twitter.com/share?text=" +
+          encodeURIComponent(tweetTags[i].textContent) +
+          '&via=&url=' +
+          window.location.href;
+        tweetA.target = "_blank";
+        tweetA.className = "twitter";
+        tweetSpanText = document.createElement("span");
+        tweetSpanText.className = "tweetText";
+        tweetSpanText.appendChild(
+          document.createTextNode(tweetTags[i].textContent)
+        );
+        tweetSpanIcon = document.createElement("span");
+        tweetSpanIcon.className = "tweetIcon";
+        tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+        tweetI = document.createElement("i");
+        tweetI.className = "fa fa-twitter";
+        tweetSpanIcon.appendChild(tweetI);
+        tweetA.appendChild(tweetSpanText);
+        tweetA.appendChild(tweetSpanIcon);
+        tweetTags[i].textContent = "";
+        tweetTags[i].appendChild(tweetA);
+      }
+    }
+  });
+</script>
+<!-- Mailchimp linking -->
+<script id="mcjs">
+  !(function (c, h, i, m, p) {
+    (m = c.createElement(h)),
+      (p = c.getElementsByTagName(h)[0]),
+      (m.async = 1),
+      (m.src = i),
+      p.parentNode.insertBefore(m, p);
+  })(
+    document,
+    "script",
+    "https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js"
+  );
+</script>
+ 
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+<script>
+  var spy = new Gumshoe("#toc-content a", {
+    navClass: "active",
+    contentClass: "underline",
+    nested: 0,
+    nestedClass: "active",
+    offset: 20,
+    reflow: 1,
+    events: 1,
+  });
+
+  var coll = document.getElementsByClassName("toc-item-1");
+  var i;
+  var chevron_up =
+    '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z"></path></svg>';
+  var chevron_down =
+    '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z"></path></svg>';
+  for (i = 0; i < coll.length; i++) {
+    if (coll[i].childElementCount > 1) {
+      sign = document.createElement("div");
+      sign.className = "toc-sign";
+      sign.innerHTML = chevron_down;
+      coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+      coll[i].addEventListener("click", function () {
+        var content = this.lastElementChild;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          this.firstElementChild.nextSibling.innerHTML = chevron_down;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          this.firstElementChild.nextSibling.innerHTML = chevron_up;
+        }
       });
     }
-
-    $(function () {
-      if (document.getElementById('comment-curtain') == null){
-        var disqusThread = document.getElementById('comment-layout')
-        if (disqusThread) {
-          disqusThread.classList.toggle('show')
-        }
-      }
-
-      var tweetTags = document.getElementsByTagName("tweet");
-
-      if (tweetTags != null){
-        for (i=0; i<tweetTags.length; i++){
-          tweetA = document.createElement("a")
-          tweetA.href = 'https://twitter.com/share?text='
-                       + encodeURIComponent(tweetTags[i].textContent)
-                       + '&via=&url='
-                       + window.location.href;
-          tweetA.target = "_blank";
-          tweetA.className = 'twitter';
-          tweetSpanText = document.createElement('span');
-          tweetSpanText.className = 'tweetText';
-          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
-          tweetSpanIcon = document.createElement('span');
-          tweetSpanIcon.className = 'tweetIcon';
-          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
-          tweetI = document.createElement("i");
-          tweetI.className = 'fa fa-twitter';
-          tweetSpanIcon.appendChild(tweetI);
-          tweetA.appendChild(tweetSpanText);
-          tweetA.appendChild(tweetSpanIcon);
-          tweetTags[i].textContent = "";
-          tweetTags[i].appendChild(tweetA);
-        }
-      }
-
-    });
-
-  </script>
-  <!-- Mailchimp linking -->
-  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
-  <script>
-    var spy = new Gumshoe("#toc-content a", {
-      navClass:"active",
-      contentClass:"underline",
-      nested:0,
-      nestedClass:"active",
-      offset:20,
-      reflow:1,
-      events:1
-    });
-
-    var coll = document.getElementsByClassName("toc-item-1");
-    var i;
-    var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
-    var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
-    for (i = 0; i < coll.length; i++) {
-      if (coll[i].childElementCount > 1) {
-        sign = document.createElement('div');
-        sign.className = "toc-sign";
-        sign.innerHTML = chevron_down;
-        coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
-        coll[i].addEventListener("click", function() {
-          var content = this.lastElementChild;
-          if (content.style.maxHeight){
-            content.style.maxHeight = null;
-            this.firstElementChild.nextSibling.innerHTML = chevron_down;
-          } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            this.firstElementChild.nextSibling.innerHTML = chevron_up;
-          }
-        });
-      }
-    }
-  </script>
-
-
-
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    },
-    "CommonHTML": { linebreaks: { automatic: true } }
-    });
-  </script>
-  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  }
+</script>
+ 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "CommonHTML": { linebreaks: { automatic: true } }
+  });
+</script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 <script src="./assets/js/main.js"></script>
 <script>
   SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: './search.json',
-      searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a><p>{description}</p></li>',
-      noResultsText: 'No results found',
-      fuzzy: false,
-      exclude: ['Welcome']
-    });
+    searchInput: document.getElementById("search-input"),
+    resultsContainer: document.getElementById("results-container"),
+    json: "./search.json",
+    searchResultTemplate:
+      '<li><a href="{url}" title="{description}">{title}</a><p>{description}</p></li>',
+    noResultsText: "No results found",
+    fuzzy: false,
+    exclude: ["Welcome"],
+  });
 </script>
 
-
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+ 
+ <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFSBB9E8Q4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1393,5 +1421,10 @@ $$</center>
   gtag('js', new Date());
   gtag('config', 'G-JFSBB9E8Q4');
 </script>
+    <!-- <script
+      type="text/javascript"
+      id="clustrmaps"
+      src="//cdn.clustrmaps.com/map_v2.js?cl=0e1633&w=266&t=tt&d=dPAyW5s5LrXzvpEdk9o0YG3xSnvRngs5dl0QAxzlEH4&co=0b4975&cmo=3acc3a&cmn=ff5353&ct=cdd4d9"
+    ></script> -->
   </body>
 </html>

@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+ 
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    Regular Languages - Swans & Swan
+  </title>
+  <link rel="canonical" href="http://localhost:4000/Regular-Language.html" />
+  <meta
+    name="description"
+    content="Introduction for Regular Languages"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:4000"},
+  "headline": "Regular Languages",
+  "abstract": "Introduction for Regular Languages",
+    "keywords": "Computability and Complexity",
+    "wordcount": "1635",
+    "image": ["http://localhost:4000/assets/imgposts/cover/COCO-Regular-Language.jpg"],
+  "datePublished": "2023-07-08 07:21:20 +0000",
+  "dateModified": "2023-07-08 07:21:20 +0000",
+  "author": {
+    "@type": "Person",
+    "name": "Thomas Men"},
+  "publisher": {
+    "@type":  "Organization",
+    "logo": {
+        "@type": "ImageObject",
+        "encodingFormat": "image/png",
+        "contentUrl": "http://localhost:4000/assets/img/branding/symbol-dark.png",
+        "url": "http://localhost:4000/assets/img/branding/symbol-dark.png"},
+    "name" : "Swans & Swan"}
+}
+</script>
+<!-- Open Graph data -->
+<meta property="og:url" content="http://localhost:4000/Regular-Language.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Regular Languages"/>
+<meta property="og:description" content="Introduction for Regular Languages"/>
+<meta property="og:image" content="http://localhost:4000/assets/imgposts/cover/COCO-Regular-Language.jpg"/>
+<meta property="og:image:alt" content="Regular Languages"/>
+<meta property="og:site_name" content="Swans & Swan" />
+<meta property="article:published_time" content="2023-07-08 07:21:20 +0000" />
+<meta property="article:modified_time" content="2023-07-08 07:21:20 +0000" />
+<meta property="article:tag" content="Computability and Complexity" />
+<meta property="fb:admins" content="" />
+<!-- Schema.org markup for Google -->
+<meta itemprop="name" content="Regular Languages">
+<meta itemprop="description" content="Introduction for Regular Languages">
+<meta itemprop="image" content="http://localhost:4000/assets/imgposts/cover/COCO-Regular-Language.jpg">
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Regular Languages">
+<meta name="twitter:description" content="Introduction for Regular Languages">
+<meta name="twitter:creator" content="">
+<meta data-rh="true" name="twitter:label1" content="Word count"/>
+<meta data-rh="true" name="twitter:data1" content="1635"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/cover/COCO-Regular-Language.jpg">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#311e3e" />
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#311e3e" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <!-- <style>
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/lora/v17/0QIvMX1D_JOuMwr7I_FMl_E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/lora/v17/0QIvMX1D_JOuMwr7I_FMl_E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdu3cOWxw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+	</style> -->
+  <link
+    href="https://fonts.googleapis.com/css?family=cmu-typewriter-text:400,600|Source+Sans+Pro:200,400,700"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="./assets/fonts/font-awesome/css/font-awesome.min.css"
+  />
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  
+
+
+
+
+<link rel="icon" href="./assets/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="./assets/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico"> 
+  <link
+    rel="stylesheet"
+    href="./assets/css/highlighter/syntax-base16.monokai.dark.css"
+  />
+  
+</head>
+
+  <body>
+    
+
+  
+<section class="hidden">
+  <div class="post">
+    <a class="post-list-title" href="./Regular-Language.html">Regular Languages</a>
+    
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-07-08T07:21:20+00:00">July 8, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        8 minute read
+      
+    </span>
+  
+  
+  </span>
+
+    <div class="post-excerpt">
+      <h2 id="finite-automata">Finite Automata</h2><p>Finite automata are good models for computers with an extremely limited amount of memory. The controller moves from state to state, depending on the input it receives. Finite automata and their probabilistic counterpart <strong>Markov Chains</strong> are useful tools when we are attempting to recognize patterns in data.</p><h3 id="formal-definition-of-a-finite-automaton">Formal Definition of a finite automaton</h3><p>​ A finite automaton is a list of those five objects: set of states, input alphabet, rules for moving, start state, and accept states.</p><p><code class="language-plaintext highlighter-rouge">Definition</code> A <em>finite</em> <em>automaton</em> is a 5-tuple $(Q,\sum,\delta,q_0,F)$, where:</p><ul> <li>$Q$ is a finite set called the state,</li> <li>$\sum$ is a finite...<a
+        class="read-more"
+        href="./Regular-Language.html"
+      >
+        read more</a
+      >
+    </div>
+  </div>
+</section>
+
+<div class="flex-container transparent">
+  
+
+
+
+
+<header class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li>
+            <div class="theme-toggle night">
+    <input class="night" type="checkbox" id="theme-switch">
+    <label class="night" for="theme-switch">
+        <div class="toggle night"></div>
+        <div class="names night">             
+        <p class="light night"><svg class="night" width="20" viewBox="0 0 25 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path class="night" d="M12.5 2.49871C11.3401 2.50016 10.2282 2.96156 9.40801 3.78171C8.58785 4.60187 8.12645 5.71383 8.125 6.87371C8.125 7.03947 8.19085 7.19844 8.30806 7.31565C8.42527 7.43286 8.58424 7.49871 8.75 7.49871C8.91576 7.49871 9.07473 7.43286 9.19194 7.31565C9.30915 7.19844 9.375 7.03947 9.375 6.87371C9.37593 6.04519 9.70547 5.25088 10.2913 4.66503C10.8772 4.07918 11.6715 3.74964 12.5 3.74871C12.6658 3.74871 12.8247 3.68286 12.9419 3.56565C13.0592 3.44844 13.125 3.28947 13.125 3.12371C13.125 2.95795 13.0592 2.79898 12.9419 2.68177C12.8247 2.56456 12.6658 2.49871 12.5 2.49871V2.49871ZM12.5 -0.00129131C8.47891 -0.00129131 5.62031 3.26238 5.625 6.88269C5.62487 8.54403 6.22974 10.1486 7.32656 11.3964C8.32891 12.5378 9.29062 14.4007 9.375 14.9987L9.37734 17.9358C9.37744 18.0587 9.41402 18.1787 9.48242 18.2807L10.4395 19.7198C10.4964 19.8055 10.5737 19.8758 10.6644 19.9245C10.7551 19.9731 10.8564 19.9986 10.9594 19.9987H14.0395C14.1426 19.9988 14.2441 19.9734 14.3351 19.9247C14.426 19.8761 14.5034 19.8057 14.5605 19.7198L15.5176 18.28C15.5854 18.1776 15.6219 18.0578 15.6227 17.935L15.625 14.9987C15.7129 14.3846 16.6797 12.5303 17.6734 11.3964C18.5434 10.4028 19.1087 9.17963 19.3015 7.87318C19.4944 6.56673 19.3066 5.23238 18.7608 4.02985C18.215 2.82732 17.3342 1.80757 16.2238 1.09264C15.1135 0.377721 13.8206 -0.00207746 12.5 -0.00129131V-0.00129131ZM14.3727 17.7452L13.7047 18.7487H11.2937L10.6273 17.7452V17.4987H14.3738L14.3727 17.7452ZM14.375 16.2487H10.625L10.6227 14.9987H14.375V16.2487ZM16.7348 10.5725C16.1879 11.1956 15.316 12.4511 14.7594 13.7479H10.243C9.68516 12.4507 8.81328 11.1956 8.26641 10.5725C7.36971 9.5491 6.87599 8.2344 6.87734 6.87371C6.87031 3.8659 9.23594 1.24871 12.5 1.24871C15.602 1.24871 18.125 3.77176 18.125 6.87371C18.1249 8.23456 17.6305 9.54904 16.7336 10.5725H16.7348ZM3.75 6.87371C3.75 6.70795 3.68415 6.54898 3.56694 6.43177C3.44973 6.31456 3.29076 6.24871 3.125 6.24871H0.625C0.45924 6.24871 0.300269 6.31456 0.183058 6.43177C0.065848 6.54898 0 6.70795 0 6.87371C0 7.03947 0.065848 7.19844 0.183058 7.31565C0.300269 7.43286 0.45924 7.49871 0.625 7.49871H3.125C3.29076 7.49871 3.44973 7.43286 3.56694 7.31565C3.68415 7.19844 3.75 7.03947 3.75 6.87371ZM20.625 2.49871C20.7221 2.49849 20.8178 2.4759 20.9047 2.43269L23.4047 1.18269C23.5529 1.10852 23.6657 0.978483 23.718 0.821201C23.7704 0.66392 23.7582 0.492273 23.684 0.344021C23.6473 0.270614 23.5964 0.205161 23.5344 0.151397C23.4724 0.0976336 23.4004 0.0566132 23.3225 0.0306781C23.1652 -0.0217002 22.9936 -0.00945342 22.8453 0.0647243L20.3453 1.31472C20.2194 1.37771 20.1184 1.48136 20.0588 1.60889C19.9991 1.73643 19.9843 1.88037 20.0166 2.0174C20.049 2.15442 20.1267 2.2765 20.2371 2.36386C20.3475 2.45122 20.4842 2.49873 20.625 2.49871ZM24.375 6.24871H21.875C21.7092 6.24871 21.5503 6.31456 21.4331 6.43177C21.3158 6.54898 21.25 6.70795 21.25 6.87371C21.25 7.03947 21.3158 7.19844 21.4331 7.31565C21.5503 7.43286 21.7092 7.49871 21.875 7.49871H24.375C24.5408 7.49871 24.6997 7.43286 24.8169 7.31565C24.9342 7.19844 25 7.03947 25 6.87371C25 6.70795 24.9342 6.54898 24.8169 6.43177C24.6997 6.31456 24.5408 6.24871 24.375 6.24871ZM4.65469 1.31472L2.15469 0.0647243C2.08128 0.0279952 2.00136 0.00608435 1.91948 0.00024269C1.83761 -0.00559897 1.75539 0.004743 1.67751 0.0306781C1.52023 0.0830564 1.39019 0.195769 1.31602 0.344021C1.24184 0.492273 1.22959 0.66392 1.28197 0.821201C1.33435 0.978483 1.44706 1.10852 1.59531 1.18269L4.09531 2.43269C4.18223 2.4759 4.27794 2.49849 4.375 2.49871C4.5158 2.49873 4.65248 2.45122 4.7629 2.36386C4.87332 2.2765 4.951 2.15442 4.98337 2.0174C5.01574 1.88037 5.0009 1.73643 4.94124 1.60889C4.88158 1.48136 4.78061 1.37771 4.65469 1.31472ZM23.4047 12.5647L20.9047 11.3147C20.7564 11.2405 20.5847 11.2283 20.4274 11.2807C20.2701 11.3332 20.14 11.4459 20.0658 11.5942C19.9916 11.7425 19.9794 11.9142 20.0318 12.0715C20.0842 12.2289 20.197 12.3589 20.3453 12.4331L22.8453 13.6831C22.9936 13.7573 23.1653 13.7695 23.3226 13.7171C23.4799 13.6647 23.61 13.5519 23.6842 13.4036C23.7584 13.2553 23.7706 13.0836 23.7182 12.9263C23.6658 12.769 23.553 12.6389 23.4047 12.5647V12.5647ZM4.375 11.2487C4.27794 11.2489 4.18223 11.2715 4.09531 11.3147L1.59531 12.5647C1.44701 12.6389 1.33425 12.769 1.28183 12.9263C1.25588 13.0042 1.24552 13.0864 1.25135 13.1683C1.25719 13.2502 1.27909 13.3302 1.31582 13.4036C1.35255 13.477 1.40338 13.5425 1.46542 13.5963C1.52745 13.6501 1.59947 13.6911 1.67737 13.7171C1.83469 13.7695 2.00638 13.7573 2.15469 13.6831L4.65469 12.4331C4.78083 12.3702 4.88202 12.2666 4.94183 12.1389C5.00164 12.0113 5.01656 11.8672 4.98417 11.7301C4.95178 11.5929 4.87397 11.4707 4.76339 11.3833C4.65281 11.2959 4.51594 11.2485 4.375 11.2487V11.2487Z" /></svg></p>
+        <p class="dark night"><svg class="night" width="20" viewBox="0 0 25 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path class="night" d="M6.39614 3.72646C7.50591 1.56178 9.72622 0.00900831 12.4782 0.00114817C13.8006 -0.00388798 15.0965 0.375153 16.2101 1.09278C17.3237 1.8104 18.2079 2.83612 18.7564 4.04682C19.3049 5.25751 19.4945 6.60175 19.3024 7.91818C19.1103 9.23461 18.5447 10.4673 17.6735 11.4683C17.5227 11.6416 17.3516 11.859 17.1739 12.1069L9.47856 6.12184C9.65443 5.45016 10.046 4.85578 10.5924 4.43118C11.1387 4.00657 11.8093 3.77554 12.4997 3.77401C12.6654 3.77401 12.8244 3.70776 12.9416 3.58984C13.0588 3.47191 13.1247 3.31197 13.1247 3.1452C13.1247 2.97843 13.0588 2.81849 12.9416 2.70057C12.8244 2.58264 12.6654 2.51639 12.4997 2.51639C11.6212 2.5173 10.7634 2.78383 10.0374 3.28141C9.31146 3.77899 8.75092 4.48463 8.42856 5.30674L6.39614 3.72646ZM6.39614 10.0841C6.64968 10.5817 6.96225 11.0465 7.327 11.4683C7.97231 12.2091 8.98169 13.7568 9.36645 15.0624C9.36645 15.0726 9.36919 15.0828 9.37075 15.093H12.8372L6.39614 10.0841ZM9.37466 16.3502V17.8574C9.37584 18.1045 9.44934 18.3458 9.58599 18.5511L10.2536 19.5607C10.3675 19.7335 10.5221 19.8753 10.7037 19.9734C10.8852 20.0715 11.0881 20.1229 11.2942 20.1231H13.7047C13.9107 20.1231 14.1135 20.0718 14.2951 19.9739C14.4766 19.876 14.6313 19.7345 14.7454 19.5619L15.4129 18.5511C15.5492 18.3451 15.622 18.1033 15.6223 17.8558V17.2581L14.4528 16.3502H9.37466Z"/>
+            <path class="night" d="M0.131556 1.2363L0.898352 0.243172C0.948738 0.177883 1.01142 0.123229 1.08282 0.0823368C1.15423 0.0414448 1.23294 0.0151171 1.31446 0.00486006C1.39598 -0.00539702 1.47872 0.000617709 1.55793 0.0225602C1.63714 0.0445026 1.71127 0.0819422 1.77609 0.132737L24.7585 18.0039C24.8894 18.1062 24.9745 18.2567 24.9952 18.4221C25.0158 18.5876 24.9703 18.7545 24.8687 18.8862L24.1015 19.8794C24.0511 19.9446 23.9884 19.9992 23.917 20.0401C23.8457 20.0809 23.767 20.1072 23.6855 20.1175C23.6041 20.1277 23.5214 20.1217 23.4422 20.0998C23.363 20.0779 23.2889 20.0405 23.2241 19.9898L0.241322 2.1186C0.110489 2.01624 0.0254259 1.86578 0.00484145 1.70032C-0.015743 1.53486 0.0298368 1.36795 0.131556 1.2363V1.2363Z"/>
+            </svg></p>
+        </div>
+    </label>
+</div>
+          </li>
+          <li>
+            <a href="./">
+              <div class="left">
+                Home
+              </div>  
+              <div class="right">
+                <svg width="24px" aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><rect x="83.534" y="40.929" width="3.997" height="20.071"/></g><path d="M16.466,41.931l33.548-25.123L92.81,48.877l2.396-3.198L50.015,11.814L4.794,45.679l2.396,3.199l5.279-3.954v42.763h75.062  V61h-3.997v22.69H64.598V54.068H35.402V83.69H16.466V41.931z M39.399,58.065h21.202V83.69H39.399V58.065z"/></svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./archive.html">
+              <div class="left">
+                All Posts
+              </div>
+              <div class="right">
+                <svg width="24px" aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="-3 3 64 64"><g><path d="M60.992,31.985c0-15.979-13-28.978-28.979-28.978c-15.994,0-29.006,12.999-29.006,28.978   c0,15.994,13.012,29.007,29.006,29.007v-2c-14.891,0-27.006-12.115-27.006-27.007c0-14.875,12.115-26.978,27.006-26.978   c14.876,0,26.979,12.103,26.979,26.978c0,8.945-4.479,17.329-11.804,22.338l0.874-10.062l-1.992-0.174l-1.135,13.071l13.042,1.136   l0.174-1.992l-9.183-0.799C56.443,50.079,60.992,41.321,60.992,31.985z"/><polygon points="33.014,12.682 31.014,12.682 31.014,32.398 39.811,41.224 41.227,39.812 33.014,31.572  "/></g></svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./tags.html">
+              <div class="left">
+                Tags
+              </div>
+              <div class="right">
+                <svg width="24px" aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M75.244,15.066c-2.59,0-5.027,1.012-6.857,2.843c-3.781,3.785-3.778,9.94,0.002,13.724    c1.831,1.833,4.266,2.843,6.857,2.843s5.026-1.01,6.861-2.843c3.781-3.785,3.781-9.943-0.002-13.724    C80.275,16.076,77.838,15.066,75.244,15.066z M78.766,28.252c-1.871,1.869-5.129,1.869-6.996,0c-1.929-1.931-1.931-5.069-0.002-7    c0.934-0.934,2.175-1.448,3.498-1.448c1.322,0,2.564,0.515,3.5,1.448C80.691,23.183,80.691,26.321,78.766,28.252z M94.632,41.027    l0.005-28.872c0-3.745-3.05-6.792-6.792-6.792L58.973,5.368l-1.237-0.004c-1.893,0-4.75,0-6.617,1.869L7.008,51.342    c-1.06,1.059-1.645,2.467-1.645,3.966s0.583,2.908,1.644,3.968l33.717,33.717c1.058,1.06,2.467,1.645,3.966,1.645    s2.908-0.585,3.968-1.645l44.106-44.111c1.893-1.886,1.88-4.604,1.869-7.227L94.632,41.027z M90.022,46.139L45.913,90.25    c-0.654,0.65-1.792,0.652-2.443,0L9.752,56.532c-0.328-0.327-0.507-0.762-0.507-1.225c0-0.462,0.18-0.894,0.507-1.221    L53.861,9.976c0.676-0.674,2.284-0.731,3.874-0.731l1.237,0.004l28.872-0.004c1.604,0,2.909,1.306,2.909,2.911l-0.005,28.872    l0.005,0.642C90.76,43.585,90.769,45.392,90.022,46.139z"/></g></svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html">
+              <div class="left">
+                About
+              </div>
+              <div class="right">
+                <svg width='24px' aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 846.66 846.66"><g><path d="M351.26 453.22c-276.42,134.06 -224.86,336.22 -224.73,336.8 6.03,25.41 -32.58,34.56 -38.6,9.15 -0.15,-0.65 -55.78,-219.32 218.87,-367.66 -60.98,-39 -100.02,-106.82 -100.02,-182.56 0,-119.6 96.95,-216.55 216.55,-216.55 119.6,0 216.55,96.95 216.55,216.55 0,75.74 -39.04,143.56 -100.02,182.56 274.65,148.34 219.02,367.01 218.87,367.66 -6.02,25.41 -44.63,16.26 -38.6,-9.15 0.13,-0.58 51.69,-202.74 -224.73,-336.8 -22.55,7.96 -46.8,12.29 -72.07,12.29 -25.27,0 -49.52,-4.33 -72.07,-12.29zm72.07 -381.14c-97.68,0 -176.87,79.19 -176.87,176.87 0,97.69 79.19,176.87 176.87,176.87 97.68,0 176.87,-79.18 176.87,-176.87 0,-97.68 -79.19,-176.87 -176.87,-176.87z"/></g></svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./feed.xml">
+              <div class="left">
+                Atom feed
+              </div>
+              <div class="right">
+                <svg width='24px' aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M80 352c26.467 0 48 21.533 48 48s-21.533 48-48 48-48-21.533-48-48 21.533-48 48-48m0-32c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80zm367.996 147.615c-6.448-237.848-198.06-429.164-435.61-435.61C5.609 31.821 0 37.229 0 44.007v8.006c0 6.482 5.146 11.816 11.626 11.994 220.81 6.05 398.319 183.913 404.367 404.367.178 6.48 5.512 11.626 11.994 11.626h8.007c6.778 0 12.185-5.609 12.002-12.385zm-144.245-.05c-6.347-158.132-133.207-284.97-291.316-291.316C5.643 175.976 0 181.45 0 188.247v8.005c0 6.459 5.114 11.72 11.567 11.989 141.134 5.891 254.301 119.079 260.192 260.192.269 6.453 5.531 11.567 11.989 11.567h8.005c6.798 0 12.271-5.643 11.998-12.435z"></path></svg>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      
+      <div class="logo"><a href="./"><img class="logo" id="logo" src="./assets/img/branding/logo.png" alt="Swans & Swan"></a></div>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Regular Languages">
+<meta itemprop="description" content="Introduction for Regular Languages">
+<meta itemprop="datePublished" content="2023-07-08T07:21:20+00:00">
+
+    <div class="page-image">
+      <div
+        class="cover-image"
+        style="background: url('./assets/img/posts/cover/COCO-Regular-Language.jpg') center no-repeat; background-size: cover;"
+      ></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">Regular Languages</h1>
+          
+
+  <span class = "post-page-meta">
+  
+    <p class="page_meta">
+  
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-07-08T07:21:20+00:00">July 8, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        8 minute read
+      
+    </span>
+  
+  
+    </p>
+  
+  </span>
+
+        </div>
+        <aside class="sidebar side" id="sidebar">
+    
+
+
+
+<div class="tag-cloud">
+    
+        <ul class="tags side">
+            
+                <li><a href="./tag.html?tag=Computability+and+Complexity" class="tag side">Computability and Complexity</a></li>
+            
+    
+        </ul>
+</div>
+    <div class="share-options side">
+    <div class="share-hover side">
+        <span class="share-button side"><svg fill="currentColor" width="25" height="25" class="side"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
+        <div class="share-icons side" id="sidebar-icons">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Regular Languages&url=http://localhost:4000/Regular-Language.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Regular-Language.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Regular-Language.html&title=Regular Languages" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Regular-Language.html&title=Regular Languages&summary=Introduction for Regular Languages&source=http://localhost:4000/Regular-Language.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Regular Languages&body=Introduction for Regular Languages%0A%0ARead more here: http://localhost:4000/Regular-Language.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="side" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
+        </div>
+    </div>
+    <div class='alert' style='font-size:.6em;color:var(--accent);text-align:center;'></div>
+</div>
+</aside>
+ <aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">
+      <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
+    </li>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#finite-automata">Finite Automata</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#formal-definition-of-a-finite-automaton">Formal Definition of a finite automaton</a></li><li class="toc-item-2"><a href="#formal-definition-of-computation">Formal Definition of Computation</a></li><li class="toc-item-2"><a href="#the-regular-operations">The Regular Operations</a></li></ul></li><li class="toc-item-1"><a href="#nondeterminism">Nondeterminism</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#formal-definition-of-a-nondeterministic-finite-automaton">Formal Definition of a Nondeterministic finite automaton</a></li><li class="toc-item-2"><a href="#equivalence-of-nfas-and-dfas">Equivalence of NFAs and DFAs</a></li></ul></li><li class="toc-item-1"><a href="#regular-expression">Regular Expression</a></li><li class="toc-item-1"><a href="#nonregular-languages">Nonregular Languages</a></li></ul>
+  </nav>
+</aside>
+  <h2 id="finite-automata">Finite Automata</h2>
+
+<p>Finite automata are good models for computers with an extremely limited amount of memory. The controller moves from state to state, depending on the input it receives. Finite automata and their probabilistic counterpart <strong>Markov Chains</strong> are useful tools when we are attempting to recognize patterns in data.</p>
+
+<h3 id="formal-definition-of-a-finite-automaton">Formal Definition of a finite automaton</h3>
+
+<p>​ A finite automaton is a list of those five objects: set of states, input alphabet, rules for moving, start state, and accept states.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> A <em>finite</em> <em>automaton</em> is a 5-tuple $(Q,\sum,\delta,q_0,F)$, where:</p>
+
+<ul>
+  <li>$Q$ is a finite set called the state,</li>
+  <li>$\sum$ is a finite set called the alphabet,</li>
+  <li>$\delta: Q\times\sum\rightarrow Q$ is the transition function,</li>
+  <li>$q_0\in Q$ is the start state, and</li>
+  <li>$F\subseteq Q$ is the set of accept states.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> If $A$ is the set of all strings that machine $M$ accepts, we say that $A$ is the <em>language of machine</em> $M$ and write $L(M)=A$. We say that $M$ <em>recognizes</em> $A$ or that $M$ <em>accepts</em> $A$. A machine may accepts several strings, but it always recognizes only one language. If the machine accepts no strings, it still recognizes only one language the empty language $\emptyset$.</p>
+
+<h3 id="formal-definition-of-computation">Formal Definition of Computation</h3>
+
+<p>​ Let $M=(Q,\sum,\delta,q_0,F)$ be a finite automaton and let $w=w_1w_2\cdots w_n$ be a string where each $w_i$ is a member of the alphabet $\sum$. Then $M$ <em>accepts</em> $w$ if a sequence of states $r_0,r_1,\cdots, r_n$ in $Q$ exists with three conditions:</p>
+
+<ol>
+  <li>$r_0=q_0$</li>
+  <li>$\delta(r_i,w_{i+1})=r_{i+1}$, for $i=0,1,\cdots,n-1$, and</li>
+  <li>$r_n\in F$.</li>
+</ol>
+
+<p>We say that $M$ <em>recognizes</em> <em>language</em> $A$, if $A=\{ w\mid M~ accepts~ w\}$.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> A language is called a <em>regular language</em> if some finite automaton recognizes it.</p>
+
+<p>Above definition equivalent to, $\forall a\in A$, $M$ accepts $a$.</p>
+
+<h3 id="the-regular-operations">The Regular Operations</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> Let $A$ and $B$ be languages. We define the regular operations <em>union</em>, <em>concatenation</em>, and <em>star</em> as follows:</p>
+
+<ul>
+  <li><em>Union</em>: $A\cup B=\{ x\mid x\in A\textit{ or }x\in B\}$.</li>
+  <li><em>Concatenation</em>: $A\circ B=\{ xy\mid x\in A~ and ~ y\in B\}$</li>
+  <li><em>Star</em>: $A^{*}=\{ x_1x_2,\cdots,x_k\mid k\geq 0\textit{ and each }x_i\in A\}$. The empty string $\epsilon$ is always a member of $A^*$, no matter what $A$ is. The set can be treated as all possible combination of the substring in $A$.</li>
+</ul>
+
+<p>Generally speaking, a collection of objects is <em>closed</em> under some operation if applying that operation to members of the collection returns an object still in the collection.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem</code> The class of regular language is closed under the union operation and the concatenation operation, star, and complementation.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Lemma</code> Given a finite automaton $M(Q,\sum,\delta,q_0,F)$ that recognizes languages $L$, for any $\sum’\supseteq\sum$ there exists an automaton $M’=(Q’,\sum’,\delta’,q_0’,F’)$ that also recognizes $L$.</p>
+
+<p>If $L$ can be recognized by a finite automaton $M$ with alphabet $\sum$, then there it can also be recognized by another finite automaton $M’$ using a larger alphabet $\sum’$.</p>
+
+<h2 id="nondeterminism">Nondeterminism</h2>
+
+<p>When the machine is in a given state and reads the next input symbol, we know what the next state will be – it is determined. We call this <em>deterministic</em> computation. In a <em>nondeterministic</em> machine, several choices may exist for the next state at any point.</p>
+
+<p>Every state of deterministic finite automaton (<strong>DFA</strong>) always has exactly one exiting transition arrow for each symbol in alphabet. In an nondeterministic finite automaton (<strong>NFA</strong>), a state may have zero, one, or many exiting arrows for each alphabet symbol, including $\epsilon$.</p>
+
+<p><code class="language-plaintext highlighter-rouge">How NFA compute? </code></p>
+
+<p>​ After reading that symbol, the machine splits into multiple copies of itself and follows all the possibilities in parallel. Each copy of the machine takes one of the possible ways to proceed and continues as before. Finally, if <em>any one</em> of these copies of the machine is in an accept state at the end of the input, the NFA accepts the input string.</p>
+
+<h3 id="formal-definition-of-a-nondeterministic-finite-automaton">Formal Definition of a Nondeterministic finite automaton</h3>
+
+<p>In a DFA, the transition function takes a state and an input symbol and produces the next state. In an NFA, the transition function takes a state and an input symbol <em>or the empty string</em> and produce the <em>set of possible next states</em>.</p>
+
+<p>For any set $Q$ we write $P(Q)$ to be the collection of all subsets of $Q$. Here $P(Q)$ is called the power set of $Q$. For any alphabet $\sum$ we write $\sum_\epsilon$ to be $\sum\cup\{ \epsilon\}$.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> A <em>nondeterministic finite automaton</em> is a 5-tuple $(Q,\sum,\delta,q_0,F)$ where:</p>
+
+<ul>
+  <li>$Q$ is a finite set of states,</li>
+  <li>$\sum$ is a finite set called the alphabet,</li>
+  <li>$\delta: Q\times\sum_\epsilon\rightarrow P(Q)$ is the transition function,</li>
+  <li>$q_0\in Q$ is the start state, and</li>
+  <li>$F\subseteq Q$ is the set of accept states.</li>
+</ul>
+
+<h3 id="equivalence-of-nfas-and-dfas">Equivalence of NFAs and DFAs</h3>
+
+<p>DFA and NFA recognize the same class of languages. We say that two machines are <em>equivalent</em> if they recognize the same language.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem</code> Every NFA has an equivalent deterministic finite automaton.</p>
+
+<p>The idea is to use DFA to ssimulate every possible state transfer in NFA.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Proof</code></p>
+
+<p>Let $N=(Q, \sum, \delta, q_0, F)$ be the NFA recognizing some language $A$. We construct a DFA $M=(Q’,\sum,\delta’,q_0’,F’)$ recognizing $A$. Let’s first consider the easier case wherein $N$ has no $\epsilon$ arrows.</p>
+
+<ol>
+  <li>
+    <p>$Q’=P(Q)$.</p>
+  </li>
+  <li>
+    <p>For $R\in Q’$ and $a\in\sum$, let $\delta’(R,a)=\{ q\in Q\mid q\in\delta(r,a) \textit{ for some   } r\in R\}$, or simply,</p>
+
+\[\delta'(R,a)=\bigcup_{r\in R}\delta(r,a)\]
+
+    <p>If $k$ is the # of states of the NFA, it has $2^k$ subset of states. Each subset corresponds to one of the possibilities that the DFA must remember, so the DFA simulating the NFA will have $2^k$ states.</p>
+  </li>
+  <li>
+    <p>$q_0’=\{ q_0\}$.</p>
+  </li>
+  <li>
+    <p>$F’=\{ R\in Q’\mid R \textit{ contains an accept state of } N\}$.</p>
+  </li>
+</ol>
+
+<p>To consider the $\epsilon$ errors, we define $E(R)$ to be the collection of states that can be reached from members of $R$ by going only along $\epsilon$ arrows, including the members of $R$ themselves.</p>
+
+<ul>
+  <li>The new transition function can be written as:</li>
+</ul>
+
+<center>
+
+$$
+\delta'(R,a)=\{ q\in Q\mid q\in E(\delta(r,a)) \textit{ for some }r\in R\}
+$$
+
+</center>
+
+<ul>
+  <li>Changing $q_0’$ to be $E(\{ q_0\})$.</li>
+</ul>
+
+<p>After drawing the graph, we may simplify the machine by removing those states that does not contain the input arrow.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Corollary</code> A language is regular if and only if some NFA recognizes it.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> The class of regular language is closed under the union, concatenation and star operation.</p>
+
+<h2 id="regular-expression">Regular Expression</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Definition</code> Say that $R$ is a <em>regular expression</em> if $R$ is:</p>
+
+<ul>
+  <li>$a$ for some $a$ in the alphabet $\sum$,</li>
+  <li>$\epsilon$,</li>
+  <li>$\emptyset$, the empty language</li>
+  <li>$(R_1\cup R_2)$, where $R_1$ and $R_2$ are regular expressions,</li>
+  <li>$(R_1\circ R_2)$, where $R_1$ and $R_2$ are regular expressions, or</li>
+  <li>$(R_1^*)$, where $R_1$ is a regular repression.</li>
+</ul>
+
+<p>When we do calculation, the star operation ( * ) has first priority, followed by concatenation $(\circ)$ and finally union $(\bigcup)$, unless parentheses change the usual order. For convenience, we let $R^{+}=RR^{*}$ and we write $L(R)$ to be the language of $R$.</p>
+
+<p>Generally we have:</p>
+
+<center>
+$$
+
+\begin{align}
+R\bigcup\emptyset&amp;=R\\
+R\circ\epsilon&amp;=R
+\end{align}
+
+$$
+
+</center>
+
+<p>However,</p>
+
+<center>
+$$
+
+\begin{align}
+R\bigcup\epsilon&amp;\neq R\\
+R\circ\emptyset&amp;\neq R
+\end{align}
+
+$$
+</center>
+
+<p>Why? just take $R=\epsilon$ as an counter example. Pay attention on the difference between the regular language and regular expression.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem </code> A language is regular (recognized by DFA/NFA) if and only if some regular expression describes it.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem 1.60</code> If a language is described by a regular expression, then it is regular; If a language is regular, then it is described by a regular expression.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Definition 1.64</code> A <em>generalized nondeterministic finite automaton</em> is a 5-tuple, $(Q,\sum,\delta,q_{start},q_{accept})$, where</p>
+
+<ol>
+  <li>$Q$ is the finite set of states,</li>
+  <li>$\sum$ is the input alphabet,</li>
+  <li>$\delta:(Q-\{ q_{accept}\})\times(Q-\{ q_{start}\})\longrightarrow \mathcal{R}$ is the transition function,</li>
+  <li>$q_{start}$ is the start state,</li>
+  <li>$q_{accept}$ is the accept state.</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">Proof Idea for Theorem 1.60</code></p>
+
+<p>To convert DFAs into GNFA, and then GNFAs into regular expression.</p>
+
+<ol>
+  <li>DFA $\to$ GNFA.
+    <ol>
+      <li>Add a new start state with an $\epsilon$ arrow to the old start state and a new accept state with $\epsilon$ arrows from the old accept states.</li>
+      <li>If there are multiple arrows going between the same two states in the same direction, we replace each with a single arrow whose label is the union of the previous labels.</li>
+      <li>Add arrows labelled $\emptyset$ between states that had no arrows.</li>
+    </ol>
+  </li>
+  <li>GNFA $\to$ regular expression
+    <ol>
+      <li>
+        <p>Assume the GNFA has $k$ states, if $k&gt;2$, we construct an equivalent GNFA with $k-1$ states by removing the state $q_{rip}(q_2)$, which is the bridge state between $q_i$ and $q_j$, add an equivalent expression edge meanwhile.</p>
+
+        <p><img src="./assets/img/posts/typora-user-images/image-20210402174247244.png" alt="image-20210402174247244" style="zoom:50%;" /></p>
+      </li>
+      <li>
+        <p>Repeat (i) until $k=2$, the GNFA has a single arrow that goes from the start state to the accept state. The label of this arrow is the equivalent regular expression.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="nonregular-languages">Nonregular Languages</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Theorem</code> <em>Pumping lemma</em>: If $A$ is a regular language, then there is a number $p$ (the pumping length) where if $s$ is any string in $A$ of length at least $p$, then $s$ may be divided into three pieces, $s=xyz$, satisfying the following conditions:</p>
+
+<ol>
+  <li>for each $i\geq 0, xy^iz\in A$,</li>
+  <li>$\mid y\mid &gt;0$, and</li>
+  <li>$\mid xy\mid \leq p$.</li>
+</ol>
+
+<p>This theorem states that all regular languages have a special property. If we can show that a language does not have this property, we are guaranteed that it is not regular. The property states that all strings in the language can be <em>pumped</em> if they are at least as long as a certain special value, called the <em>pumping length</em>. That means every such string contains a section that can be repeated any number of times with the resulting string remaining in the language.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Applying Pumping Lemma Contrapositively</code></p>
+
+<ol>
+  <li>Assume $L$ is regular, thus $p$ exists. Use $p$ to define some $s\in L$ such that $\mid s\mid\geq p$.</li>
+  <li>Split $s$ in <strong>all</strong> possible ways into $xyz$ such that $\mid y\mid &gt;0$ and $\mid xy\mid \leq p$.
+    <ol>
+      <li>For every split, find some $i\neq 1$ (often $i=0$ or $i=2$ works) such that $xy^iz\notin L$.</li>
+    </ol>
+  </li>
+  <li>Conclude: $\mid s\mid \geq p$, but there does not exist a split of $s$ into $xyz$ such that <strong>all</strong> 3 properties hold. (A language is regular if there exists a partition that satisfy $xy^iz\in L$).
+    <ol>
+      <li>Contradiction! The assumption that $L$ is regular must be false.</li>
+      <li>$L$ is not regular.</li>
+    </ol>
+  </li>
+</ol>
+
+ <aside class="sidebar inline" id="post-end">
+    
+
+
+
+<div class="tag-cloud">
+    
+        <ul class="tags inline">
+            
+                <li><a href="./tag.html?tag=Computability+and+Complexity" class="tag inline">Computability and Complexity</a></li>
+            
+    
+        </ul>
+</div>
+    <div class="share-options inline">
+    <div class="share-hover inline">
+        <span class="share-button inline"><svg fill="currentColor" width="25" height="25" class="inline"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
+        <div class="share-icons inline" id="post-end-icons">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Regular Languages&url=http://localhost:4000/Regular-Language.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Regular-Language.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Regular-Language.html&title=Regular Languages" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Regular-Language.html&title=Regular Languages&summary=Introduction for Regular Languages&source=http://localhost:4000/Regular-Language.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Regular Languages&body=Introduction for Regular Languages%0A%0ARead more here: http://localhost:4000/Regular-Language.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="inline" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
+        </div>
+    </div>
+    <div class='alert' style='font-size:.6em;color:var(--accent);text-align:center;'></div>
+</div>
+</aside>
+
+        <div class="separator"></div>
+        
+
+
+
+<section class="author-box">
+  <div class="narrow-column">
+    <a href='https://RomaLzhih.github.io'><img src="./assets/img/Ziyang.jpg" alt="Thomas Men" class="author-img"></a>
+    <ul class="contact-icons">
+      
+      
+      <li class="linkedin"><a class="linkedin" href="https://in.linkedin.com/in/ziyang-men-427429221" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      
+      
+      <li class="github"><a class="github" href="http://github.com/RomaLzhih" target="_blank"><i class="fa fa-github"></i></a></li>
+      
+      
+      <li class="instagram"><a class="instagram" href="http://instagram.com/__ziyang_" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      
+      
+      <li class="book"><a class="book" href="https://www.douban.com/people/romaLzhih" target="_blank"><i class="fa fa-book"></i></a></li>
+      
+      
+      <li class="email"><a class="email" href="mailto:mzy791191656@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      
+    </ul>
+  </div>
+  <div class="author-desc">
+    <h3>Thomas Men</h3>
+    <p>$\int_{birth}^{death}\text{study} dt = \text{life}$</p>
+  </div>
+</section>
+ 
+
+
+
+<div class="recent-box">
+  <h2 class="page-subtitle">Recent posts</h2>
+  <div class="recent-list">
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Regular-Language.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/COCO-Regular-Language.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Regular Languages</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        8 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Robot-Motion.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-Robot-Motion.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Robot Motion</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        3 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Delaunay-Triangulations.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-Delaunay.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Delaunay Triangulations</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        8 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Voronoi-Diagram.html" class="recent-item-img" style="background: url('./assets/img/posts/cover/CG-Voronoi.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Voronoi Diagram</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        7 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+  </div>
+</div> <!-- End Recent-Box -->
+
+      </div>
+    </div>
+    <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+
+
+<footer class="main-footer">
+    <div class="footer-wrapper">
+        <div class="logo-symbol">
+            <a class="logo-link" title="Swans & Swan" href="./">
+                <svg width="45px" height="45px" class="logo-symbol" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 649 649"><g fill="currentColor" stroke="none"><path fill="#000000" opacity="1.000000" stroke="none" 
+                    d="
+                M220.683792,334.336761 
+                    C195.567734,310.659302 184.210403,281.614319 184.743820,247.714340 
+                    C185.064438,227.337067 191.994873,209.352127 204.602066,193.387024 
+                    C215.636353,179.413803 229.492752,168.379532 242.469055,156.428146 
+                    C253.662964,146.118347 264.765625,135.637848 271.347992,121.659027 
+                    C281.113190,100.920914 282.217194,79.219513 275.721558,57.420834 
+                    C270.173615,38.802647 256.791138,30.666218 236.708298,32.354156 
+                    C220.874435,33.684971 207.824051,46.901699 205.292038,63.864883 
+                    C204.001053,72.513878 205.908981,80.719154 208.006744,88.947929 
+                    C210.470093,98.610695 213.363785,108.151123 214.416931,118.154465 
+                    C216.303452,136.073715 208.569809,149.773926 195.958084,161.367538 
+                    C193.016693,164.071487 190.232666,167.204666 186.225342,168.721024 
+                    C185.316025,166.496292 186.923859,165.566666 187.553497,164.328613 
+                    C193.509995,152.616150 194.821869,140.649231 190.127930,128.134781 
+                    C186.395172,118.182930 181.114716,108.784416 179.351044,98.119034 
+                    C173.312332,61.601391 194.825577,21.997086 237.727570,16.627565 
+                    C269.442932,12.658143 295.232361,29.558222 304.760010,62.223995 
+                    C316.879913,103.777321 309.907501,142.366226 282.748718,176.533783 
+                    C274.995850,186.287399 264.973175,194.061096 257.067474,203.795639 
+                    C239.830658,225.019821 226.259735,248.078476 220.837479,275.246338 
+                    C216.386429,297.548157 220.150665,318.278107 233.305862,337.055298 
+                    C234.631348,338.947235 236.249680,340.634003 238.476807,343.311157 
+                    C237.767395,336.284332 235.983841,330.549164 235.423264,324.588562 
+                    C233.855606,307.920258 237.996048,292.966522 247.256485,279.232147 
+                    C256.554840,265.441589 270.059143,256.534729 283.756073,247.886566 
+                    C303.897369,235.169510 324.421173,223.000351 342.445709,207.245743 
+                    C363.146484,189.151993 378.430176,167.673065 384.252075,140.232193 
+                    C388.790985,118.838524 386.372192,97.856293 380.944763,77.036079 
+                    C377.578766,64.123634 373.025635,51.608246 367.563263,39.428322 
+                    C367.097656,38.390110 366.316467,37.422718 366.697601,36.114098 
+                    C367.757874,35.053188 368.543488,36.019760 369.224640,36.614975 
+                    C394.200409,58.440437 414.916687,83.419510 424.807251,115.688957 
+                    C435.475708,150.496201 427.960907,181.763229 404.509766,209.364838 
+                    C398.783691,216.104370 392.619354,222.406845 385.663452,227.916107 
+                    C384.583099,228.771805 382.774200,229.205475 383.645569,231.738449 
+                    C384.219208,233.405884 381.744171,234.584976 380.206696,234.495209 
+                    C376.966095,234.306000 375.751617,236.270233 373.961151,238.432419 
+                    C369.610199,243.686676 362.862823,245.499542 357.152039,248.730118 
+                    C326.327240,266.167542 294.050262,281.214111 266.433380,303.889130 
+                    C255.490616,312.873810 247.747986,324.115540 244.059357,338.004883 
+                    C243.160614,341.389069 244.136719,345.029205 242.114395,348.836670 
+                    C233.793900,345.868591 227.526886,339.980988 220.683792,334.336761 
+                z"/>
+                <path fill="#000000" opacity="1.000000" stroke="none" 
+                    d="
+                M411.534424,321.744965 
+                    C389.900116,328.016144 368.020752,329.796234 346.093597,331.334747 
+                    C321.222046,333.079865 296.211700,333.544006 271.751617,339.228119 
+                    C264.102295,341.005676 256.708527,343.466736 249.582336,346.762909 
+                    C247.984497,347.501953 246.523132,348.865417 244.238525,348.145538 
+                    C243.839661,345.885162 245.081879,344.100189 246.118698,342.283142 
+                    C260.209900,317.588501 282.049866,304.144257 309.402954,298.685883 
+                    C324.783112,295.616730 340.561279,296.383545 355.994415,293.701660 
+                    C384.917023,288.675568 411.905945,279.576324 432.698212,257.503998 
+                    C447.255829,242.050201 454.673767,223.249985 457.717346,202.464447 
+                    C459.174469,192.513397 458.859314,182.541885 458.822266,172.556732 
+                    C458.814606,170.494537 458.080139,168.316574 459.630066,165.850876 
+                    C461.958405,168.670410 462.812469,171.880707 463.872406,174.890793 
+                    C471.063568,195.313034 475.298035,216.267639 474.262512,238.024582 
+                    C473.066010,263.163635 465.663727,285.794373 446.534271,303.316376 
+                    C436.620087,312.397430 424.611420,317.696838 411.534424,321.744965 
+                z"/>
+                <path fill="#000000" opacity="1.000000" stroke="none" 
+                    d="
+                M562.124512,555.887329 
+                    C569.447205,563.377258 575.670227,571.585754 585.361145,575.791992 
+                    C591.953064,578.653137 598.813232,579.332703 605.892334,578.897095 
+                    C607.397888,578.804382 609.565308,578.056396 610.007263,580.442749 
+                    C610.418274,582.662109 608.444031,582.967346 606.865417,583.551758 
+                    C590.433289,589.634827 568.846741,583.736816 556.307434,569.739807 
+                    C523.958496,533.630066 491.597870,497.530853 459.236755,461.432037 
+                    C458.255096,460.337036 457.216034,459.293488 455.499084,457.482727 
+                    C455.086273,466.623108 454.492279,474.823944 454.390808,483.030914 
+                    C454.166290,501.191437 454.148346,519.354919 454.127533,537.517334 
+                    C454.115784,547.791748 456.056000,549.860718 466.405945,550.956055 
+                    C467.960266,551.120544 469.651886,551.034241 469.456787,553.216003 
+                    C469.276245,555.235046 467.552887,555.271057 466.039795,555.272949 
+                    C462.874481,555.276855 459.709045,555.158630 456.543701,555.162170 
+                    C435.383331,555.185669 414.222900,555.253845 393.062622,555.222290 
+                    C391.064087,555.219299 388.672516,556.082336 387.171600,553.729065 
+                    C387.879913,551.108459 390.076355,551.976074 391.713287,551.725586 
+                    C397.725922,550.805603 399.092468,548.244873 396.956818,542.609741 
+                    C391.883972,529.224487 386.835968,515.825928 382.089844,502.323090 
+                    C380.744537,498.495636 378.743073,497.135468 374.788879,497.290802 
+                    C367.967255,497.558777 361.125610,497.482269 354.297089,497.333344 
+                    C351.266693,497.267273 349.263977,498.135193 348.066956,501.091705 
+                    C342.694641,514.360901 336.461731,527.284851 331.968811,540.905151 
+                    C329.928589,547.090210 330.932404,548.980042 337.014771,551.294800 
+                    C338.131134,551.719666 339.359619,551.977478 339.216461,553.522217 
+                    C339.073181,555.068542 337.831055,555.267273 336.640320,555.268555 
+                    C326.643127,555.279480 316.645874,555.269836 306.648773,555.226379 
+                    C304.977142,555.219116 303.645844,554.683655 304.090607,552.054810 
+                    C316.028381,550.919861 320.214203,541.579590 324.125397,532.018677 
+                    C336.860626,500.887390 349.564545,469.743317 362.283234,438.605286 
+                    C362.597992,437.834717 362.927155,437.068939 363.280945,436.315643 
+                    C363.841064,435.122894 364.243744,433.746857 365.901215,433.641754 
+                    C367.879364,433.516266 368.360229,435.108765 368.929962,436.455078 
+                    C373.471710,447.187103 377.961334,457.941193 382.492065,468.677887 
+                    C392.459564,492.298462 402.345245,515.954346 412.465057,539.509521 
+                    C416.569458,549.063049 422.309326,552.127319 432.694092,551.199524 
+                    C440.111023,550.536804 443.024139,547.419678 443.025665,539.915466 
+                    C443.030884,514.420715 442.224030,488.894318 443.272644,463.443695 
+                    C443.858704,449.219849 441.015015,437.668945 430.517212,427.675385 
+                    C424.750092,422.185272 420.103638,415.565552 412.592407,412.087494 
+                    C405.421600,408.767059 398.029968,407.600739 390.253571,409.404083 
+                    C388.634583,409.779541 386.694061,410.348907 386.205505,407.985443 
+                    C385.762970,405.844727 387.778778,405.772552 389.126770,405.367310 
+                    C406.927338,400.016174 427.054352,403.452057 440.016876,418.552094 
+                    C470.612427,454.192780 502.105988,489.062714 533.264465,524.219421 
+                    C534.549011,525.668762 535.593262,527.495056 537.692566,528.032837 
+                    C539.040588,527.011047 538.643494,525.570251 538.660461,524.307129 
+                    C539.018188,497.661072 539.383789,471.014984 539.654968,444.367981 
+                    C539.754028,434.628815 537.351135,432.062744 527.652527,430.953766 
+                    C526.204529,430.788208 524.320190,431.115326 524.114014,429.082825 
+                    C523.898987,426.962738 525.699707,426.809723 527.221069,426.811157 
+                    C538.218201,426.821655 549.215393,426.865356 560.212341,426.938416 
+                    C561.526123,426.947144 562.941589,427.014740 563.383911,428.751404 
+                    C563.100342,430.639954 561.510193,430.215637 560.294128,430.458069 
+                    C553.024536,431.907471 550.342041,435.074463 550.335754,442.456055 
+                    C550.309082,473.616302 550.409729,504.777161 550.216980,535.936218 
+                    C550.185913,540.950684 551.206482,544.968079 555.062561,548.334961 
+                    C557.556702,550.512634 559.621338,553.182373 562.124512,555.887329 
+                M356.397339,487.840759 
+                    C362.734894,488.042786 369.074036,488.270111 376.018127,487.478027 
+                    C373.120331,477.780914 369.882599,469.311859 365.540527,459.531128 
+                    C361.508545,469.182556 358.068756,477.375702 354.679230,485.589539 
+                    C354.318848,486.462830 354.854004,487.167999 356.397339,487.840759 
+                z"/>
+                <path fill="#000000" opacity="1.000000" stroke="none" 
+                    d="
+                M65.719162,416.815857 
+                    C79.329605,396.655029 98.552383,392.188934 120.766998,395.985687 
+                    C125.356461,396.770111 129.851334,398.081390 134.568451,397.729584 
+                    C137.845825,397.485138 139.054230,399.192017 139.047058,402.227356 
+                    C139.027802,410.391266 139.072128,418.555450 139.025421,426.719116 
+                    C139.017242,428.150818 139.223969,430.026459 137.158722,430.254517 
+                    C135.050125,430.487335 134.879578,428.721313 134.723221,427.211304 
+                    C132.237350,403.204559 101.467827,399.432343 87.118950,409.987640 
+                    C75.227081,418.735443 74.412964,439.517456 85.326622,451.674194 
+                    C91.155876,458.167389 98.238518,463.197266 105.255188,468.275879 
+                    C118.752373,478.044952 132.382721,487.639984 143.813446,499.928162 
+                    C161.526550,518.970154 167.293640,541.013855 159.252136,565.856812 
+                    C152.266998,587.436340 130.118668,602.843872 107.442268,603.374207 
+                    C95.458267,603.654480 83.860802,602.201538 72.790070,597.461548 
+                    C57.002636,590.702026 46.850716,579.239868 43.428516,562.164429 
+                    C39.852261,544.320312 42.205120,527.706177 53.804520,513.131775 
+                    C55.604435,510.870178 57.599762,506.306274 60.884548,508.521210 
+                    C64.354866,510.861267 60.057892,513.708801 58.774239,515.944214 
+                    C47.291485,535.940857 48.010952,557.940125 61.304855,573.904663 
+                    C73.743683,588.842407 90.085442,593.357483 108.534668,589.285828 
+                    C126.323532,585.359863 138.311554,574.273315 142.009903,556.146912 
+                    C145.340225,539.824280 141.590500,525.057739 128.811203,513.375000 
+                    C119.300064,504.680115 108.236801,498.087463 97.919327,490.485992 
+                    C88.097107,483.249359 78.836143,475.375824 70.767555,466.226379 
+                    C62.857807,457.257080 57.049816,447.336365 58.658405,434.632294 
+                    C59.472076,428.206238 62.118164,422.520660 65.719162,416.815857 
+                z"/>
+                <path fill="#000000" opacity="1.000000" stroke="none" 
+                    d="
+                M289.733795,490.891571 
+                    C293.793274,476.752625 297.822449,463.025757 301.687195,449.252747 
+                    C303.925690,441.275269 303.183655,440.054474 295.431671,437.102142 
+                    C295.049072,436.956451 294.801575,436.455872 293.833435,435.409973 
+                    C306.000031,435.409973 317.412567,435.409973 328.750397,435.409973 
+                    C328.944519,437.462128 328.086182,438.001007 327.033539,438.079437 
+                    C319.317108,438.654205 315.714325,443.767029 313.661957,450.372955 
+                    C308.872955,465.787292 304.203033,481.238708 299.513214,496.683685 
+                    C293.906158,515.149475 288.342529,533.628479 282.712128,552.087097 
+                    C282.256775,553.580078 282.355591,555.811768 280.199677,555.952576 
+                    C277.708405,556.115479 277.649353,553.684204 277.049347,552.081116 
+                    C267.245178,525.884644 257.486908,499.671082 247.706589,473.465729 
+                    C247.073639,471.769806 246.345200,470.109497 245.635223,468.368958 
+                    C243.619934,469.043976 243.641830,470.670288 243.215546,472.008362 
+                    C234.828415,498.335846 226.472168,524.673279 217.997803,550.972656 
+                    C217.402374,552.820496 217.796967,556.064026 214.848068,555.917664 
+                    C212.293610,555.790955 212.205093,552.748962 211.512695,550.845886 
+                    C200.187317,519.717163 188.954041,488.554871 177.701141,457.399750 
+                    C176.796082,454.894012 175.732071,452.431244 175.029755,449.869598 
+                    C173.098907,442.826965 168.954590,438.538452 161.332352,438.259338 
+                    C160.181900,438.217194 158.754822,438.241852 158.647278,436.675812 
+                    C158.513168,434.722961 160.142990,434.746429 161.443466,434.729126 
+                    C172.434570,434.582977 183.426147,434.462097 194.417953,434.391022 
+                    C195.675598,434.382904 197.167526,434.188599 197.829849,435.835236 
+                    C197.488922,437.879181 195.699631,437.651886 194.350220,437.957764 
+                    C188.827133,439.209595 188.373444,439.841614 190.142929,445.352417 
+                    C194.977112,460.407959 199.879517,475.441681 204.771545,490.478577 
+                    C207.701233,499.483765 210.662140,508.478790 213.861908,518.250671 
+                    C216.842789,513.563721 217.848038,508.862244 219.369385,504.460388 
+                    C227.305344,481.498993 235.001617,458.454865 242.809052,435.448914 
+                    C243.549423,433.267303 244.113113,430.803680 247.254639,430.890442 
+                    C250.172668,430.971039 250.558197,433.421722 251.231354,435.361389 
+                    C260.289490,461.462311 269.276794,487.587769 278.295563,513.702332 
+                    C278.929718,515.538696 279.136871,517.605530 281.448364,519.438171 
+                    C285.021393,510.078552 286.863007,500.534027 289.733795,490.891571 
+                z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="copyright">
+          <p>2023 &copy; Thomas Men</p>
+        </div>
+        <div class="footer-nav">
+            <div>
+                <a href="./archive.html">
+                    Posts
+                </a>
+            </div>
+            <div>
+                <a href="./tags.html">
+                    Tags
+                </a>
+            </div>
+            <div>
+                <a href="./about.html">
+                    About
+                </a>
+            </div>
+        </div>
+    </div>
+</footer> <!-- End Footer -->
+
+</div>
+
+    <div class="top" title="Top">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fal"
+        data-icon="angle-up"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 256 512"
+        class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"
+      >
+        <path
+          fill="currentColor"
+          d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z"
+          class=""
+        ></path>
+      </svg>
+    </div>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "CommonHTML": { linebreaks: { automatic: true } }
+      });
+    </script>
+    <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+ 
+
+<!-- JS -->
+
+     
+
+<script>
+  (function () {
+    var sw = document.getElementById("theme-switch");
+    var html = document.getElementsByTagName("html")[0];
+    var logo = document.getElementById("logo");
+    var nightModeOption = ("auto" || "auto").toLowerCase();
+    var storage = nightModeOption === "manual" ? localStorage : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem("theme", JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem("theme");
+      try {
+        data = JSON.parse(data ? data : "");
+      } catch (e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? "dark" : "light";
+      if (nightShift) {
+        logo.setAttribute("src", "./assets/img/branding/logo.png");
+      } else {
+        logo.setAttribute("src", "./assets/img/branding/logo.png");
+      }
+      setTimeout(function () {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <= 7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0);
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function () {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime(),
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener("change", function (event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == "auto") {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == "manual") {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === "on";
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+
+<script src="./assets/js/jekyll-search.js"></script>
+<script src="./assets/js/jquery-3.6.0.min.js"></script>
+
+
+<script>
+  function toggle_comments() {
+    var commentCurtain = document.getElementById("comment-curtain");
+    if (commentCurtain) {
+      commentCurtain.classList.toggle("hide");
+    }
+    var disqusThread = document.getElementById("comment-layout");
+    if (disqusThread) {
+      disqusThread.classList.toggle("show");
+    }
+  }
+
+  function copyToClipboard() {
+    navigator.clipboard.writeText("http://localhost:4000/Regular-Language.html").then(
+      function () {
+        alerts = document.getElementsByClassName("alert");
+        for (i = 0; i < alerts.length; i++) {
+          alerts[i].innerHTML = "\u00ABlink copied\u00BB";
+          setTimeout(
+            (function (i) {
+              return function () {
+                alerts[i].innerHTML = "";
+              };
+            })(i),
+            1600
+          );
+        }
+      },
+      function () {
+        prompt(
+          "Unable to copy, please use this link:",
+          "http://localhost:4000/Regular-Language.html"
+        );
+      }
+    );
+  }
+
+  $(function () {
+    if (document.getElementById("comment-curtain") == null) {
+      var disqusThread = document.getElementById("comment-layout");
+      if (disqusThread) {
+        disqusThread.classList.toggle("show");
+      }
+    }
+
+    var tweetTags = document.getElementsByTagName("tweet");
+
+    if (tweetTags != null) {
+      for (i = 0; i < tweetTags.length; i++) {
+        tweetA = document.createElement("a");
+        tweetA.href =
+          "https://twitter.com/share?text=" +
+          encodeURIComponent(tweetTags[i].textContent) +
+          '&via=&url=' +
+          window.location.href;
+        tweetA.target = "_blank";
+        tweetA.className = "twitter";
+        tweetSpanText = document.createElement("span");
+        tweetSpanText.className = "tweetText";
+        tweetSpanText.appendChild(
+          document.createTextNode(tweetTags[i].textContent)
+        );
+        tweetSpanIcon = document.createElement("span");
+        tweetSpanIcon.className = "tweetIcon";
+        tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+        tweetI = document.createElement("i");
+        tweetI.className = "fa fa-twitter";
+        tweetSpanIcon.appendChild(tweetI);
+        tweetA.appendChild(tweetSpanText);
+        tweetA.appendChild(tweetSpanIcon);
+        tweetTags[i].textContent = "";
+        tweetTags[i].appendChild(tweetA);
+      }
+    }
+  });
+</script>
+<!-- Mailchimp linking -->
+<script id="mcjs">
+  !(function (c, h, i, m, p) {
+    (m = c.createElement(h)),
+      (p = c.getElementsByTagName(h)[0]),
+      (m.async = 1),
+      (m.src = i),
+      p.parentNode.insertBefore(m, p);
+  })(
+    document,
+    "script",
+    "https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js"
+  );
+</script>
+ 
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+<script>
+  var spy = new Gumshoe("#toc-content a", {
+    navClass: "active",
+    contentClass: "underline",
+    nested: 0,
+    nestedClass: "active",
+    offset: 20,
+    reflow: 1,
+    events: 1,
+  });
+
+  var coll = document.getElementsByClassName("toc-item-1");
+  var i;
+  var chevron_up =
+    '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z"></path></svg>';
+  var chevron_down =
+    '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z"></path></svg>';
+  for (i = 0; i < coll.length; i++) {
+    if (coll[i].childElementCount > 1) {
+      sign = document.createElement("div");
+      sign.className = "toc-sign";
+      sign.innerHTML = chevron_down;
+      coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+      coll[i].addEventListener("click", function () {
+        var content = this.lastElementChild;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          this.firstElementChild.nextSibling.innerHTML = chevron_down;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          this.firstElementChild.nextSibling.innerHTML = chevron_up;
+        }
+      });
+    }
+  }
+</script>
+ 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "CommonHTML": { linebreaks: { automatic: true } }
+  });
+</script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script src="./assets/js/main.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById("search-input"),
+    resultsContainer: document.getElementById("results-container"),
+    json: "./search.json",
+    searchResultTemplate:
+      '<li><a href="{url}" title="{description}">{title}</a><p>{description}</p></li>',
+    noResultsText: "No results found",
+    fuzzy: false,
+    exclude: ["Welcome"],
+  });
+</script>
+
+ 
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFSBB9E8Q4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JFSBB9E8Q4');
+</script>
+    <!-- <script
+      type="text/javascript"
+      id="clustrmaps"
+      src="//cdn.clustrmaps.com/map_v2.js?cl=0e1633&w=266&t=tt&d=dPAyW5s5LrXzvpEdk9o0YG3xSnvRngs5dl0QAxzlEH4&co=0b4975&cmo=3acc3a&cmn=ff5353&ct=cdd4d9"
+    ></script> -->
+  </body>
+</html>

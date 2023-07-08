@@ -7,10 +7,18 @@ infinite: yes
 
 {% include calculate_relative_base.html %} {% include get-site-tags.html %}
 
-<script
-  type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "CommonHTML": { linebreaks: { automatic: true } }
+  });
+</script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 {% for item in (0..site.tags.size) %}{% unless forloop.last %} {% capture
 this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
