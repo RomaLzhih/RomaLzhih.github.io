@@ -1498,7 +1498,7 @@ div.tag-cloud {
   margin-right: 10px;
   margin-bottom: 10px;
   line-height: 20px;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
   color: var(--grey1) !important;
   border: 2px solid transparent;
@@ -1508,7 +1508,8 @@ div.tag-cloud {
   font-family: var(--font2);
   font-weight: var(--font2-regular);
   display: block;
-  text-transform: lowercase
+  /* text-transform: lowercase */
+  text-transform: none
 }
 
 .tags li a:hover {
@@ -2076,7 +2077,8 @@ img+br+small {
 /* = = = = = = = = = = Post Lists  = = = = = = = = = = */
 .tag-master h1 {
   color: var(--grey4);
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
+  text-transform: none;
 }
 
 .list-group {
@@ -2092,7 +2094,9 @@ img+br+small {
 
 .list-group-title a {
   color: var(--text);
-  text-transform: lowercase;
+  text-transform: none;
+  /* text-transform: lowercase; */
+  font-size: 18px;
   font-family: var(--font2);
   font-weight: var(--font2-bold);
 }

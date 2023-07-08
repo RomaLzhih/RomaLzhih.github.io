@@ -34,6 +34,7 @@
    max-width: 90%;
    }
    ```
+5. to change tag setting, search `lower_case`.
 
 ## For markdown
 
