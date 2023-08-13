@@ -54,7 +54,7 @@ The region of a node $v$, denoted as $region(v)$, in Kd-Tree is:
 
 Such a $region(v)$ is formed by the line represented by the ancestor nodes of $v$.
 
-The _query algorithm_ is: we traverse the Kd-Tree, but visit only nodes whose region is interested by the query rectangle. When a region is fully contained in the query rectangle, we can report all the points stored in its subtree. When the traversal reaches a leaf, we have to check whether the points stored at the leaf is contained in the query region and, if so, report it.
+The _query algorithm_ is: we traverse the Kd-Tree, but visit only nodes whose region is intersected by the query rectangle. When a region is fully contained in the query rectangle, we can report all the points stored in its subtree. When the traversal reaches a leaf, we have to check whether the points stored at the leaf is contained in the query region and, if so, report it.
 
 ![image-20210222180109075](./assets/img/posts/typora-user-images/image-20210222180109075.png)
 
@@ -67,15 +67,15 @@ where $\ell(v)$ is the splitting line stored at $v$, and $\ell(v)^{left}$ is the
 
 ![image-20210222180710476](./assets/img/posts/typora-user-images/image-20210222180710476.png)
 
-The time we need to **traverse a subtree and report the points stored in its leaves is linear in the number of reported points**, which is $O(k)$. Besides, it remains to bound the **number of nodes visited by the query algorithm that are not in one of the traversed subtrees**. To analyze the number of such nodes, we shall bound the number of regions interested by any vertical line.
+The time we need to **traverse a subtree and report the points stored in its leaves is linear in the number of reported points**, which is $O(k)$. Besides, it remains to bound the **number of nodes visited by the query algorithm that are not in one of the traversed subtrees**. To analyze the number of such nodes, we shall bound the number of regions intersected by any vertical line.
 
-Let $\ell$ be a vertical line, and let $\mathcal{T}$ be a Kd-Tree. Let $\ell(root(\mathcal{T}))$ be the splitting line stored at the root of the Kd-Tree. Observe that if the line $\ell$ intersects, for instance $region(lc(root(\mathcal{T})))$, then it will always intersect the **regions corresponding to both children** of $lc(root(\mathcal{T}))$.
+Let $\ell$ be a vertical line, and let $\mathcal{T}$ be a Kd-Tree. Let $\ell(root(\mathcal{T}))$ be the splitting line stored at the root of the Kd-Tree. Observe that if the line $\ell$ intersects, for instance $region(lc(root(\mathcal{T})))$, then it will always intersect the **regions corresponding to both children** of $lc(root(\mathcal{T}))$, e.g., the region between line $\ell_1, \ell_4$ and $\ell_1,\ell_5$.
 
-Define $Q(n)$ as the number of interested regions in a Kd-Tree storing $n$ points whose root contains a vertical splitting line. To write recurrence for $Q(n)$ we have to go down two steps in the tree. Each of the four nodes at depth two in the tree corresponds to a region containing $n/4$ points.
+Define $Q(n)$ as the number of intersected regions in a Kd-Tree storing $n$ points whose root contains a vertical splitting line. To write recurrence for $Q(n)$ we have to go down two steps in the tree. Each of the four nodes at depth two in the tree corresponds to a region containing $n/4$ points.
 
 <img src="./assets/img/posts/typora-user-images/image-20210222182343544.png" alt="image-20210222182343544" style="zoom: 67%;" />
 
-Two of the four nodes correspond to intersected regions (at least two regions would be interested by such region), so we have to count the number of intersected regions of the remaining 2 nodes ($Q(n/4)+Q(n/4)$) in these subtrees recursively. Hence, $Q(n)$ satisfies the recurrence
+Two of the four nodes correspond to intersected regions (at least two regions would be intersected by such region that we mentioned earlier), so we have to count the number of intersected regions of the remaining 2 nodes ($Q(n/4)+Q(n/4)$) in these subtrees recursively (the region to the left of $\ell_4$ and $\ell_5$). Hence, $Q(n)$ satisfies the recurrence
 
 <center>$$
 Q(n)=\begin{cases}
